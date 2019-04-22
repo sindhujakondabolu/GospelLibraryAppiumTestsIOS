@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%d result(s) found</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@results@</string>
+		<key>results</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Ergebnis gefunden</string>
+			<key>other</key>
+			<string>%d Ergebnisse gefunden</string>
+		</dict>
+	</dict>
+	<key>%d item(s) added to %@</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@items@</string>
+		<key>items</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Element zu dieser Sammlung hinzugefügt: %@</string>
+			<key>other</key>
+			<string>%d Elemente zu dieser Sammlung hinzugefügt: %@</string>
+		</dict>
+	</dict>
+	<key>%d note(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@notes@</string>
+		<key>notes</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Notiz</string>
+			<key>other</key>
+			<string>%d Notizen</string>
+		</dict>
+	</dict>
+	<key>%d item(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@items@</string>
+		<key>items</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Element</string>
+			<key>other</key>
+			<string>%d Elemente</string>
+		</dict>
+	</dict>
+	<key>%d day(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@days@</string>
+		<key>days</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Tag</string>
+			<key>other</key>
+			<string>%d Tage</string>
+		</dict>
+	</dict>
+	<key>%d Month(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@months@</string>
+		<key>months</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Monat</string>
+			<key>other</key>
+			<string>%d Monate</string>
+		</dict>
+	</dict>
+	<key>Reading estimate: %d chapter(s) per day</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@chapters@</string>
+		<key>chapters</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Geschätzte Lesegeschwindigkeit: %d Kapitel pro Tag</string>
+			<key>other</key>
+			<string>Geschätzte Lesegeschwindigkeit: %d Kapitel pro Tag</string>
+		</dict>
+	</dict>
+	<key>%d day(s) missed</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@days@</string>
+		<key>days</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Tag verpasst</string>
+			<key>other</key>
+			<string>%d Tage verpasst</string>
+		</dict>
+	</dict>
+	<key>%d day(s) ahead</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@days@</string>
+		<key>days</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Tag voraus</string>
+			<key>other</key>
+			<string>%d Tage voraus</string>
+		</dict>
+	</dict>
+	<key>LibraryViewController.downloadSelectedItems</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@string@</string>
+		<key>string</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Dieses Element wird in Ihr Archiv heruntergeladen.</string>
+			<key>other</key>
+			<string>Die ausgewählten Elemente werden in Ihr Archiv heruntergeladen.</string>
+		</dict>
+	</dict>
+	<key>LibraryViewController.removeItemsFromCollection</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@string@</string>
+		<key>string</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Dieses Element wird aus dieser Sammlung entfernt, bleibt aber in Ihrem Archiv.</string>
+			<key>other</key>
+			<string>Die ausgewählten Elemente werden aus dieser Sammlung entfernt, bleiben aber in Ihrem Archiv.</string>
+		</dict>
+	</dict>
+	<key>LibraryViewController.removeItemsFromLibrary</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@string@</string>
+		<key>string</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Dieses Element wird aus Ihrem Archiv entfernt.</string>
+			<key>other</key>
+			<string>Die ausgewählten Elemente werden aus Ihrem Archiv entfernt.</string>
+		</dict>
+	</dict>
+	<key>LibraryViewController.removeStandardCollection</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@string@</string>
+		<key>string</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Diese Standard-Sammlung wird entfernt, bleibt aber in Ihrem Archiv.</string>
+			<key>other</key>
+			<string>Die ausgewählten Standard-Sammlungen werden entfernt, bleiben aber in Ihrem Archiv.</string>
+		</dict>
+	</dict>
+	<key>LibraryViewController.removeStandardCollectionFromLibrary</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@string@</string>
+		<key>string</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Alle Elemente in dieser Standard-Sammlung werden entfernt.</string>
+			<key>other</key>
+			<string>Alle Elemente in den ausgewählten Standard-Sammlungen werden entfernt.</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%d result(s) found</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@results@</string>
+		<key>results</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d result found</string>
+			<key>two</key>
+			<string>%d results found</string>
+			<key>few</key>
+			<string>%d results found</string>
+			<key>many</key>
+			<string>%d results found</string>
+			<key>other</key>
+			<string>%d results found</string>
+			<key>zero</key>
+			<string>%d results found</string>
+		</dict>
+	</dict>
+	<key>%d item(s) added to %@</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@items@</string>
+		<key>items</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d item added to %@</string>
+			<key>two</key>
+			<string>%d items added to %@</string>
+			<key>few</key>
+			<string>%d items added to %@</string>
+			<key>many</key>
+			<string>%d items added to %@</string>
+			<key>other</key>
+			<string>%d items added to %@</string>
+			<key>zero</key>
+			<string>%d items added to %@</string>
+		</dict>
+	</dict>
+	<key>%d note(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@notes@</string>
+		<key>notes</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d note</string>
+			<key>two</key>
+			<string>%d notes</string>
+			<key>few</key>
+			<string>%d notes</string>
+			<key>many</key>
+			<string>%d notes</string>
+			<key>other</key>
+			<string>%d notes</string>
+			<key>zero</key>
+			<string>%d notes</string>
+		</dict>
+	</dict>
+	<key>%d item(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@items@</string>
+		<key>items</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d item</string>
+			<key>two</key>
+			<string>%d items</string>
+			<key>few</key>
+			<string>%d items</string>
+			<key>many</key>
+			<string>%d items</string>
+			<key>other</key>
+			<string>%d items</string>
+			<key>zero</key>
+			<string>%d items</string>
+		</dict>
+	</dict>
+	<key>%d day(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@days@</string>
+		<key>days</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d day</string>
+			<key>two</key>
+			<string>%d days</string>
+			<key>few</key>
+			<string>%d days</string>
+			<key>many</key>
+			<string>%d days</string>
+			<key>other</key>
+			<string>%d days</string>
+			<key>zero</key>
+			<string>%d days</string>
+		</dict>
+	</dict>
+	<key>%d Month(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@months@</string>
+		<key>months</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Month</string>
+			<key>two</key>
+			<string>%d Months</string>
+			<key>few</key>
+			<string>%d Months</string>
+			<key>many</key>
+			<string>%d Months</string>
+			<key>other</key>
+			<string>%d Months</string>
+			<key>zero</key>
+			<string>%d Months</string>
+		</dict>
+	</dict>
+	<key>Reading estimate: %d chapter(s) per day</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@chapters@</string>
+		<key>chapters</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Reading estimate: %d chapter per day</string>
+			<key>two</key>
+			<string>Reading estimate: %d chapters per day</string>
+			<key>few</key>
+			<string>Reading estimate: %d chapters per day</string>
+			<key>many</key>
+			<string>Reading estimate: %d chapters per day</string>
+			<key>other</key>
+			<string>Reading estimate: %d chapters per day</string>
+			<key>zero</key>
+			<string>Reading estimate: %d chapters per day</string>
+		</dict>
+	</dict>
+	<key>%d day(s) missed</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@days@</string>
+		<key>days</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d day missed</string>
+			<key>two</key>
+			<string>%d days missed</string>
+			<key>few</key>
+			<string>%d days missed</string>
+			<key>many</key>
+			<string>%d days missed</string>
+			<key>other</key>
+			<string>%d days missed</string>
+			<key>zero</key>
+			<string>%d days missed</string>
+		</dict>
+	</dict>
+	<key>%d day(s) ahead</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@days@</string>
+		<key>days</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d day ahead</string>
+			<key>two</key>
+			<string>%d days ahead</string>
+			<key>few</key>
+			<string>%d days ahead</string>
+			<key>many</key>
+			<string>%d days ahead</string>
+			<key>other</key>
+			<string>%d days ahead</string>
+			<key>zero</key>
+			<string>%d days ahead</string>
+		</dict>
+	</dict>
+	<key>LibraryViewController.downloadSelectedItems</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@string@</string>
+		<key>string</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>This item will be downloaded to your library.</string>
+			<key>two</key>
+			<string>Selected items will be downloaded to your library.</string>
+			<key>few</key>
+			<string>Selected items will be downloaded to your library.</string>
+			<key>many</key>
+			<string>Selected items will be downloaded to your library.</string>
+			<key>other</key>
+			<string>Selected items will be downloaded to your library.</string>
+			<key>zero</key>
+			<string>Selected items will be downloaded to your library.</string>
+		</dict>
+	</dict>
+	<key>LibraryViewController.removeItemsFromCollection</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@string@</string>
+		<key>string</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>This item will be removed from this collection but will remain in your library.</string>
+			<key>two</key>
+			<string>Selected items will be removed from this collection but will remain in your library.</string>
+			<key>few</key>
+			<string>Selected items will be removed from this collection but will remain in your library.</string>
+			<key>many</key>
+			<string>Selected items will be removed from this collection but will remain in your library.</string>
+			<key>other</key>
+			<string>Selected items will be removed from this collection but will remain in your library.</string>
+			<key>zero</key>
+			<string>Selected items will be removed from this collection but will remain in your library.</string>
+		</dict>
+	</dict>
+	<key>LibraryViewController.removeItemsFromLibrary</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@string@</string>
+		<key>string</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>This item will be removed from your library.</string>
+			<key>two</key>
+			<string>Selected items will be removed from your library.</string>
+			<key>few</key>
+			<string>Selected items will be removed from your library.</string>
+			<key>many</key>
+			<string>Selected items will be removed from your library.</string>
+			<key>other</key>
+			<string>Selected items will be removed from your library.</string>
+			<key>zero</key>
+			<string>Selected items will be removed from your library.</string>
+		</dict>
+	</dict>
+	<key>LibraryViewController.removeStandardCollection</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@string@</string>
+		<key>string</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>This standard collection will be removed but will remain in your library.</string>
+			<key>two</key>
+			<string>Selected standard collections will be removed but will remain in your library.</string>
+			<key>few</key>
+			<string>Selected standard collections will be removed but will remain in your library.</string>
+			<key>many</key>
+			<string>Selected standard collections will be removed but will remain in your library.</string>
+			<key>other</key>
+			<string>Selected standard collections will be removed but will remain in your library.</string>
+			<key>zero</key>
+			<string>Selected standard collections will be removed but will remain in your library.</string>
+		</dict>
+	</dict>
+	<key>LibraryViewController.removeStandardCollectionFromLibrary</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@string@</string>
+		<key>string</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>All items within this standard collection will be removed.</string>
+			<key>two</key>
+			<string>All items within selected standard collections will be removed.</string>
+			<key>few</key>
+			<string>All items within selected standard collections will be removed.</string>
+			<key>many</key>
+			<string>All items within selected standard collections will be removed.</string>
+			<key>other</key>
+			<string>All items within selected standard collections will be removed.</string>
+			<key>zero</key>
+			<string>All items within selected standard collections will be removed.</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
