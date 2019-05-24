@@ -282,12 +282,11 @@ public abstract class Content {
         LibraryCollections.add("Temple and Family History");
         LibraryCollections.add("Life Help");
         LibraryCollections.add("Self-Reliance");
-        LibraryCollections.add("Tips");
         //Settings Items Defaults
-//        SettingsItems.add(new Pair<>(Strings.LDSAccountString.toUpperCase(),2));
+//        SettingsItems.add(new Pair<>(Strings.AccountString.toUpperCase(),2));
         SettingsItems.add(new Pair<>(Strings.SignInString,2));
-        SettingsItems.add(new Pair<>(Strings.CreateLDSAccountString,2));
-        SettingsItems.add(new Pair<>(Strings.LDSAccountExplainationString,2));
+        SettingsItems.add(new Pair<>(Strings.CreateChurchAccountString,2));
+        SettingsItems.add(new Pair<>(Strings.ChurchAccountExplainationString,2));
 //        SettingsItems.add(new Pair<>(Strings.FeedbackString.toUpperCase(),2));
         SettingsItems.add(new Pair<>(Strings.SendFeedbackString,2));
 //        SettingsItems.add(new Pair<>(Strings.ContentString.toUpperCase(),2));

@@ -5,6 +5,8 @@ public abstract class Strings {
     public static String user = "support2";
     public static String password = "ldssaldssa";
     public static String wrongPassword = "ldssaldssaa";
+    public static String AccountName = "Johnny Test";
+    public static String AccountNameAndUserName = AccountName + " (" + user +")";
 
     //millisecond standards
 
@@ -133,17 +135,23 @@ public abstract class Strings {
     public static String BookmarkThreeTitle = "My Third Bookmark";
     public static String BookmarkFourTitle = "My Fourth Bookmark";
 
+    //Library Strings
+    public static String EditString = "Edit";
+    public static String LibraryString = "Library";
+
     //Settings Screen Strings
-    public static String LDSAccountString = "LDS Account";
+    public static String AccountString = "Account";
     public static String SignInString = "Sign In";
-    public static String CreateLDSAccountString = "Create an LDS Account";
-    public static String LDSAccountExplainationString = "An LDS Account is used to back up and synchronize across devices and on LDS.org.";
+    public static String CreateChurchAccountString = "Create an Account";
+    public static String ChurchAccountExplainationString = "A Church Account is used to back up and synchronize your data between devices and the Church website.";
     public static String FeedbackString = "Feedback";
     public static String SendFeedbackString = "Send Feedback";
     public static String ContentString = "Content";
     public static String LanguageTitleString = "Language";
+    public static String LanguagesTitleString = "Languages";
     public static String LanguageEnglishString = "English";
     public static String DownloadsString = "Downloads";
+    public static String DownloadedString = "Downloaded";
     public static String DisplayString = "Display";
     public static String TextSizeString = "Text Size";
     public static String ThemeString = "Theme";
@@ -164,9 +172,89 @@ public abstract class Strings {
     public static String AppDetailsString = "App Details";
     public static String AboutString = "About";
     public static String ViewSourceString = "View Source";
+    public static String AllString = "All";
+
+    //Login Screen Strings
+    public static String UserNameString = "Username";
+    public static String PasswordString = "Password";
+    public static String AccountURLString = "\u200Eldsaccount.lds.org, secure and validated connection";
+    public static String AccountRecoveryURLString = "\u200Eldsaccount.lds.org, secure and validated connection";
+    public static String TroubleSigningInString = "Having trouble signing in?";
+    public static String SignInErrorString = "Sign-In Error";
+    public static String WrongUserNameAndPasswordString = "Wrong username and password combination. Please check your username and password and try again.";
+    public static String SignInTermsOfUseString = "By clicking the “Sign In” button, I agree to the Terms of Use (Updated 2018-09-01) and have read the Privacy Notice (Updated 2018-09-01).";
+    public static String TermsOfUseString = "Terms of Use (Updated 2018-09-01)";
+    public static String PrivacyNoticeString = "Privacy Notice (Updated 2018-09-01)";
+
+    //Languages Screen Strings
+    public static String FindByNameString = "Find by name";
+    public static String LanguageDutchString = "Dutch";
+    public static String LanguageNederlandsString = "Nederlands";
 
 
+    //Download Screen Strings
+    public static String ScripturesString = "Scriptures";
+    public static String InspirationString = "Inspiration";
+    public static String TopicsString = "Topics";
+    public static String StudyHelpsString = "Study Helps";
+    public static String DeleteAllString = "Delete All";
+    public static String DeleteString = "Delete";
+
+    //Book Names
+    public static String OldTestamentString = "Old Testament";
+    public static String NewTestamentString = "New Testament";
+    public static String BookOfMormonString = "Book of Mormon";
+    public static String DoctrineAndCovenantsString = "Doctrine and Covenants";
+    public static String PearlOfGreatPriceString = "Pearl of Great Price";
+
+    public static String GuideToTheScripturesString = "Guide to the Scriptures";
+    public static String TopicalGuideString = "Topical Guide";
+    public static String BibleDictionaryString = "Bible Dictionary";
+    public static String BibleChronologyString = "Bible Chronology";
+    public static String HarmonyOfTheGospelsString = "Harmony of the Gospels";
+    public static String JSTAppendixString = "Joseph Smith Translation Appendix";
+    public static String BibleMapsString = "Bible Maps";
+    public static String BiblePhotographsString = "Bible Photographs";
+    public static String IndexToTripleCombinationString = "Index to the Triple Combination";
+    public static String ChurchHistoryMapsString = "Church History Maps";
+    public static String ChurchHistoryPhotographsString = "Church History Photographs";
+    public static String AbbreviationsString = "Abbreviations";
+
+    //Books in the BoM
+    public static String IntroductionAndWitnessesString ="Introduction and Witnesses";
+    public static String FirstNephiString = "1 Nephi";
+    public static String SecondNephiString = "2 Nephi";
+    public static String JacobString = "Jacob";
+    public static String EnosString = "Enos";
+    public static String JaromString = "Jarom";
+    public static String OmniString = "Omni";
+    public static String WordsOfMormonString = "Words of Mormon";
+    public static String MosiahString = "Mosiah";
+    public static String AlmaString = "Alma";
+    public static String HelamanString = "Helaman";
+    public static String ThirdNephiString = "3 Nephi";
+    public static String FourthNephiString = "4 Nephi";
+    public static String EtherString = "Ether";
+    public static String MoroniString = "Moroni";
+    public static String PronunciationGuideString = "Book of Mormon Pronunciation Guide";
 
 
+    //Annotation Menu Strings
+    public static String MarkString = "Mark";
+    public static String StyleString = "Style";
+    public static String NoteString = "Note";
+    public static String TagString = "Tag";
+    public static String AddToString = "Add to";
+    public static String LinkString = "Link";
+    public static String CopyString = "Copy";
+    public static String ShareString = "Share";
+    public static String SearchString = "Search";
+    public static String DefineString = "Define";
+    public static String RemoveString = "Remove";
+
+    //Dutch Strings
+    public static String LibraryDutchString = "Bibliotheek";
+    public static String ScripturesDutchString = "Schriften";
+    public static String GeneralConferenceDutchString = "Algemene conferentie";
 
 }

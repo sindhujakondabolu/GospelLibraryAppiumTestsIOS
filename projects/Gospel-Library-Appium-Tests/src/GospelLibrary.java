@@ -1,33 +1,25 @@
 package UI;
 
-import io.appium.java_client.AppiumDriver;
+import com.google.common.base.Joiner;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.touch.WaitOptions;
 import javafx.util.Pair;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Tag;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.ios.IOSDriver;
 import java.net.URL;
 
-import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
-import static UI.Content.SettingsItems;
 import static UI.Content.setBooks;
 import static UI.Strings.*;
 import static java.lang.Integer.parseInt;
@@ -50,13 +42,12 @@ public class GospelLibrary {
         capabilities.setCapability("deviceName", "iPhone X");
         capabilities.setCapability("automationname","XUITest");
         capabilities.setCapability("app", System.getProperty("user.dir") + "/../../App/GospelLibrary.app");
-        capabilities.setCapability("browserName", "");
         capabilities.setCapability("deviceOrientation", "portrait");
         capabilities.setCapability("waitForQuiescence",false);
-        capabilities.setCapability("wdaEventloopIdleDelay",5);
+        capabilities.setCapability("wdaEventloopIdleDelay",2);
         capabilities.setCapability("useNewWDA",false);
         capabilities.setCapability("noReset",true);
-
+//        capabilities.setCapability("noReset",false);
         driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         setBooks();
 
@@ -64,7 +55,13 @@ public class GospelLibrary {
 
     @After
     public void tearDown() throws Exception {
+//        ClickUIElementByAccessibilityID("Settings");
+//        if (WebElementsByAccessibilityId("Account options").size() > 0){
+//            ClickUIElementByAccessibilityID("Account options");
+//            ClickUIElementByAccessibilityID("Sign Out");
+//        }
         driver.quit();
+
     }
 
 
@@ -73,15 +70,27 @@ public class GospelLibrary {
     //Replaces letters with dots
     public String hidePassword(String password) throws Exception {
         String passwordDotted = "";
-//        if (AndroidVersion > 6) {
-//            int passwordLength = password.length();
-//            for (int i = 0; i < passwordLength; i++) {
-//                passwordDotted = passwordDotted.concat("•");
-//            }
-//        }
-        passwordDotted = password;
+        int passwordLength = password.length();
+        for (int i = 0; i < passwordLength; i++) {
+            passwordDotted = passwordDotted.concat("•");
+        }
         return passwordDotted;
     }
+
+    //delay
+    public void delay(int delayTime) throws Exception{
+        Thread.sleep(milliseconds_1 * delayTime);
+    }
+
+    //log
+    public void log(String stringToLog) throws Exception{
+        System.out.println(stringToLog);
+    }
+
+    public void openAnnotationMenu(WebElement theParagraph){
+        driver.tap(1,theParagraph,1000);
+    }
+
 
     //Get Element by text
     public String FindElementByText(String text) throws Exception {
@@ -318,7 +327,7 @@ public class GospelLibrary {
     public void scrollDown() {
         int screenHeight = driver.manage().window().getSize().getHeight();
         int screenWidth = driver.manage().window().getSize().getWidth();
-        driver.swipe(screenWidth / 2, screenHeight / 10 * 9, screenWidth / 2, screenHeight / 10 * 3, 2000);
+        driver.swipe(screenWidth / 2, screenHeight / 10 * 8, screenWidth / 2, screenHeight / 10 * 3, 2000);
         System.out.println("Scrolling Down...");
 
     }
@@ -341,8 +350,8 @@ public class GospelLibrary {
 
     }
 
-    //Swipe right
-    public void swipeRight() throws Exception {
+    //Swipe next chapter
+    public void swipeNextChapter() throws Exception {
         int screenHeight = driver.manage().window().getSize().getHeight();
         int screenWidth = driver.manage().window().getSize().getWidth();
         driver.swipe(screenWidth / 20 * 18, screenHeight / 2, screenWidth / 20 * 2, screenHeight / 2, 300);
@@ -350,12 +359,30 @@ public class GospelLibrary {
         Thread.sleep(milliseconds_1);
     }
 
-    //Swipe left
-    public void swipeLeft() throws Exception {
+    //Swipe previous chapter
+    public void swipePreviousChapter() throws Exception {
         int screenHeight = driver.manage().window().getSize().getHeight();
         int screenWidth = driver.manage().window().getSize().getWidth();
         driver.swipe(screenWidth / 20 * 3, screenHeight / 2, screenWidth / 20 * 19, screenHeight / 2, 300);
         System.out.println("Swiping left...");
+        Thread.sleep(milliseconds_1);
+    }
+
+    //Swipe to delete
+    public void swipeToDelete(WebElement theWebElement, boolean delete) throws Exception {
+
+        int elementY = theWebElement.getLocation().y;
+        int elementHeight = theWebElement.getSize().height;
+        int swipeY = (elementY-(elementHeight/2));
+        int screenWidth = driver.manage().window().getSize().getWidth();
+        if (delete) {
+            driver.swipe(screenWidth / 20 * 18, swipeY, screenWidth / 20 * 2, swipeY, 300);
+            log("Swiping to delete...");
+        } else {
+            driver.swipe(screenWidth / 20 * 18, swipeY, screenWidth / 20 * 6, swipeY, 300);
+            assertElementExistsBy(WebElementsByText(DeleteString));
+            log("Swiping");
+        }
         Thread.sleep(milliseconds_1);
     }
 
@@ -436,6 +463,48 @@ public class GospelLibrary {
         }
     }
 
+    public void OpenScripture(String work, String book, String chapter, String verse) throws Exception {
+        assertElementExistsBy(WebElementsByText("Scriptures"));
+        ClickUIElementByID("Scriptures");
+        Thread.sleep(milliseconds_1);
+        ClickUIElementByID(work +", Installed");
+        Thread.sleep(milliseconds_1);
+        if (book != "") {
+            scrollToById(book);
+            ClickUIElementByID(book);
+            Thread.sleep(milliseconds_2);
+            if (chapter != "") {
+                scrollToById(chapter);
+                ClickUIElementByID(chapter);
+                Thread.sleep(milliseconds_1);
+            }
+            if (verse != "") {
+                Thread.sleep(milliseconds_1);
+                System.out.println("Scrolling to " + verse);
+                scrollToById(verse);
+            }
+        }
+
+    }
+
+    public void OpenConference(String month, String year, String talkTitle) throws Exception {
+        assertElementExistsBy(WebElementsByText("General Conference"));
+        ClickUIElementByText("General Conference");
+        Thread.sleep(milliseconds_1);
+
+        if (month != "") {
+            scrollToById(month + " " + year);
+            assertElementExistsBy(WebElementsByText(month + " " + year));
+            ClickUIElementByText(month + " " + year);
+            Thread.sleep(milliseconds_1);
+            ClickUIElementByText(month + " " + year);
+            if (talkTitle != "") {
+                scrollToById(talkTitle);
+                ClickUIElementByText(talkTitle);
+            }
+        }
+    }
+
 
     //*************************************************************** Assert Functions ***************************************************************
 
@@ -474,13 +543,21 @@ public class GospelLibrary {
     }
 
     //Verify Text
-    public void verifyText(String expectedText, WebElement webelementActual) throws Exception {
-        String webelementActualAsText = webelementActual.getText();
+    public void verifyText(String expectedText, WebElement webElementActual) throws Exception {
+        String webelementActualAsText = webElementActual.getText();
         System.out.println("Validating text Expected: '" + expectedText + "' Actual: '" + webelementActualAsText + "'");
         Assert.assertEquals(expectedText, webelementActualAsText);
     }
 
-    //Verify Object Exists Using WebElementsBy
+    //Verify Value
+    public void verifyValue(String expectedValue, WebElement webElementActual) throws Exception {
+        String webelementActualValue = webElementActual.getAttribute("value");
+        System.out.println("Validating value Expected: '" + expectedValue + "' Actual: '" + webelementActualValue + "'");
+        Assert.assertEquals(expectedValue, webelementActualValue);
+    }
+
+
+    //Assert Object Exists Using WebElementsBy
     public void assertElementExistsBy(List webElementsBy) {
         Boolean tempElement = webElementsBy.size() > 0;
         System.out.println("assert element is present. Expected: true [] Actual: " + tempElement + " Element: " + webElementsBy.toString() + "");
@@ -488,6 +565,23 @@ public class GospelLibrary {
             System.out.println("Found " + webElementsBy.size() + ". List of Elements Found: " + webElementsBy);
         }
         assert tempElement == true;
+    }
+
+    //Assert Object Doesn't Exist Using WebElementsBy
+    public void assertElementNotPresentBy(List webElementsBy) {
+        Boolean tempElement = webElementsBy.size() == 0;
+        System.out.println("assert element is not present. Expected: false [] Actual: " + tempElement + " Element: " + webElementsBy.toString() + "");
+        if (tempElement == false) {
+            System.out.println("Found " + webElementsBy.size() + ". List of Elements Found: " + webElementsBy);
+        }
+        assert tempElement == true;
+    }
+
+    //Assert item count
+    public void assertElementCount (List webElementsBy, Integer expectedCount) throws Exception{
+        Integer elementCount = webElementsBy.size();
+        log("Expected: " + expectedCount + " element(s) Found: "+ elementCount + " element(s)");
+        assert expectedCount == elementCount;
     }
 
     //Assert Expected Switch Status
@@ -499,6 +593,38 @@ public class GospelLibrary {
             System.out.println("Switch Status of " + IOSElementName + " matched expected. Expected: " + expectedSwitchStatus);
         }
         Assertions.assertTrue(expectedSwitchStatus == SwitchStatus);
+    }
+
+    //Assert Header with Option
+    public void assertHeaderWithOption(String header, String option, boolean tap) throws Exception{
+        scrollDownTo(header.toUpperCase());
+        assertElementExistsBy(WebElementsByText(header.toUpperCase()));
+        assertElementExistsBy(WebElementsByXpath("//*[@name='" + header.toUpperCase() +"']/*[@name='"+ option +"']"));
+        if (tap){
+            ClickUIElementByXpath("//*[@name='" + header.toUpperCase() +"']/*[@name='"+ option +"']");
+        }
+
+    }
+
+    public void assertMoreInfoButton (String neighborElementName, Boolean tap) throws Exception{
+        assertElementExistsBy(WebElementsByXpath("//*[@name='" + neighborElementName +"']/../*[@name='More Info']"));
+        if (tap){
+            ClickUIElementByXpath("//*[@name='" + neighborElementName +"']/../*[@name='More Info']");
+        }
+    }
+
+    public void assertItemIsNextTo (String neighborElementName, String ElementName, Boolean tap) throws Exception{
+        scrollDownTo(neighborElementName);
+        assertElementExistsBy(WebElementsByText(neighborElementName));
+        assertElementExistsBy(WebElementsByXpath("//*[@name='" + neighborElementName +"']/../*[@name='" + ElementName + "']"));
+        if (tap){
+            ClickUIElementByXpath("//*[@name='" + neighborElementName +"']/../*[@name='More Info']");
+        }
+    }
+
+    public void isEnabled (WebElement theElement, Boolean isEnabled) throws Exception{
+        log("Expected " + theElement + "'s enabled attribute to be "+ isEnabled +". Actual was: " + theElement.getAttribute("enabled")+".");
+        assert (Boolean.parseBoolean(theElement.getAttribute("enabled")) == isEnabled);
     }
 
 
@@ -522,6 +648,35 @@ public class GospelLibrary {
         assertElementExistsBy(WebElementsByAccessibilityId("Screens"));
         assertElementExistsBy(WebElementsByAccessibilityId("Bookmarks"));
     }
+
+    public void assertAnnotationMenu(boolean isNewHighlight, boolean DefineIsEnabled) throws Exception{
+        if (isNewHighlight){
+            assertElementExistsBy(WebElementsByAccessibilityId(MarkString));
+            assertElementExistsBy(WebElementsByAccessibilityId(RemoveString));
+            isEnabled(WebElementByAccessibilityId(RemoveString), false);
+        } else {
+            assertElementExistsBy(WebElementsByAccessibilityId(StyleString));
+            assertElementExistsBy(WebElementsByAccessibilityId(RemoveString));
+            isEnabled(WebElementByAccessibilityId(RemoveString), true);
+        }
+        assertElementExistsBy(WebElementsByAccessibilityId(NoteString));
+        isEnabled(WebElementByAccessibilityId(NoteString),true);
+        assertElementExistsBy(WebElementsByAccessibilityId(TagString));
+        isEnabled(WebElementByAccessibilityId(TagString),true);
+        assertElementExistsBy(WebElementsByAccessibilityId(AddToString));
+        isEnabled(WebElementByAccessibilityId(AddToString),true);
+        assertElementExistsBy(WebElementsByAccessibilityId(LinkString));
+        isEnabled(WebElementByAccessibilityId(LinkString),true);
+        assertElementExistsBy(WebElementsByAccessibilityId(CopyString));
+        isEnabled(WebElementByAccessibilityId(CopyString),true);
+        assertElementExistsBy(WebElementsByAccessibilityId(ShareString));
+        isEnabled(WebElementByAccessibilityId(ShareString),true);
+        assertElementExistsBy(WebElementsByAccessibilityId(SearchString));
+        isEnabled(WebElementByAccessibilityId(SearchString),true);
+        assertElementExistsBy(WebElementsByAccessibilityId(DefineString));
+        isEnabled(WebElementByAccessibilityId(DefineString), DefineIsEnabled);
+    }
+
 
     public void assertCollectionsAndBooks(ArrayList Titles) throws Exception{
         int theCount = 0;
@@ -547,10 +702,101 @@ public class GospelLibrary {
         }
     }
 
-    public void assertSettingsScreen() throws Exception{
+    public void assertSettingsScreen(Boolean isFirstLaunch) throws Exception{
         assertNavBar("",false,"Settings","Done",true);
-        assertSettingsitems(UI.Content.SettingsItems);
+        if (isFirstLaunch) {
+            assertSettingsitems(UI.Content.SettingsItems);
+        } else {
+            fail("No asserts for settings screen not on first launch");
+        }
+    }
 
+    public void assertChurchAccountScreen() throws Exception{
+        assertNavBar("Back",true, AccountString, "",false);
+        assertElementExistsBy(WebElementsByAccessibilityId("Username"));
+        verifyText(Strings.UserNameString, WebElementByAccessibilityId("Username"));
+        assertElementExistsBy(WebElementsByAccessibilityId("Password"));
+        verifyText(PasswordString,WebElementByAccessibilityId("Password"));
+        assertElementExistsBy(WebElementsByAccessibilityId("Toggle Password Visibility"));
+        System.out.println(WebElementByAccessibilityId("Toggle Password Visibility").getAttribute("value"));
+        verifyValue(null, WebElementByAccessibilityId("Toggle Password Visibility"));
+        assertElementExistsBy(WebElementsByAccessibilityId("Sign In"));
+        verifyText(SignInString,WebElementByAccessibilityId("Sign In"));
+        assertElementExistsBy(WebElementsByAccessibilityId("Having trouble signing in?"));
+        verifyText(TroubleSigningInString,WebElementByAccessibilityId("Having trouble signing in?"));
+        assertElementExistsBy(WebElementsByXpath("//*[@name=\"Terms of Use (Updated 2018-09-01)\"]/../../XCUIElementTypeTextView"));
+        verifyValue(SignInTermsOfUseString,WebElementByXpath("//*[@name=\"Terms of Use (Updated 2018-09-01)\"]/../../XCUIElementTypeTextView"));
+        assertElementExistsBy(WebElementsByAccessibilityId("Terms of Use (Updated 2018-09-01)"));
+        verifyText(TermsOfUseString,WebElementByAccessibilityId("Terms of Use (Updated 2018-09-01)"));
+        assertElementExistsBy(WebElementsByAccessibilityId("Privacy Notice (Updated 2018-09-01)"));
+        verifyText(PrivacyNoticeString,WebElementByAccessibilityId("Privacy Notice (Updated 2018-09-01)"));
+    }
+
+    public void fillAndAssertAccountScreen(String theUserName, String thePassword, Boolean showPassword, Boolean signIn) throws Exception{
+        assertChurchAccountScreen();
+        assertElementExistsBy(WebElementsByAccessibilityId("Username"));
+        sendText("Username",theUserName);
+        verifyValue(theUserName,WebElementByAccessibilityId("Username"));
+        assertElementExistsBy(WebElementsByAccessibilityId("Password"));
+        sendText("Password",thePassword);
+        verifyValue(hidePassword(thePassword), WebElementByAccessibilityId("Password"));
+        if (showPassword){
+            ClickUIElementByAccessibilityID("Toggle Password Visibility");
+            verifyValue("1",WebElementByAccessibilityId("Toggle Password Visibility"));
+            verifyValue(thePassword,WebElementByAccessibilityId("Password"));
+        }
+        if (signIn){
+            ClickUIElementByAccessibilityID("Sign In");
+        }
+    }
+
+    public void assertLanguageScreen(String Language, String EnglishLanguageName) throws Exception{
+        assertNavBar("Back",true, LanguagesTitleString, "", false);
+        assertElementExistsBy(WebElementsByAccessibilityId(FindByNameString));
+        assertElementExistsBy(WebElementsByAccessibilityId(DownloadedString.toUpperCase()));
+        assertElementExistsBy(WebElementsByText(Language));
+        if (Language == EnglishLanguageName){
+            assertElementExistsBy(WebElementsByXpath("//*[@name='"+ EnglishLanguageName +"'][2]"));
+        } else {
+            assertElementExistsBy(WebElementsByText(EnglishLanguageName));
+        }
+        assertMoreInfoButton(Language,false);
+        assertElementExistsBy(WebElementsByAccessibilityId(AllString.toUpperCase()));
+    }
+
+    public void assertDownloadsScreen(boolean isFreshInstall) throws Exception{
+        assertNavBar("Back",true,(DownloadsString + ", " + LanguageEnglishString),"",false);
+        if (isFreshInstall){
+            assertHeaderWithOption(ScripturesString,DeleteAllString,false);
+            assertMoreInfoButton("101.5 MB",true);
+            assertNavBar("Back",true,(DownloadsString + ", " + LanguageEnglishString),"", false);
+            assertHeaderWithOption(ScripturesString, DeleteAllString, false);
+            assertItemIsNextTo(OldTestamentString,"18.6 MB",false);
+            assertItemIsNextTo(NewTestamentString,"7.2 MB",false);
+            assertItemIsNextTo(BookOfMormonString,"8 MB", false);
+            assertItemIsNextTo(DoctrineAndCovenantsString, "5.3 MB",false);
+            assertItemIsNextTo(PearlOfGreatPriceString, "1 MB",false);
+            assertHeaderWithOption(StudyHelpsString,DeleteAllString,false);
+            assertItemIsNextTo(GuideToTheScripturesString, "5.2 MB",false);
+            assertItemIsNextTo(TopicalGuideString,"28.3 MB",false);
+            assertItemIsNextTo(BibleDictionaryString,"4.9 MB",false);
+            assertItemIsNextTo(BibleChronologyString,"356 KB", false);
+            assertItemIsNextTo(HarmonyOfTheGospelsString, "553 KB", false);
+            assertItemIsNextTo(JSTAppendixString,"713 KB",false);
+            assertItemIsNextTo(BibleMapsString,"590 KB",false);
+            assertItemIsNextTo(BiblePhotographsString,"348 KB",false);
+            assertItemIsNextTo(IndexToTripleCombinationString,"19.6 MB",false);
+            assertItemIsNextTo(ChurchHistoryMapsString,"344 KB",false);
+            assertItemIsNextTo(ChurchHistoryPhotographsString,"270 KB",false);
+            assertItemIsNextTo(AbbreviationsString,"217 KB",false);
+            ClickUIElementByAccessibilityID("Back");
+            assertHeaderWithOption(InspirationString,DeleteAllString,false);
+            assertMoreInfoButton("38.4 MB",true);
+            assertNavBar("Back",true,(DownloadsString + ", " + LanguageEnglishString),"", false);
+            assertItemIsNextTo(GuideToTheScripturesString, "5.2 MB",false);
+            assertItemIsNextTo(TopicalGuideString,"28.3 MB",false);
+            assertItemIsNextTo(BibleDictionaryString,"4.9 MB",false);
+        }
     }
 
 
@@ -570,7 +816,7 @@ public class GospelLibrary {
             scrollDown();
             upperY = idIsPresent.getLocation().getY();
         }
-        while (upperY <= screenHeight / 7) {
+        while (upperY <= screenHeight / 10) {
             System.out.println("scrolling up y '" + upperY + "' is <= " + screenHeight / 8 + "");
             scrollUp();
             upperY = idIsPresent.getLocation().getY();
@@ -870,17 +1116,16 @@ public class GospelLibrary {
     //********** Settings Screen **********
     @Test
     public void settingsScreenLandingPageNotSignedIn() throws Exception {
-        driver.findElementByAccessibilityId("Settings").click();
+        ClickUIElementByAccessibilityID("Settings");
         assertNavBar("",false,"Settings","Done",true);
-        assertSettingsScreen();
-        scrollDownTo(Strings.LDSAccountString.toUpperCase());
-        assertElementExistsBy(WebElementsByText(Strings.LDSAccountString.toUpperCase()));
+        scrollDownTo(Strings.AccountString.toUpperCase());
+        assertElementExistsBy(WebElementsByText(Strings.AccountString.toUpperCase()));
         scrollDownTo(Strings.SignInString);
         assertElementExistsBy(WebElementsByText(Strings.SignInString));
-        scrollDownTo(Strings.CreateLDSAccountString);
-        assertElementExistsBy(WebElementsByText(Strings.CreateLDSAccountString));
-        scrollDownTo(Strings.LDSAccountExplainationString);
-        assertElementExistsBy(WebElementsByText(Strings.LDSAccountExplainationString));
+        scrollDownTo(Strings.CreateChurchAccountString);
+        assertElementExistsBy(WebElementsByText(Strings.CreateChurchAccountString));
+        scrollDownTo(Strings.ChurchAccountExplainationString);
+        assertElementExistsBy(WebElementsByText(Strings.ChurchAccountExplainationString));
         scrollDownTo(Strings.FeedbackString.toUpperCase());
         assertElementExistsBy(WebElementsByText(Strings.FeedbackString.toUpperCase()));
         scrollDownTo(Strings.SendFeedbackString);
@@ -949,28 +1194,151 @@ public class GospelLibrary {
 
     @Test
     public void settingsScreenLoginCorrectUserNameAndPassword() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID("Settings");
+        assertNavBar("",false,"Settings","Done",true);
+        scrollDownTo(SignInString);
+        assertElementExistsBy(WebElementsByText(SignInString));
+        ClickUIElementByText(SignInString);
+        fillAndAssertAccountScreen(user, password,true,true);
+        assertElementExistsBy(WebElementsByAccessibilityId("Account options"));
+        verifyValue(AccountName, WebElementByAccessibilityId("Account options"));
+        assertElementExistsBy(WebElementsByAccessibilityId(AccountNameAndUserName));
+        //Large amount of annotations causes the following to time out. Commented out to save time
+
+        //delay(15);
+        //assertElementExistsBy(WebElementsByTextContains("Last Sync"));
+        ClickUIElementByAccessibilityID("Done");
     }
 
     @Test
     public void settingsScreenLoginInvalidLogin() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID("Settings");
+        assertNavBar("",false,"Settings","Done",true);
+        scrollDownTo(SignInString);
+        assertElementExistsBy(WebElementsByText(SignInString));
+        ClickUIElementByText(SignInString);
+        fillAndAssertAccountScreen(user, wrongPassword,true,true);
+        assertElementExistsBy(WebElementsByText(SignInErrorString));
+        assertElementExistsBy(WebElementsByAccessibilityId(WrongUserNameAndPasswordString));
+        assertElementExistsBy(WebElementsByAccessibilityId("OK"));
+        ClickUIElementByAccessibilityID("OK");
+        ClickUIElementByAccessibilityID("Back");
+        ClickUIElementByAccessibilityID("Done");
     }
 
     @Test
     public void settingsScreenLoginTroubleSigningIn() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID("Settings");
+        assertNavBar("",false,"Settings","Done",true);
+        scrollDownTo(SignInString);
+        assertElementExistsBy(WebElementsByText(SignInString));
+        ClickUIElementByText(SignInString);
+        fillAndAssertAccountScreen(user, wrongPassword,true,true);
+        assertElementExistsBy(WebElementsByText(SignInErrorString));
+        assertElementExistsBy(WebElementsByAccessibilityId(WrongUserNameAndPasswordString));
+        assertElementExistsBy(WebElementsByAccessibilityId("OK"));
+        ClickUIElementByAccessibilityID("OK");
+        ClickUIElementByAccessibilityID(TroubleSigningInString);
+        assertElementExistsBy(WebElementsByText("URL"));
+        verifyValue(AccountRecoveryURLString,WebElementByText("URL"));
+        ClickUIElementByAccessibilityID("Done");
+        ClickUIElementByAccessibilityID("Back");
+        ClickUIElementByAccessibilityID("Done");
+
+
+
     }
 
 
     @Test
-    public void settingsScreenCreateLDSAccount() throws Exception {
-        fail("Test Not Written");
+    public void settingsScreenCreateChurchAccount() throws Exception {
+        ClickUIElementByAccessibilityID("Settings");
+        assertNavBar("",false,"Settings","Done",true);
+        scrollDownTo(CreateChurchAccountString);
+        assertElementExistsBy(WebElementsByText(CreateChurchAccountString));
+        ClickUIElementByText(CreateChurchAccountString);
+        assertElementExistsBy(WebElementsByText("URL"));
+        verifyValue(AccountURLString,WebElementByText("URL"));
+        ClickUIElementByAccessibilityID("Done");
+
+
+    }
+
+    @Test
+    public void settingsScreenLanguagePage() throws Exception {
+        ClickUIElementByAccessibilityID("Settings");
+        assertNavBar("",false,"Settings","Done",true);
+        scrollDownTo(LanguageTitleString);
+        ClickUIElementByText(LanguageTitleString);
+        assertLanguageScreen(LanguageEnglishString,LanguageEnglishString);
+    }
+
+    @Test
+    public void settingsScreenLanguageSearchDutAndNeder() throws Exception{
+        settingsScreenLanguagePage();
+        sendText(FindByNameString,"Dut");
+        assertElementExistsBy(WebElementsByAccessibilityId("Clear text"));
+        assertElementExistsBy(WebElementsByAccessibilityId(LanguageDutchString));
+        assertElementExistsBy(WebElementsByAccessibilityId(LanguageNederlandsString));
+        assertElementExistsBy(WebElementsByAccessibilityId(LanguageNederlandsString + ", " + LanguageDutchString));
+        ClickUIElementByAccessibilityID("Clear text");
+        sendText(FindByNameString,"Neder");
+        assertElementExistsBy(WebElementsByAccessibilityId("Clear text"));
+        assertElementExistsBy(WebElementsByAccessibilityId(LanguageDutchString));
+        assertElementExistsBy(WebElementsByAccessibilityId(LanguageNederlandsString));
+        assertElementExistsBy(WebElementsByAccessibilityId(LanguageNederlandsString + ", " + LanguageDutchString));
+
+    }
+
+    @Test
+    public void settingsScreenLanguageSelectDutch() throws Exception{
+        settingsScreenLanguageSearchDutAndNeder();
+        ClickUIElementByAccessibilityID("Dutch");
+        delay(2);
+        assertNavBar("History Back",true,LibraryDutchString,EditString,true);
+        assertElementExistsBy(WebElementsByAccessibilityId(ScripturesDutchString));
+        assertElementExistsBy(WebElementsByAccessibilityId(GeneralConferenceDutchString));
+        ClickUIElementByAccessibilityID("Settings");
+        assertElementExistsBy(WebElementsByText(LanguageDutchString));
+        ClickUIElementByAccessibilityID(LanguageTitleString);
+        assertLanguageScreen(LanguageNederlandsString,LanguageDutchString);
+    }
+
+    @Test
+    public void settingsScreenLanguageEnglishDutchEnglish() throws Exception{
+        settingsScreenLanguageSelectDutch();
+        ClickUIElementByAccessibilityID(LanguageEnglishString);
+        delay(2);
+        assertNavBar("History Back",true,LibraryString,EditString,true);
+        ClickUIElementByAccessibilityID("Settings");
+        assertElementExistsBy(WebElementsByText(LanguageEnglishString));
+        ClickUIElementByAccessibilityID(LanguageTitleString);
+        assertLanguageScreen(LanguageEnglishString,LanguageEnglishString);
+
+    }
+
+    @Test
+    public void settingsScreenLanguageSwipeDeleteDutch() throws Exception{
+        settingsScreenLanguageEnglishDutchEnglish();
+        swipeToDelete(WebElementByAccessibilityId(LanguageNederlandsString),true);
+        assertElementCount(WebElementsByText(LanguageNederlandsString),1);
+    }
+
+    @Test
+    public void settingsScreenLanguagePartialSwipetoDeleteDutchTapDelete() throws Exception{
+        settingsScreenLanguageEnglishDutchEnglish();
+        swipeToDelete(WebElementByAccessibilityId(LanguageNederlandsString),false);
+        ClickUIElementByText(DeleteString);
+        assertElementCount(WebElementsByText(LanguageNederlandsString),1);
     }
 
     @Test
     public void settingsScreenDownloadedMediaLandingPage_Empty() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID("Settings");
+        assertNavBar("",false,"Settings","Done",true);
+        scrollDownTo(DownloadsString);
+        ClickUIElementByText(DownloadsString);
+        assertDownloadsScreen(true);
     }
 
     @Test
@@ -1281,7 +1649,23 @@ public class GospelLibrary {
 
     @Test
     public void AnnotationMenuTapMark() throws Exception{
-        fail("Test Not Written");
+    OpenScripture(BookOfMormonString,JacobString,"1","1");
+    openAnnotationMenu(WebElementByAccessibilityId("1"));
+    assertAnnotationMenu(true,true);
+    ClickUIElementByAccessibilityID(MarkString);
+
+    Set handles = driver.getContextHandles();
+    List theHandles = new ArrayList(handles);
+    log(String.valueOf(theHandles));
+        for (int i = 1; i < theHandles.size(); i++) {
+            driver.context((String) theHandles.get(i));
+            log("Window handle is now: " + (String)theHandles.get(i));
+            List theWebelements = WebElementsByXpath("//*");
+            log(Joiner.on("").join(theWebelements));
+        }
+
+    assertAnnotationMenu(false,true);
+    ClickUIElementByAccessibilityID(RemoveString);
 
     }
 

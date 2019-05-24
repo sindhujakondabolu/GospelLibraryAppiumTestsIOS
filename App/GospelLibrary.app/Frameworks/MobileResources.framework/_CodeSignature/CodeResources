@@ -273,6 +273,10 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>ICSAcknowledgements.html</key>
+		<data>
+		zaPXrVKEU5BBA9d4N6Efgg9t37Y=
+		</data>
 		<key>ICSCalendarView.storyboardc/Info.plist</key>
 		<data>
 		mcGvIkQn9W0gDyG+2COu6wSbA8E=
@@ -323,11 +327,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TImd4SPtnuAORx6IUApT5qfKCQs=
-		</data>
-		<key>LDSAcknowledgements.html</key>
-		<data>
-		zaPXrVKEU5BBA9d4N6Efgg9t37Y=
+		P442sD95LM1OojyfNIWBWsNx/RQ=
 		</data>
 		<key>LDSCalendarView.storyboardc/Info.plist</key>
 		<data>
@@ -1080,7 +1080,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2qCK4z8wnPK/tM1z7gjjmkxPwJo=
+			9ZY2ORY8TD3hIxHxLu6bN8j43Ao=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -2319,6 +2319,17 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>ICSAcknowledgements.html</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			zaPXrVKEU5BBA9d4N6Efgg9t37Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			rTJ9GioaMLMHNlMJQoMa6saPry1WZpc0u2TTJRSYuNY=
+			</data>
+		</dict>
 		<key>ICSCalendarView.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
@@ -2449,17 +2460,6 @@
 			<key>hash2</key>
 			<data>
 			BNLpTuUd0y4HnjC0qTchdzbhGL44jv5HF4lROCjzGxs=
-			</data>
-		</dict>
-		<key>LDSAcknowledgements.html</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			zaPXrVKEU5BBA9d4N6Efgg9t37Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			rTJ9GioaMLMHNlMJQoMa6saPry1WZpc0u2TTJRSYuNY=
 			</data>
 		</dict>
 		<key>LDSCalendarView.storyboardc/Info.plist</key>
@@ -4344,11 +4344,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2qCK4z8wnPK/tM1z7gjjmkxPwJo=
+			9ZY2ORY8TD3hIxHxLu6bN8j43Ao=
 			</data>
 			<key>hash2</key>
 			<data>
-			YBVc/HXtl11G8tQ5YPn9HQ+fR45aY1y28BeJTCnMbS0=
+			zC9wxoyilYU6B7dlcDi6rLV/5I262ZUTw53+N8s40z4=
 			</data>
 			<key>optional</key>
 			<true/>
