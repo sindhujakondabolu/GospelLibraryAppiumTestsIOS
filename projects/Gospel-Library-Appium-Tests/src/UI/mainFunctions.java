@@ -705,24 +705,7 @@ public class mainFunctions {
         ClickUIElementByAccessibilityID("Navigate up");
     }
 
-    //Backup
-    public void Backup(Boolean signIn) throws Exception{
-        //Back Up Annotations?
-        verifyText("Back Up Annotations", WebElementByText("Back Up Annotations", false),false);
-        assertElementExistsBy(WebElementsById("org.lds.ldssa.dev:id/md_buttonDefaultPositive"));
-        verifyText("SIGN IN",WebElementById("org.lds.ldssa.dev:id/md_buttonDefaultPositive"),false);
-        assertElementExistsBy(WebElementsById("org.lds.ldssa.dev:id/md_buttonDefaultNegative"));
-        verifyText("NO THANKS",WebElementById("org.lds.ldssa.dev:id/md_buttonDefaultNegative"),false);
-        assertElementExistsBy(WebElementsById("org.lds.ldssa.dev:id/md_buttonDefaultNeutral"));
-        verifyText("CREATE LDS ACCOUNT", WebElementById("org.lds.ldssa.dev:id/md_buttonDefaultNeutral"),false);
-        if (signIn) {
-            ClickUIElementByID("org.lds.ldssa.dev:id/md_buttonDefaultPositive");
-            fail("You need to add the login feature to this function to use 'true'");
-        } else {
-            ClickUIElementByID("org.lds.ldssa.dev:id/md_buttonDefaultNegative");
-        }
-        Thread.sleep(milliseconds_1);
-    }
+
     //Change Text Size
     public void ChangeTextSize(int sizeOneThroughSeven) throws Exception {
         assertElementExistsBy(WebElementsByAccessibilityId("More options"));

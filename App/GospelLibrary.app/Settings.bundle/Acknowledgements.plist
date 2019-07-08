@@ -131,7 +131,7 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright (c) 2019 Intellectual Reserve, Inc. All rights reserved.</string>
+			<string>Copyright © 2019 by Intellectual Reserve, Inc. All rights reserved.</string>
 			<key>License</key>
 			<string>Commercial</string>
 			<key>Title</key>
@@ -146,6 +146,16 @@ SOFTWARE.
 			<string>Commercial</string>
 			<key>Title</key>
 			<string>Authentication</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright (c) 2019 by Intellectual Reserve, Inc. All rights reserved.</string>
+			<key>License</key>
+			<string>Commercial</string>
+			<key>Title</key>
+			<string>Commons</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
@@ -752,16 +762,6 @@ SOFTWARE.
 			<string>MIT</string>
 			<key>Title</key>
 			<string>Kingfisher</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright (c) 2014 Intellectual Reserve, Inc. All rights reserved.</string>
-			<key>License</key>
-			<string>Commercial</string>
-			<key>Title</key>
-			<string>LDSCommons</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

@@ -4,95 +4,183 @@
     <list default="true" id="e61195d5-5b6a-4293-81dc-73667731a79a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Acknowledgements.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/AppIconGoldMoroni_60pt@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/AppIconGoldMoroni_60pt@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/AppIconGold_60pt@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/AppIconGold_60pt@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/AppIconLeather_60pt@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/AppIconLeather_60pt@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/AppIconLego_60pt@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/AppIconLego_60pt@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/AppIconLightRay_60pt@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/AppIconLightRay_60pt@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/AnnotationCell.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/AnnotationCell.nib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Assets.car" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Assets.car" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/ExpandedLinkView.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/ExpandedLinkView.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Alamofire.framework/Alamofire" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Alamofire.framework/Alamofire" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Alamofire.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Alamofire.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Alamofire.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Alamofire.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Analytics.framework/Analytics" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Analytics.framework/Analytics" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Analytics.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Analytics.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Analytics.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Analytics.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Anchorage.framework/Anchorage" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Anchorage.framework/Anchorage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Anchorage.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Anchorage.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Anchorage.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Anchorage.framework/_CodeSignature/CodeResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Annotations.framework/Annotations" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Annotations.framework/Annotations" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Annotations.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Annotations.framework/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Annotations.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Annotations.framework/_CodeSignature/CodeResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Authentication.framework/Authentication" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Authentication.framework/Authentication" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Authentication.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Authentication.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Authentication.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Authentication.framework/_CodeSignature/CodeResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/_CodeSignature/CodeDirectory" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/_CodeSignature/CodeDirectory" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/_CodeSignature/CodeRequirements-1" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/_CodeSignature/CodeRequirements-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/en.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/en.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/ja.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/ja.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/zh-Hans.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/zh-Hans.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/zh-Hant.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Content.bundle/zh-Hant.lproj/Localizable.strings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/_CodeSignature/CodeResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DRKonamiCode.framework/DRKonamiCode" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DRKonamiCode.framework/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DRKonamiCode.framework/_CodeSignature/CodeResources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/en.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/en.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/ja.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/ja.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/zh-Hans.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/zh-Hans.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/zh-Hant.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Content.framework/zh-Hant.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DataCompression.framework/DataCompression" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DataCompression.framework/DataCompression" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DataCompression.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DataCompression.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DataCompression.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DataCompression.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DateToolsSwift.framework/DateToolsSwift" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DateToolsSwift.framework/DateToolsSwift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DateToolsSwift.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DateToolsSwift.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DateToolsSwift.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/DateToolsSwift.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/FTS3HTMLTokenizer.framework/FTS3HTMLTokenizer" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/FTS3HTMLTokenizer.framework/FTS3HTMLTokenizer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/FTS3HTMLTokenizer.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/FTS3HTMLTokenizer.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/FTS3HTMLTokenizer.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/FTS3HTMLTokenizer.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/GMCRadialProgressView.framework/GMCRadialProgressView" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/GMCRadialProgressView.framework/GMCRadialProgressView" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/GMCRadialProgressView.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/GMCRadialProgressView.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/GMCRadialProgressView.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/GMCRadialProgressView.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/GoogleToolboxForMac.framework/GoogleToolboxForMac" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/GoogleToolboxForMac.framework/GoogleToolboxForMac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/GoogleToolboxForMac.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/GoogleToolboxForMac.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/GoogleToolboxForMac.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/GoogleToolboxForMac.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/KeychainAccess.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/KeychainAccess.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/KeychainAccess.framework/KeychainAccess" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/KeychainAccess.framework/KeychainAccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/KeychainAccess.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/KeychainAccess.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Kingfisher.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Kingfisher.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Kingfisher.framework/Kingfisher" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Kingfisher.framework/Kingfisher" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Kingfisher.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Kingfisher.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/LDSCommons.framework/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/LDSCommons.framework/LDSAcknowledgements.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/LDSCommons.framework/LDSCommons" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/LDSCommons.framework/_CodeSignature/CodeResources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/LDSCommons.framework/en.lproj/LDSAcknowledgements.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/LDSCommons.framework/es.lproj/LDSAcknowledgements.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/LaunchStep.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/LaunchStep.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/LaunchStep.framework/LaunchStep" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/LaunchStep.framework/LaunchStep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/LaunchStep.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/LaunchStep.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MMMarkdown.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MMMarkdown.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MMMarkdown.framework/MMMarkdown" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MMMarkdown.framework/MMMarkdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MMMarkdown.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MMMarkdown.framework/_CodeSignature/CodeResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Media.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Media.framework/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Media.framework/Media" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Media.framework/Media" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Media.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Media.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/Assets.car" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/Assets.car" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSCalendarView.storyboardc/UIViewController-Ycn-DV-PyC.nib/objects-11.0+.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSCalendarView.storyboardc/UIViewController-Ycn-DV-PyC.nib/objects-11.0+.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSCalendarView.storyboardc/UIViewController-Ycn-DV-PyC.nib/runtime.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSCalendarView.storyboardc/UIViewController-Ycn-DV-PyC.nib/runtime.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSCalendarView.storyboardc/Ycn-DV-PyC-view-Iyx-Vc-bCQ.nib/objects-11.0+.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSCalendarView.storyboardc/Ycn-DV-PyC-view-Iyx-Vc-bCQ.nib/objects-11.0+.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSCalendarView.storyboardc/Ycn-DV-PyC-view-Iyx-Vc-bCQ.nib/runtime.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSCalendarView.storyboardc/Ycn-DV-PyC-view-Iyx-Vc-bCQ.nib/runtime.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSEmptyStateView.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSEmptyStateView.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSHorizontalCollectionViewCell.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSHorizontalCollectionViewCell.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSMediaListTableViewCell.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSMediaListTableViewCell.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSNavigationBarSubtitleView.nib/objects-11.0+.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSNavigationBarSubtitleView.nib/objects-11.0+.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSNavigationBarSubtitleView.nib/runtime.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSNavigationBarSubtitleView.nib/runtime.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSVerticalCollectionViewCell.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/ICSVerticalCollectionViewCell.nib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/LDSAcknowledgements.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/LDSCalendarView.storyboardc/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/LDSCalendarView.storyboardc/UIViewController-Ycn-DV-PyC.nib/objects-11.0+.nib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/LDSCalendarView.storyboardc/UIViewController-Ycn-DV-PyC.nib/runtime.nib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/LDSCalendarView.storyboardc/Ycn-DV-PyC-view-Iyx-Vc-bCQ.nib/objects-11.0+.nib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/LDSCalendarView.storyboardc/Ycn-DV-PyC-view-Iyx-Vc-bCQ.nib/runtime.nib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/LDSEmptyStateView.nib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/LDSHorizontalCollectionViewCell.nib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/LDSMediaListTableViewCell.nib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/LDSNavigationBarSubtitleView.nib/objects-11.0+.nib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/LDSNavigationBarSubtitleView.nib/runtime.nib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/LDSVerticalCollectionViewCell.nib" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/MobileResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/MobileResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/PasscodeViewController.storyboardc/PasscodeViewController.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/PasscodeViewController.storyboardc/PasscodeViewController.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/PasscodeViewController.storyboardc/vm2-Pi-WtH-view-BNo-nK-p9S.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/PasscodeViewController.storyboardc/vm2-Pi-WtH-view-BNo-nK-p9S.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/SignInViewController.storyboardc/SignInViewController.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/SignInViewController.storyboardc/SignInViewController.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/SignInViewController.storyboardc/vm2-Pi-WtH-view-BNo-nK-p9S.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/SignInViewController.storyboardc/vm2-Pi-WtH-view-BNo-nK-p9S.nib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/_CodeSignature/CodeResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/en.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/MobileResources.framework/en.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/OnePasswordExtension" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/OnePasswordExtension" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/OnePasswordExtensionResources.bundle/Assets.car" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/OnePasswordExtensionResources.bundle/Assets.car" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/OnePasswordExtensionResources.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/OnePasswordExtensionResources.bundle/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/OnePasswordExtensionResources.bundle/_CodeSignature/CodeDirectory" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/OnePasswordExtensionResources.bundle/_CodeSignature/CodeDirectory" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/OnePasswordExtensionResources.bundle/_CodeSignature/CodeRequirements-1" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/OnePasswordExtensionResources.bundle/_CodeSignature/CodeRequirements-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/OnePasswordExtensionResources.bundle/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/OnePasswordExtensionResources.bundle/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/OnePasswordExtension.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PDSSync.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PDSSync.framework/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PDSSync.framework/PDSSync" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PDSSync.framework/PDSSync" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PDSSync.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PDSSync.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PaneViewController.framework/Assets.car" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PaneViewController.framework/Assets.car" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PaneViewController.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PaneViewController.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PaneViewController.framework/PaneViewController" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PaneViewController.framework/PaneViewController" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PaneViewController.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/PaneViewController.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/ProcedureKit.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/ProcedureKit.framework/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/ProcedureKit.framework/ProcedureKit" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/ProcedureKit.framework/ProcedureKit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/ProcedureKit.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/ProcedureKit.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Reachability.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Reachability.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Reachability.framework/Reachability" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Reachability.framework/Reachability" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Reachability.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Reachability.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Reusable.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Reusable.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Reusable.framework/Reusable" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Reusable.framework/Reusable" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Reusable.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Reusable.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/RichTextVC_iOS.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/RichTextVC_iOS.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/RichTextVC_iOS.framework/RichTextVC_iOS" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/RichTextVC_iOS.framework/RichTextVC_iOS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/RichTextVC_iOS.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/RichTextVC_iOS.framework/_CodeSignature/CodeResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SQLite.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SQLite.framework/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SQLite.framework/SQLite" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SQLite.framework/SQLite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SQLite.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SQLite.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SSZipArchive.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SSZipArchive.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SSZipArchive.framework/SSZipArchive" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SSZipArchive.framework/SSZipArchive" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SSZipArchive.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SSZipArchive.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SVProgressHUD.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SVProgressHUD.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SVProgressHUD.framework/SVProgressHUD" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SVProgressHUD.framework/SVProgressHUD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SVProgressHUD.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/SVProgressHUD.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Signals.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Signals.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Signals.framework/Signals" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Signals.framework/Signals" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Signals.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Signals.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Swiftification.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Swiftification.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Swiftification.framework/Swiftification" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Swiftification.framework/Swiftification" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Swiftification.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Swiftification.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Swinject.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Swinject.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Swinject.framework/Swinject" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Swinject.framework/Swinject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Swinject.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Swinject.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/TSMarkdownParser.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/TSMarkdownParser.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/TSMarkdownParser.framework/TSMarkdownParser" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/TSMarkdownParser.framework/TSMarkdownParser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/TSMarkdownParser.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/TSMarkdownParser.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Theme.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Theme.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Theme.framework/Theme" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Theme.framework/Theme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Theme.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/Theme.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/UIDevice_DisplayName.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/UIDevice_DisplayName.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/UIDevice_DisplayName.framework/UIDevice_DisplayName" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/UIDevice_DisplayName.framework/UIDevice_DisplayName" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/UIDevice_DisplayName.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Frameworks/UIDevice_DisplayName.framework/_CodeSignature/CodeResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/GospelLibrary" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/GospelLibrary" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/NotebookView.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/NotebookView.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/PageFlipProgressView.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/PageFlipProgressView.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/RawRelatedContentCell.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/RawRelatedContentCell.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/RelatedContentFootnoteTableViewCell.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/RelatedContentFootnoteTableViewCell.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/RelatedVideoPlayerView.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/RelatedVideoPlayerView.nib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/Settings.bundle/Acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/Settings.bundle/Acknowledgements.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/ar.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/ar.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/ceb.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/ceb.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/cs.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/cs.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/da.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/da.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/de.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/de.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/el.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/el.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/en.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/en.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/es.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/es.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/fi.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/fi.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/fr.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/fr.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/hi.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/hi.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/hr.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/hr.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/hu.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/hu.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/id.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/id.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/it.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/it.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/ja.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/ja.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/ka.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/ka.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/kek.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/kek.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/km.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/km.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/ko.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/ko.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/lt.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/lt.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/mn.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/mn.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/ms.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/ms.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/nl.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/nl.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/no.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/no.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/pl.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/pl.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/pt.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/pt.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/ro.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/ro.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/ru.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/ru.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/sk.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/sk.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/sm.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/sm.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/sq.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/sq.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/sv.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/sv.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/th.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/th.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/tl.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/tl.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/to.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/to.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/ty.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/ty.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/uk.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/uk.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/vi.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/vi.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/zh-Hans.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/zh-Hans.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/zh-Hant.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/zh-Hant.lproj/Localizable.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gospel-Library-Appium-Tests/UI/Content.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gospel-Library-Appium-Tests/UI/Content.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gospel-Library-Appium-Tests/UI/GospelLibrary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gospel-Library-Appium-Tests/UI/GospelLibrary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanDetailsViewController.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanDetailsViewController.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanIntroductionViewController.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanIntroductionViewController.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanOverviewViewController.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanOverviewViewController.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanReminderViewController.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanReminderViewController.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanScheduleViewController.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanScheduleViewController.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanTableViewCell.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanTableViewCell.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanWeekdayPickerCell.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/StudyPlanWeekdayPickerCell.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/SyncErrorTableViewCell.nib" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/SyncErrorTableViewCell.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/GospelLibrary.app/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/App/GospelLibrary.app/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gospel-Library-Appium-Tests/UI/GospelLibrary.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Gospel-Library-Appium-Tests/UI/Strings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gospel-Library-Appium-Tests/UI/Strings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gospel-Library-Appium-Tests/UI/mainFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gospel-Library-Appium-Tests/UI/mainFunctions.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/GospelLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/GospelLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/Content.java" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/Content.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/Strings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/mainFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/mainFunctions.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -121,20 +209,18 @@
     <favorites_list name="GospelLibraryAppiumTestsAndroid" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7169384">
+    <splitter split-orientation="horizontal" split-proportion="0.65528196">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.41407982">
+        <splitter split-orientation="horizontal" split-proportion="0.51000607">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file leaf-file-name="GospelLibrary.java" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/GospelLibrary.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="380">
-                      <caret line="1659" column="22" selection-start-line="1659" selection-start-column="22" selection-end-line="1659" selection-end-column="22" />
+                    <state relative-caret-position="4090">
+                      <caret line="1646" column="45" selection-start-line="1646" selection-start-column="45" selection-end-line="1646" selection-end-column="45" />
                       <folding>
                         <element signature="imports" expanded="true" />
-                        <element signature="e#2906#2907#0" expanded="true" />
-                        <element signature="e#2934#2935#0" expanded="true" />
                       </folding>
                     </state>
                   </provider>
@@ -147,17 +233,17 @@
               <file leaf-file-name="Strings.java" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/Strings.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="504">
-                      <caret line="224" column="25" selection-start-line="224" selection-start-column="25" selection-end-line="224" selection-end-column="25" />
+                    <state relative-caret-position="2505">
+                      <caret line="167" column="60" selection-start-line="167" selection-start-column="60" selection-end-line="167" selection-end-column="60" />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="mainFunctions.java" pinned="false" current-in-tab="true">
+              <file leaf-file-name="mainFunctions.java" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/mainFunctions.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="383">
-                      <caret line="177" column="9" lean-forward="true" selection-start-line="172" selection-start-column="8" selection-end-line="177" selection-end-column="9" />
+                    <state relative-caret-position="9705">
+                      <caret line="664" column="5" selection-start-line="633" selection-start-column="4" selection-end-line="664" selection-end-column="5" />
                       <folding>
                         <element signature="imports" expanded="true" />
                       </folding>
@@ -165,15 +251,13 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="GospelLibrary.java" pinned="false" current-in-tab="false">
+              <file leaf-file-name="GospelLibrary.java" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/GospelLibrary.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="293">
-                      <caret line="281" column="49" selection-start-line="281" selection-start-column="43" selection-end-line="281" selection-end-column="49" />
+                    <state relative-caret-position="133">
+                      <caret line="1187" column="8" selection-start-line="1187" selection-start-column="8" selection-end-line="1187" selection-end-column="8" />
                       <folding>
                         <element signature="imports" expanded="true" />
-                        <element signature="e#2906#2907#0" expanded="true" />
-                        <element signature="e#2934#2935#0" expanded="true" />
                       </folding>
                     </state>
                   </provider>
@@ -188,8 +272,8 @@
           <file leaf-file-name="Strings.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/Strings.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="452">
-                  <caret line="239" lean-forward="true" selection-start-line="239" selection-end-line="239" />
+                <state relative-caret-position="266">
+                  <caret line="181" column="54" selection-start-line="181" selection-start-column="54" selection-end-line="181" selection-end-column="54" />
                 </state>
               </provider>
             </entry>
@@ -207,10 +291,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>annotationsSync</find>
-      <find>Backup</find>
-      <find>assertnote</find>
-      <find>clickUi</find>
       <find>Create an LDS Account</find>
       <find>Create an LDS Account&quot;</find>
       <find>GB</find>
@@ -237,6 +317,10 @@
       <find>anno</find>
       <find>window</find>
       <find>context</find>
+      <find>Grey</find>
+      <find>notebook</find>
+      <find>navbar</find>
+      <find>swipeToDelete</find>
     </findStrings>
     <replaceStrings>
       <replace>Language…</replace>
@@ -289,8 +373,8 @@
         <option value="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/AppiumService.java" />
         <option value="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/AppiumService.java" />
         <option value="$PROJECT_DIR$/Test Runs/Test Results 1-11-18 - GospelLibrary.xml" />
-        <option value="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/mainFunctions.java" />
         <option value="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/Content.java" />
+        <option value="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/mainFunctions.java" />
         <option value="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/Strings.java" />
         <option value="$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/GospelLibrary.java" />
       </list>
@@ -303,10 +387,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1680" />
-    <option name="y" value="64" />
-    <option name="width" value="1680" />
-    <option name="height" value="1027" />
+    <option name="x" value="2340" />
+    <option name="y" value="-367" />
+    <option name="width" value="1900" />
+    <option name="height" value="1417" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -331,55 +415,7 @@
       <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="GospelLibraryAppiumTestsIOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gospel-Library-Appium-Tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GospelLibraryAppiumTestsIOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gospel-Library-Appium-Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GospelLibraryAppiumTestsIOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gospel-Library-Appium-Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GospelLibraryAppiumTestsIOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gospel-Library-Appium-Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GospelLibraryAppiumTestsIOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gospel-Library-Appium-Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="mainFunctions" type="1a9f42e2:ClassTreeNode" />
-            </path>
-            <path>
-              <item name="GospelLibraryAppiumTestsIOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gospel-Library-Appium-Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GospelLibrary" type="1a9f42e2:ClassTreeNode" />
-            </path>
-            <path>
-              <item name="GospelLibraryAppiumTestsIOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/dexterjohn/Documents/GitHub/GospelLibraryAppiumTestsAndroid/projects/Gospel-Library-Appium-Tests/src/UI/Strings.java" />
@@ -389,7 +425,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2632184" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -414,14 +450,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GospelLibrary.AnnotationMenuTapMark">
+  <component name="RunManager" selected="JUnit.GospelLibrary.ScreensScreenFromNotesScreen">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="GospelLibrary.AnnotationMenuTapMark" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GospelLibrary.BookmarksDeleteBookmark" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gospel-Library-Appium-Tests" />
       <extension name="coverage">
         <pattern>
@@ -433,7 +469,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UI.GospelLibrary" />
-      <option name="METHOD_NAME" value="AnnotationMenuTapMark" />
+      <option name="METHOD_NAME" value="BookmarksDeleteBookmark" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -444,7 +480,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="GospelLibrary.settingsScreenLanguageDeleteDutch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GospelLibrary.BookmarksLandingPageFromNotes_NotSignedIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gospel-Library-Appium-Tests" />
       <extension name="coverage">
         <pattern>
@@ -456,7 +492,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UI.GospelLibrary" />
-      <option name="METHOD_NAME" value="settingsScreenLanguageDeleteDutch" />
+      <option name="METHOD_NAME" value="BookmarksLandingPageFromNotes_NotSignedIn" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -467,7 +503,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="GospelLibrary.settingsScreenLanguagePartialSwipetoDeleteDutchTapDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GospelLibrary.BookmarksSwipeDeletePartialSwipeTapDeleteBookmark" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gospel-Library-Appium-Tests" />
       <extension name="coverage">
         <pattern>
@@ -479,7 +515,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UI.GospelLibrary" />
-      <option name="METHOD_NAME" value="settingsScreenLanguagePartialSwipetoDeleteDutchTapDelete" />
+      <option name="METHOD_NAME" value="BookmarksSwipeDeletePartialSwipeTapDeleteBookmark" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -490,7 +526,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="GospelLibrary.settingsScreenLanguageSearchDutAndNeder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GospelLibrary.ScreensScreenFromLibrary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gospel-Library-Appium-Tests" />
       <extension name="coverage">
         <pattern>
@@ -502,7 +538,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UI.GospelLibrary" />
-      <option name="METHOD_NAME" value="settingsScreenLanguageSearchDutAndNeder" />
+      <option name="METHOD_NAME" value="ScreensScreenFromLibrary" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -513,7 +549,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="GospelLibrary.settingsScreenLanguageSelectDutch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GospelLibrary.ScreensScreenFromNotesScreen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gospel-Library-Appium-Tests" />
       <extension name="coverage">
         <pattern>
@@ -525,7 +561,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UI.GospelLibrary" />
-      <option name="METHOD_NAME" value="settingsScreenLanguageSelectDutch" />
+      <option name="METHOD_NAME" value="ScreensScreenFromNotesScreen" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -575,19 +611,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.GospelLibrary.settingsScreenLanguageSearchDutAndNeder" />
-      <item itemvalue="JUnit.GospelLibrary.settingsScreenLanguageSelectDutch" />
-      <item itemvalue="JUnit.GospelLibrary.settingsScreenLanguageDeleteDutch" />
-      <item itemvalue="JUnit.GospelLibrary.settingsScreenLanguagePartialSwipetoDeleteDutchTapDelete" />
-      <item itemvalue="JUnit.GospelLibrary.AnnotationMenuTapMark" />
+      <item itemvalue="JUnit.GospelLibrary.BookmarksSwipeDeletePartialSwipeTapDeleteBookmark" />
+      <item itemvalue="JUnit.GospelLibrary.BookmarksDeleteBookmark" />
+      <item itemvalue="JUnit.GospelLibrary.BookmarksLandingPageFromNotes_NotSignedIn" />
+      <item itemvalue="JUnit.GospelLibrary.ScreensScreenFromLibrary" />
+      <item itemvalue="JUnit.GospelLibrary.ScreensScreenFromNotesScreen" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GospelLibrary.AnnotationMenuTapMark" />
-        <item itemvalue="JUnit.GospelLibrary.settingsScreenLanguagePartialSwipetoDeleteDutchTapDelete" />
-        <item itemvalue="JUnit.GospelLibrary.settingsScreenLanguageDeleteDutch" />
-        <item itemvalue="JUnit.GospelLibrary.settingsScreenLanguageSelectDutch" />
-        <item itemvalue="JUnit.GospelLibrary.settingsScreenLanguageSearchDutAndNeder" />
+        <item itemvalue="JUnit.GospelLibrary.ScreensScreenFromNotesScreen" />
+        <item itemvalue="JUnit.GospelLibrary.ScreensScreenFromLibrary" />
+        <item itemvalue="JUnit.GospelLibrary.BookmarksLandingPageFromNotes_NotSignedIn" />
+        <item itemvalue="JUnit.GospelLibrary.BookmarksDeleteBookmark" />
+        <item itemvalue="JUnit.GospelLibrary.BookmarksSwipeDeletePartialSwipeTapDeleteBookmark" />
       </list>
     </recent_temporary>
   </component>
@@ -608,35 +644,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GospelLibrary_AnnotationMenuTapMark - 2019.05.15 at 11h 57m 52s.xml">
-      <configuration name="GospelLibrary.AnnotationMenuTapMark" configurationId="JUnit" />
+    <history-entry file="GospelLibrary_BookmarksHideAddAndUpdateButtonsWhenNotOnChapter - 2019.06.25 at 15h 38m 55s.xml">
+      <configuration name="GospelLibrary.BookmarksHideAddAndUpdateButtonsWhenNotOnChapter" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GospelLibrary_AnnotationMenuTapMark - 2019.05.15 at 12h 09m 23s.xml">
-      <configuration name="GospelLibrary.AnnotationMenuTapMark" configurationId="JUnit" />
+    <history-entry file="GospelLibrary_BookmarksHideAddAndUpdateButtonsWhenNotOnChapter - 2019.06.25 at 15h 45m 44s.xml">
+      <configuration name="GospelLibrary.BookmarksHideAddAndUpdateButtonsWhenNotOnChapter" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GospelLibrary_AnnotationMenuTapMark - 2019.05.15 at 14h 08m 58s.xml">
-      <configuration name="GospelLibrary.AnnotationMenuTapMark" configurationId="JUnit" />
+    <history-entry file="GospelLibrary_BookmarksSwipeDeletePartialSwipeTapDeleteBookmark - 2019.06.26 at 09h 12m 27s.xml">
+      <configuration name="GospelLibrary.BookmarksSwipeDeletePartialSwipeTapDeleteBookmark" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GospelLibrary_AnnotationMenuTapMark - 2019.05.15 at 14h 41m 57s.xml">
-      <configuration name="GospelLibrary.AnnotationMenuTapMark" configurationId="JUnit" />
+    <history-entry file="GospelLibrary_BookmarksDeleteBookmark - 2019.06.27 at 16h 28m 29s.xml">
+      <configuration name="GospelLibrary.BookmarksDeleteBookmark" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GospelLibrary_AnnotationMenuTapMark - 2019.05.15 at 15h 11m 51s.xml">
-      <configuration name="GospelLibrary.AnnotationMenuTapMark" configurationId="JUnit" />
+    <history-entry file="GospelLibrary_BookmarksDeleteBookmark - 2019.06.27 at 16h 30m 54s.xml">
+      <configuration name="GospelLibrary.BookmarksDeleteBookmark" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GospelLibrary_AnnotationMenuTapMark - 2019.05.15 at 15h 33m 25s.xml">
-      <configuration name="GospelLibrary.AnnotationMenuTapMark" configurationId="JUnit" />
+    <history-entry file="GospelLibrary_BookmarksDeleteBookmark - 2019.06.27 at 16h 35m 40s.xml">
+      <configuration name="GospelLibrary.BookmarksDeleteBookmark" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GospelLibrary_AnnotationMenuTapMark - 2019.05.15 at 15h 56m 01s.xml">
-      <configuration name="GospelLibrary.AnnotationMenuTapMark" configurationId="JUnit" />
+    <history-entry file="GospelLibrary_BookmarksLandingPageFromNotes_NotSignedIn - 2019.06.28 at 10h 23m 20s.xml">
+      <configuration name="GospelLibrary.BookmarksLandingPageFromNotes_NotSignedIn" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GospelLibrary_AnnotationMenuTapMark - 2019.05.15 at 16h 02m 38s.xml">
-      <configuration name="GospelLibrary.AnnotationMenuTapMark" configurationId="JUnit" />
+    <history-entry file="GospelLibrary_ScreensScreenFromLibrary - 2019.07.01 at 11h 54m 06s.xml">
+      <configuration name="GospelLibrary.ScreensScreenFromLibrary" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GospelLibrary_AnnotationMenuTapMark - 2019.05.15 at 16h 05m 24s.xml">
-      <configuration name="GospelLibrary.AnnotationMenuTapMark" configurationId="JUnit" />
+    <history-entry file="GospelLibrary_ScreensScreenFromLibrary - 2019.07.01 at 12h 05m 57s.xml">
+      <configuration name="GospelLibrary.ScreensScreenFromLibrary" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GospelLibrary_AnnotationMenuTapMark - 2019.05.15 at 16h 11m 41s.xml">
-      <configuration name="GospelLibrary.AnnotationMenuTapMark" configurationId="JUnit" />
+    <history-entry file="GospelLibrary_ScreensScreenFromNotesScreen - 2019.07.01 at 12h 07m 16s.xml">
+      <configuration name="GospelLibrary.ScreensScreenFromNotesScreen" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -649,18 +685,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1680" y="64" width="1680" height="1027" extended-state="0" />
-    <editor active="true" />
+    <frame x="2340" y="-367" width="1900" height="1417" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3285985" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49574015" weight="0.19814958" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49574015" weight="0.19737856" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.4074367" side_tool="true" weight="0.32992327" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.14179687" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5925633" weight="0.37265712" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5925633" visible="true" weight="0.33307633" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32829046" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3285985" />
       <window_info id="Capture Tool" order="2" />
@@ -682,27 +717,27 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3285985" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5925633" visible="true" weight="0.4087863" />
       <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48393196" visible="true" weight="0.06875" />
       <window_info id="Structure" order="1" sideWeight="0.4965035" side_tool="true" weight="0.19737887" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3285985" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32829046" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32836932" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49574015" weight="0.39761728" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3285985" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.4074367" side_tool="true" weight="0.32992327" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32829046" />
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49574015" weight="0.20253165" />
@@ -715,7 +750,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="76" />
+      <option name="time" value="77" />
     </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
@@ -735,8 +770,6 @@
         <state>
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2906#2907#0" expanded="true" />
-            <element signature="e#2934#2935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -746,8 +779,6 @@
         <state>
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2906#2907#0" expanded="true" />
-            <element signature="e#2934#2935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -757,8 +788,6 @@
         <state>
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2906#2907#0" expanded="true" />
-            <element signature="e#2934#2935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -768,8 +797,6 @@
         <state>
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2906#2907#0" expanded="true" />
-            <element signature="e#2934#2935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -779,8 +806,6 @@
         <state>
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2906#2907#0" expanded="true" />
-            <element signature="e#2934#2935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -790,8 +815,6 @@
         <state>
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2906#2907#0" expanded="true" />
-            <element signature="e#2934#2935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -801,8 +824,6 @@
         <state>
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2906#2907#0" expanded="true" />
-            <element signature="e#2934#2935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -812,8 +833,6 @@
         <state>
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2906#2907#0" expanded="true" />
-            <element signature="e#2934#2935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -912,17 +931,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/Strings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="224" column="25" selection-start-line="224" selection-start-column="25" selection-end-line="224" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/mainFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="177" column="9" lean-forward="true" selection-start-line="172" selection-start-column="8" selection-end-line="177" selection-end-column="9" />
+        <state relative-caret-position="9705">
+          <caret line="664" column="5" selection-start-line="633" selection-start-column="4" selection-end-line="664" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -931,13 +943,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/GospelLibrary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="1659" column="22" selection-start-line="1659" selection-start-column="22" selection-end-line="1659" selection-end-column="22" />
+        <state relative-caret-position="4090">
+          <caret line="1646" column="45" selection-start-line="1646" selection-start-column="45" selection-end-line="1646" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2906#2907#0" expanded="true" />
-            <element signature="e#2934#2935#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/UI/Strings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="181" column="54" selection-start-line="181" selection-start-column="54" selection-end-line="181" selection-end-column="54" />
         </state>
       </provider>
     </entry>

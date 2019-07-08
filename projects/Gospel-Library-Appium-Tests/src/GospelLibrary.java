@@ -1,6 +1,5 @@
 package UI;
 
-import com.google.common.base.Joiner;
 import io.appium.java_client.TouchAction;
 import javafx.util.Pair;
 import org.junit.After;
@@ -8,7 +7,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Tag;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -18,7 +16,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 import static UI.Content.setBooks;
 import static UI.Strings.*;
@@ -40,16 +37,24 @@ public class GospelLibrary {
         capabilities.setCapability("platformName","iOS");
         capabilities.setCapability("platformVersion","12.2");
         capabilities.setCapability("deviceName", "iPhone X");
-        capabilities.setCapability("automationname","XUITest");
+        capabilities.setCapability("automationName","XCUITest");
         capabilities.setCapability("app", System.getProperty("user.dir") + "/../../App/GospelLibrary.app");
-        capabilities.setCapability("deviceOrientation", "portrait");
+//        capabilities.setCapability("setOrientation", "PORTRAIT");
+//        capabilities.setCapability("eventTimings",true);
         capabilities.setCapability("waitForQuiescence",false);
-        capabilities.setCapability("wdaEventloopIdleDelay",2);
+//        capabilities.setCapability("newCommandTimeout",1);
+        capabilities.setCapability("wdaEventloopIdleDelay",1);
         capabilities.setCapability("useNewWDA",false);
         capabilities.setCapability("noReset",true);
+        capabilities.setCapability("launchTimeout",1);
+        capabilities.setCapability("waitForAppScript", "$.delay(0); true;");
 //        capabilities.setCapability("noReset",false);
         driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+//        driver.manage().timeouts().pageLoadTimeout(4,TimeUnit.SECONDS);
+//        driver.manage().timeouts().setScriptTimeout(4,TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(4,TimeUnit.SECONDS);
         setBooks();
+        delay(5);
 
     }
 
@@ -60,7 +65,10 @@ public class GospelLibrary {
 //            ClickUIElementByAccessibilityID("Account options");
 //            ClickUIElementByAccessibilityID("Sign Out");
 //        }
+        driver.closeApp();
+        driver.removeApp("org.lds.gospelstudy-Alpha");
         driver.quit();
+
 
     }
 
@@ -124,6 +132,12 @@ public class GospelLibrary {
         return tempElement;
     }
 
+    //Create WebElement by text
+    public WebElement WebElementByName(String name) throws Exception {
+        WebElement tempElement = driver.findElementByName(name);
+        return tempElement;
+    }
+
     //Create WebElements by text (List)
     public List WebElementsByText(String text) throws Exception {
         String xPathofText = "//*[@name='" + text + "']";
@@ -175,6 +189,20 @@ public class GospelLibrary {
         }
         return tempElement;
     }
+
+    //Create Webelements by name
+    public List WebElementsByName(String name) throws Exception {
+        List tempElement = driver.findElementsByName(name);
+        if (tempElement.size() <1){
+            swipeDown();
+            tempElement = driver.findElementsByName(name);
+            if (tempElement.size() < 1){
+                System.out.println("\n" + name + " was not found on the screen.");
+            }
+        }
+        return tempElement;
+    }
+
 
     //Create WebElements by accessibility id
     public List WebElementsByAccessibilityId(String id) throws Exception {
@@ -270,6 +298,14 @@ public class GospelLibrary {
         Thread.sleep(milliseconds_1);
     }
 
+    //Click Element by Name
+    public void ClickUIElementByName(String name) throws Exception {
+        WebElementByName(name).click();
+        System.out.println("Clicking: '" + name + "' by Name");
+        Thread.sleep(milliseconds_1);
+    }
+
+
     //Click Element by Xpath
     public void ClickUIElementByXpath(String xpath) throws Exception {
         WebElementByXpath(xpath).click();
@@ -315,9 +351,17 @@ public class GospelLibrary {
 
     //Enter Text to a field by ID
     //click field, clear field, enter text
-    public void sendText(String elementID, String text) throws Exception {
-        WebElement textfield = driver.findElementById(elementID);
+    public void sendText(String AccessibilityID, String text) throws Exception {
+        WebElement textfield = driver.findElementById(AccessibilityID);
         textfield.clear();
+        textfield.sendKeys(text);
+        System.out.println("Sending Text: '" + text + "'");
+        Thread.sleep(milliseconds_1);
+    }
+
+    //click field, enter text
+    public void sendTextWithoutClearing(String AccessibilityID, String text) throws Exception {
+        WebElement textfield = driver.findElementById(AccessibilityID);
         textfield.sendKeys(text);
         System.out.println("Sending Text: '" + text + "'");
         Thread.sleep(milliseconds_1);
@@ -373,8 +417,11 @@ public class GospelLibrary {
 
         int elementY = theWebElement.getLocation().y;
         int elementHeight = theWebElement.getSize().height;
-        int swipeY = (elementY-(elementHeight/2));
+        int swipeY = (elementY+(elementHeight/2));
+        log(String.valueOf(swipeY));
         int screenWidth = driver.manage().window().getSize().getWidth();
+        log(String.valueOf(screenWidth / 20 * 18));
+        log(String.valueOf(screenWidth / 20 * 2));
         if (delete) {
             driver.swipe(screenWidth / 20 * 18, swipeY, screenWidth / 20 * 2, swipeY, 300);
             log("Swiping to delete...");
@@ -505,6 +552,11 @@ public class GospelLibrary {
         }
     }
 
+    public void NavigateToLibrary()throws Exception{
+        ClickUIElementByXpath("//XCUIElementTypeNavigationBar");
+        ClickUIElementByName(LibraryString);
+    }
+
 
     //*************************************************************** Assert Functions ***************************************************************
 
@@ -626,6 +678,24 @@ public class GospelLibrary {
         log("Expected " + theElement + "'s enabled attribute to be "+ isEnabled +". Actual was: " + theElement.getAttribute("enabled")+".");
         assert (Boolean.parseBoolean(theElement.getAttribute("enabled")) == isEnabled);
     }
+    public void isVisible (WebElement theElement, Boolean isVisible) throws Exception{
+        log("Expected " + theElement + "'s visible attribute to be "+ isVisible +". Actual was: " + theElement.getAttribute("visible")+".");
+        assert (Boolean.parseBoolean(theElement.getAttribute("visible")) == isVisible);
+    }
+
+    public void verifyItemOrder(WebElement topItem, WebElement bottomItem) throws Exception{
+        int topItemY = topItem.getLocation().getY();
+        int bottomItemY = bottomItem.getLocation().getY();
+        log("The Top Item Y is: " + String.valueOf(topItemY));
+        log("The Bottom item Y is: "+ String.valueOf(bottomItemY));
+        if (topItemY < bottomItemY){
+            log("Item order is as expected");
+        } else {
+            log("Item order is not as expected... topItem is below bottomItem");
+        }
+        Assertions.assertTrue(topItemY < bottomItemY);
+    }
+
 
 
     //*************************************************************** Assert Page Functions ***************************************************************
@@ -635,10 +705,42 @@ public class GospelLibrary {
             assertElementExistsBy(WebElementsByAccessibilityId(topLeftButton));
             assert (Boolean.parseBoolean(WebElementByAccessibilityId(topLeftButton).getAttribute("enabled")) == LeftIsEnabled);
         }
-        assertElementExistsBy(WebElementsByText(title));
+        assertElementExistsBy(WebElementsByName(title));
         if (topRightButton != "") {
             assertElementExistsBy(WebElementsByAccessibilityId(topRightButton));
             assert (Boolean.parseBoolean(WebElementByAccessibilityId(topRightButton).getAttribute("enabled")) == RightIsEnabled);
+        }
+    }
+
+    //assert the Nav bar
+    public void assertNavBarDropDownNav(String title1, String title2, String title3, String title4, String title5, String title6, String title7, Boolean close) throws Exception{
+
+        //Click Main Toolbar
+        ClickUIElementByAccessibilityID(title1);
+        Thread.sleep(milliseconds_1);
+        assertElementExistsBy(WebElementsByAccessibilityId(title1));
+        if (title2 != ""){
+            assertElementExistsBy(WebElementsByXpath("//XCUIElementTypeButton[@name=\"" + title2 + "\"]"));
+            if (title3 != ""){
+                assertElementExistsBy(WebElementsByXpath("//XCUIElementTypeButton[@name=\"" + title3 + "\"]"));
+                if (title4 != ""){
+                    assertElementExistsBy(WebElementsByXpath("//XCUIElementTypeButton[@name=\"" + title4 + "\"]"));
+                    if (title5 != ""){
+                        assertElementExistsBy(WebElementsByXpath("//XCUIElementTypeButton[@name=\"" + title5 + "\"]"));
+                        if (title6 != ""){
+                            assertElementExistsBy(WebElementsByXpath("//XCUIElementTypeButton[@name=\"" + title6 + "\"]"));
+                            if (title7 != ""){
+                                assertElementExistsBy(WebElementsByXpath("//XCUIElementTypeButton[@name=\"" + title7 + "\"]"));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (close) {
+            //Dismiss the toolbar
+            ClickUIElementByAccessibilityID(title1);
         }
     }
 
@@ -647,6 +749,16 @@ public class GospelLibrary {
         assertElementExistsBy(WebElementsByAccessibilityId("Search"));
         assertElementExistsBy(WebElementsByAccessibilityId("Screens"));
         assertElementExistsBy(WebElementsByAccessibilityId("Bookmarks"));
+    }
+
+    public void assertTabBar(String button1, String button2, String button3) throws Exception{
+        assertElementExistsBy(WebElementsByAccessibilityId(button1));
+        assertElementExistsBy(WebElementsByAccessibilityId(button2));
+        assertElementExistsBy(WebElementsByAccessibilityId(button3));
+    }
+
+    public void assertTabBarNotesScreen() throws Exception{
+        assertTabBar(AllString,TagsString,NotebooksString);
     }
 
     public void assertAnnotationMenu(boolean isNewHighlight, boolean DefineIsEnabled) throws Exception{
@@ -675,6 +787,105 @@ public class GospelLibrary {
         isEnabled(WebElementByAccessibilityId(SearchString),true);
         assertElementExistsBy(WebElementsByAccessibilityId(DefineString));
         isEnabled(WebElementByAccessibilityId(DefineString), DefineIsEnabled);
+    }
+
+    public void assertStyleMenu(String Style) throws Exception{
+        assertElementExistsBy(WebElementsByAccessibilityId(RedString));
+        assertElementExistsBy(WebElementsByAccessibilityId(OrangeString));
+        assertElementExistsBy(WebElementsByAccessibilityId(YellowString));
+        assertElementExistsBy(WebElementsByAccessibilityId(GreenString));
+        assertElementExistsBy(WebElementsByAccessibilityId(BlueString));
+        assertElementExistsBy(WebElementsByAccessibilityId(DarkBlueString));
+        assertElementExistsBy(WebElementsByAccessibilityId(PurpleString));
+        assertElementExistsBy(WebElementsByAccessibilityId(PinkString));
+        assertElementExistsBy(WebElementsByAccessibilityId(BrownString));
+        assertElementExistsBy(WebElementsByAccessibilityId(GrayString));
+        assertElementExistsBy(WebElementsByAccessibilityId("Highlight Style"));
+        assertElementExistsBy(WebElementsByAccessibilityId("Underline Style"));
+        assertElementExistsBy(WebElementsByAccessibilityId("Clear Style"));
+
+        if (Style == "Solid") {
+            assertElementExistsBy(WebElementsByXpath("//*[@name=\"Highlight Style\"]/../*[@name=\"active-style-indicator\"]"));
+        } else if (Style == "Underline"){
+            assertElementExistsBy(WebElementsByXpath("//*[@name=\"Underline Style\"]/../*[@name=\"active-style-indicator\"]"));
+        } else if (Style == "Clear"){
+            assertElementExistsBy(WebElementsByXpath("//*[@name=\"Clear Style\"]/../*[@name=\"active-style-indicator\"]"));
+        } else {
+            fail("Style must be one of \"Solid\" \"Underline\" or \"Clear\"");
+        }
+
+    }
+
+    public void clickAndAssertStyleMenu(String Color, String StartingStyle, String StyleToClick) throws Exception{
+        assertStyleMenu(StartingStyle);
+        if (Color == "Red"){
+            ClickUIElementByAccessibilityID(RedString);
+        } else if(Color =="Orange"){
+            ClickUIElementByAccessibilityID(OrangeString);
+        } else if(Color =="Yellow"){
+            ClickUIElementByAccessibilityID(YellowString);
+        } else if(Color =="Green"){
+            ClickUIElementByAccessibilityID(GreenString);
+        } else if(Color =="Blue"){
+            ClickUIElementByAccessibilityID(BlueString);
+        } else if(Color =="Dark Blue"){
+            ClickUIElementByAccessibilityID(DarkBlueString);
+        } else if(Color =="Purple"){
+            ClickUIElementByAccessibilityID(PurpleString);
+        } else if(Color =="Pink"){
+            ClickUIElementByAccessibilityID(PinkString);
+        } else if(Color =="Brown"){
+            ClickUIElementByAccessibilityID(BrownString);
+        } else if(Color =="Gray"){
+            ClickUIElementByAccessibilityID(GrayString);
+        } else {
+            fail("Color must be one of 'Red' 'Orange' 'Yellow' 'Green' 'Blue' 'Dark Blue' 'Purple' 'Pink' 'Brown' or 'Gray'");
+        }
+
+        if (StyleToClick == "Solid") {
+            ClickUIElementByAccessibilityID("Highlight Style");
+            assertElementExistsBy(WebElementsByXpath("//*[@name=\"Highlight Style\"]/../*[@name=\"active-style-indicator\"]"));
+        } else if (StyleToClick == "Underline"){
+            ClickUIElementByAccessibilityID("Underline Style");
+            assertElementExistsBy(WebElementsByXpath("//*[@name=\"Underline Style\"]/../*[@name=\"active-style-indicator\"]"));
+        } else if (StyleToClick == "Clear"){
+            ClickUIElementByAccessibilityID("Clear Style");
+            assertElementExistsBy(WebElementsByXpath("//*[@name=\"Clear Style\"]/../*[@name=\"active-style-indicator\"]"));
+        } else {
+            fail("Style must be one of \"Solid\" \"Underline\" or \"Clear\"");
+        }
+
+        ClickUIElementByAccessibilityID("PopoverDismissRegion");
+
+    }
+
+    public void annotationStyleTest(String Color, String StartingStyle, String StyleToClick) throws Exception{
+        OpenScripture(BookOfMormonString,JacobString,"1","1");
+        openAnnotationMenu(WebElementByAccessibilityId("1"));
+        assertAnnotationMenu(true,true);
+        ClickUIElementByAccessibilityID(MarkString);
+        Backup(false);
+        assertAnnotationMenu(false,true);
+        ClickUIElementByAccessibilityID(StyleString);
+        clickAndAssertStyleMenu(Color,StartingStyle,StyleToClick);
+        ClickUIElementByAccessibilityID("1");
+        assertAnnotationMenu(false,true);
+        ClickUIElementByAccessibilityID(RemoveString);
+    }
+
+    //Backup
+    public void Backup(Boolean signIn) throws Exception{
+        //Back Up Annotations?
+        assertElementExistsBy(WebElementsByAccessibilityId(BackUpString));
+        assertElementExistsBy(WebElementsByXpath("//*[@name= \"" + SignInBackupString + "\"]"));
+        assertElementExistsBy(WebElementsByAccessibilityId(SignInString));
+        assertElementExistsBy(WebElementsByAccessibilityId(CreateChurchAccountString));
+        assertElementExistsBy(WebElementsByAccessibilityId(NoThanksString));
+        if (signIn) {
+            ClickUIElementByAccessibilityID(SignInString);
+        } else {
+            ClickUIElementByAccessibilityID(NoThanksString);
+        }
     }
 
 
@@ -799,6 +1010,196 @@ public class GospelLibrary {
         }
     }
 
+    public void assertNotebookScreen(boolean isEmptyState, String sortBy) throws Exception {
+        assertNavBar(HistoryBackString,true,"Notes",EditString,true);
+        assertNavBarDropDownNav(NotesString,LibraryString,"","","","","",true);
+        assertTabBarNotesScreen();
+        if (isEmptyState){
+            assertElementExistsBy(WebElementsByAccessibilityId(FindByNameString));
+            isEnabled(WebElementByAccessibilityId(FindByNameString),true);
+            isVisible(WebElementByAccessibilityId(FindByNameString),false);
+            assertElementExistsBy(WebElementsByAccessibilityId("empty-state-notebook"));
+            assertElementExistsBy(WebElementsByAccessibilityId(NoNotebooksString));
+            assertElementExistsBy(WebElementsByAccessibilityId(CreateAsManyNotebooksString));
+            assertElementExistsBy(WebElementsByAccessibilityId(CreateNotebookString));
+        }else {
+            assertElementExistsBy(WebElementsByAccessibilityId(FindByNameString));
+            isEnabled(WebElementByAccessibilityId(FindByNameString),true);
+            isVisible(WebElementByAccessibilityId(FindByNameString),true);
+            if(sortBy == ""){
+                log("Skipping sortBy assertion because nothing was passed in");
+            } else if (sortBy.toLowerCase() == "recent"){
+                assertElementExistsBy(WebElementsByAccessibilityId(ByMostRecentString));
+            } else if (sortBy.toLowerCase() == "name"){
+                assertElementExistsBy(WebElementsByAccessibilityId(ByNameString));
+            } else if (sortBy.toLowerCase() == "count"){
+                assertElementExistsBy(WebElementsByAccessibilityId(ByCountString));
+            } else fail("Must pass in \"\", \"recent\", \"name\", or \"count\"");
+            assertElementExistsBy(WebElementsByAccessibilityId(ByMostRecentString));
+            isEnabled(WebElementByAccessibilityId(ByMostRecentString),true);
+            isVisible(WebElementByAccessibilityId(ByMostRecentString),true);
+            assertElementExistsBy(WebElementsByAccessibilityId(CreateNotebookString));
+        }
+        assertToolBar();
+    }
+
+    public void assertAndCreate_CreateNotebookScreen(String Title, Boolean Save)throws Exception{
+        assertNavBar(CancelString,true,CreateNotebookString,SaveString,true);
+        assertElementExistsBy(WebElementsByAccessibilityId("Notebook Name"));
+        verifyValue(UntitledString,WebElementByAccessibilityId("Notebook Name"));
+        sendText("Notebook Name", Title);
+        if (Save){
+            ClickUIElementByAccessibilityID(SaveString);
+            assertElementExistsBy(WebElementsByXpath("//*[@name=\"" + Title + "\"]"));
+            assertElementExistsBy(WebElementsByXpath("//*[@name=\""+ Title +"\"]/*[@name=\"0 items\"]"));
+        } else {
+            ClickUIElementByAccessibilityID(CancelString);
+        }
+    }
+
+    public void assertSortByMenuAndClick(String sortBy, boolean cancel) throws Exception{
+        assertElementExistsBy(WebElementsByAccessibilityId(SortMenuByMostRecentString));
+        assertElementExistsBy(WebElementsByAccessibilityId(SortMenuByNameString));
+        assertElementExistsBy(WebElementsByAccessibilityId(SortMenuByCountString));
+        assertElementExistsBy(WebElementsByAccessibilityId(CancelString));
+        if (cancel){
+            ClickUIElementByAccessibilityID(CancelString);
+        } else {
+            if(sortBy.toLowerCase() == "recent"){
+                ClickUIElementByAccessibilityID(SortMenuByMostRecentString);
+                assertElementExistsBy(WebElementsByAccessibilityId(ByMostRecentString));
+            } else if (sortBy.toLowerCase() == "name"){
+                ClickUIElementByAccessibilityID(SortMenuByNameString);
+                assertElementExistsBy(WebElementsByAccessibilityId(ByNameString));
+            } else if (sortBy.toLowerCase() == "count"){
+                ClickUIElementByAccessibilityID(SortMenuByCountString);
+                assertElementExistsBy(WebElementsByAccessibilityId(ByCountString));
+            } else {
+                fail("Must pass in \"recent\", \"name\", or \"count\"");
+            }
+        }
+    }
+
+    public void assertEditNotebookScreen(String notebookTitle) throws Exception{
+        assertNavBar(CancelString,true, EditNotebookString,SaveString,true);
+        assertElementExistsBy(WebElementsByAccessibilityId(NotebookNameString));
+        verifyValue(notebookTitle,WebElementByAccessibilityId(NotebookNameString));
+        assertElementExistsBy(WebElementsByAccessibilityId(ClearTextString));
+    }
+
+    public void renameNotebook(String startTitle, String newTitle, Boolean Save)throws Exception{
+        ClickUIElementByAccessibilityID(EditString);
+        assertNavBar(HistoryBackString,true,NotesString,DoneString,true);
+        ClickUIElementByName(startTitle);
+        assertEditNotebookScreen(startTitle);
+        sendTextWithoutClearing(NotebookNameString,NotebookTitleAddOn);
+        verifyValue(startTitle + NotebookTitleAddOn, WebElementByAccessibilityId(NotebookNameString));
+        ClickUIElementByAccessibilityID(ClearTextString);
+        verifyValue(UntitledString,WebElementByAccessibilityId(NotebookNameString));
+        sendText(NotebookNameString,newTitle);
+        verifyValue(newTitle,WebElementByAccessibilityId(NotebookNameString));
+        if (Save){
+            ClickUIElementByAccessibilityID(SaveString);
+            assertElementExistsBy(WebElementsByName(newTitle));
+        }else{
+            ClickUIElementByAccessibilityID(CancelString);
+            assertElementExistsBy(WebElementsByName(startTitle));
+        }
+        assertNavBar(HistoryBackString,true,NotesString,DoneString,true);
+        ClickUIElementByAccessibilityID(DoneString);
+        //This line might need to change in the future if sort by was changed before calling rename Notebook
+        assertNotebookScreen(false,"recent");
+
+
+    }
+
+    public void assertBookmarksScreen(Boolean isEmptyState, Boolean isOnContent)throws Exception{
+        assertNavBar(CancelString,true,BookmarksString,EditString,true);
+        if (isEmptyState){
+            assertBookmarksScreenEmptyState();
+        }else{
+            log("Skipping empty state check as no empty state was expected");
+            assertElementExistsBy(WebElementsByName(HistoryString));
+        }
+        if (isOnContent){
+            assertElementExistsBy(WebElementsByName(AddBookmarkString));
+        } else {
+            assertElementNotPresentBy(WebElementsByName(AddBookmarkString));
+        }
+
+
+    }
+
+    public void assertBookmarksScreenEditMode(Boolean isEmptyState,String title, String subtitle,Boolean delete)throws Exception{
+        assertNavBar(CancelString,true,BookmarksString,DoneString,true);
+        if (isEmptyState){
+            assertBookmarksScreenEmptyState();
+        }else{
+            log("Skipping empty state check as no empty state was expected");
+            assertElementExistsBy(WebElementsByName(HistoryString));
+        }
+        assertElementNotPresentBy(WebElementsByName(AddBookmarkString));
+        assertElementExistsBy(WebElementsByAccessibilityId(HistoryIconString));
+        assertElementExistsBy(WebElementsByName(title + "; " + subtitle));
+        assertElementExistsBy(WebElementsByName(title));
+        assertElementExistsBy(WebElementsByName(subtitle));
+        assertElementExistsBy(WebElementsByName("bookmarkTag_gray"));
+        assertElementNotPresentBy(WebElementsByName(UpdateString + " " + title));
+        assertElementExistsBy(WebElementsByName(DeleteString + " " + title + "; " + subtitle));
+        assertElementExistsBy(WebElementsByName(ReorderString + " " + title + "; " + subtitle));
+        if (delete){
+            ClickUIElementByName(DeleteString + " " + title + "; " + subtitle);
+            assertElementExistsBy(WebElementsByName(DeleteString));
+            ClickUIElementByName(DeleteString);
+        }
+
+
+
+
+    }
+
+    public void assertBookmarksScreenAndClick(Boolean isEmptyState, Boolean isOnContent, Boolean saveNew)throws Exception{
+        assertBookmarksScreen(isEmptyState,isOnContent);
+        if (saveNew){
+            ClickUIElementByName(AddBookmarkString);
+        } else {
+            ClickUIElementByAccessibilityID(CancelString);
+        }
+
+
+    }
+
+    public void assertBookmarksScreenEmptyState()throws Exception{
+        //currently empty state elements are invisible to appium
+        log("WARNING: empty state elements aren't visible to appium");
+    }
+
+    public void assertBookmarkOptionalUpdate(String title, String subtitle,Boolean update)throws Exception{
+        assertElementExistsBy(WebElementsByName(title + "; " + subtitle));
+        assertElementExistsBy(WebElementsByName(title));
+        assertElementExistsBy(WebElementsByName(subtitle));
+        assertElementExistsBy(WebElementsByName("bookmarkTag_gray"));
+        assertElementExistsBy(WebElementsByName(UpdateString + " " + title));
+        if (update){
+            ClickUIElementByName(UpdateString + " " + title);
+        }
+    }
+
+    public void assertScreensScreen(Boolean isEditMode, String currentScreenTitle) throws Exception {
+        assertElementExistsBy(WebElementsByName(currentScreenTitle));
+        if (isEditMode) {
+            assertNavBar(CancelString, true, ScreensString, DoneString, true);
+            assertElementNotPresentBy(WebElementsByAccessibilityId(AddScreenString));
+        } else {
+            assertNavBar(CancelString, true, ScreensString, EditString, true);
+            assertElementExistsBy(WebElementsByAccessibilityId(AddScreenString));
+            assertElementExistsBy(WebElementsByXpath("//*[@name=\""+ currentScreenTitle + "\"]/*[@name=\""+MoreInfoString+"\"]"));
+        }
+
+    }
+
+
+
 
 
     //*************************************************************** Nav Functions ***************************************************************
@@ -900,26 +1301,76 @@ public class GospelLibrary {
     //********** Notes Landing Page **********
     @Test
     public void NotesLandingPage_NotSignedIn() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID("Notes");
+        assertNotebookScreen(true,"");
 
     }
 
     @Test
     public void CreateNewNotebook() throws Exception {
+        ClickUIElementByAccessibilityID(NotesString);
+        assertNotebookScreen(true,"");
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle1,true);
 
-        fail("Test Not Written");
 
     }
 
     @Test
-    public void DeleteANotebook() throws Exception{
-        fail("Test Not Written");
+    public void DeleteANotebook_SwipeToDelete() throws Exception{
+        CreateNewNotebook();
+        swipeToDelete(driver.findElementByName(NotebookTitle1),true);
+        assertElementNotPresentBy(WebElementsByXpath("//*[@name=\""+NotebookTitle1+"\"]"));
+        assertNotebookScreen(true, "");
+    }
+
+    @Test
+    public void DeleteANotebook_PartialSwipeToDelete() throws Exception{
+        CreateNewNotebook();
+        swipeToDelete(driver.findElementByName(NotebookTitle1),false);
+        ClickUIElementByAccessibilityID(DeleteString);
+        assertElementNotPresentBy(WebElementsByXpath("//*[@name=\""+NotebookTitle1+"\"]"));
+        assertNotebookScreen(true, "");
+    }
+
+    @Test
+    public void DeleteANotebook_Edit_Delete() throws Exception{
+        CreateNewNotebook();
+        ClickUIElementByAccessibilityID(EditString);
+        assertNavBar(HistoryBackString,true,NotesString,DoneString,true);
+        assertElementExistsBy(WebElementsByName("Delete "+ NotebookTitle1));
+        ClickUIElementByName("Delete "+ NotebookTitle1);
+        assertElementNotPresentBy(WebElementsByName(NotebookTitle1));
+        assertNavBar(HistoryBackString,true,NotesString,DoneString,true);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertNotebookScreen(true, "");
     }
 
     @Test
     public void CancelDeleteANotebook() throws Exception{
-        fail("Test Not Written");
+        CreateNewNotebook();
+        ClickUIElementByAccessibilityID(EditString);
+        assertNavBar(HistoryBackString,true,NotesString,DoneString,true);
+        ClickUIElementByName("Delete "+ NotebookTitle1);
+        ClickUIElementByName(NotebookTitle1);
+        assertElementExistsBy(WebElementsByName(NotebookTitle1));
+        assertNavBar(HistoryBackString,true,NotesString,DoneString,true);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertNotebookScreen(false, "recent");
     }
+
+    @Test
+    public void RenameANotebook() throws Exception{
+        CreateNewNotebook();
+        renameNotebook(NotebookTitle1,NotebookTitle2,true);
+    }
+
+    @Test
+    public void CancelRenamingANotebook() throws Exception{
+        CreateNewNotebook();
+        renameNotebook(NotebookTitle1,NotebookTitle2,false);
+    }
+
 
     @Test
     public void CreateNewNoteInNewNotebook() throws Exception {
@@ -952,28 +1403,44 @@ public class GospelLibrary {
     }
 
     @Test
-    public void NotesSectionMergeTwoNotebooks() throws Exception{
-        fail("Test Not Written");
-    }
-
-    @Test
-    public void NotesSectionCancelMergeTwoNotebooks() throws Exception{
-        fail("Test Not Written");
-    }
-
-    @Test
     public void NotesSectionSortNotebooksByCount() throws Exception{
         fail("Test Not Written");
     }
 
     @Test
-    public void NotesSectionSortNotebooksByRecent() throws Exception{
-        fail("Test Not Written");
+    public void NotesSectionDefaultSortNotebooksByMostRecent() throws Exception{
+        CreateNewNotebook();
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle2,true);
+        assertElementExistsBy(WebElementsByAccessibilityId(ByMostRecentString));
+        verifyItemOrder(WebElementByName(NotebookTitle2),WebElementByName(NotebookTitle1));
     }
 
     @Test
     public void NotesSectionSortNotebooksByName() throws Exception{
-        fail("Test Not Written");
+        CreateNewNotebook();
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle2,true);
+        assertElementExistsBy(WebElementsByAccessibilityId(ByMostRecentString));
+        verifyItemOrder(WebElementByName(NotebookTitle2),WebElementByName(NotebookTitle1));
+        ClickUIElementByAccessibilityID(ByMostRecentString);
+        assertSortByMenuAndClick("name",false);
+        verifyItemOrder(WebElementByName(NotebookTitle1),WebElementByName(NotebookTitle2));
+    }
+
+    @Test
+    public void NotesSectionSortNotebooksByNameThenByRecent() throws Exception{
+        CreateNewNotebook();
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle2,true);
+        assertElementExistsBy(WebElementsByAccessibilityId(ByMostRecentString));
+        verifyItemOrder(WebElementByName(NotebookTitle2),WebElementByName(NotebookTitle1));
+        ClickUIElementByAccessibilityID(ByMostRecentString);
+        assertSortByMenuAndClick("name",false);
+        verifyItemOrder(WebElementByName(NotebookTitle1),WebElementByName(NotebookTitle2));
+        ClickUIElementByAccessibilityID(ByNameString);
+        assertSortByMenuAndClick("recent",false);
+        verifyItemOrder(WebElementByName(NotebookTitle2),WebElementByName(NotebookTitle1));
     }
 
     @Test
@@ -1017,33 +1484,56 @@ public class GospelLibrary {
     //********** Bookmarks Landing Page **********
     @Test
     public void BookmarksLandingPageFromLibrary_NotSignedIn() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarksScreen(true,false);
     }
 
     @Test
     public void BookmarksLandingPageFromContent_NotSignedIn() throws Exception {
-        fail("Test Not Written");
+        OpenScripture(BookOfMormonString,JacobString,"5","");
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarksScreen(true,true);
     }
 
     @Test
     public void BookmarksCreateBookmarkFromScripture() throws Exception{
-        fail("Test Not Written");
+        OpenScripture(BookOfMormonString,JacobString,"5","");
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarksScreen(true,true);
+        ClickUIElementByAccessibilityID(AddBookmarkString);
     }
 
     @Test
     public void BookmarksCreateBookmarkFromScriptureCancel() throws Exception{
-        fail("Test Not Written");
+        OpenScripture(BookOfMormonString,JacobString,"5","");
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarksScreenAndClick(true,true,false);
+        assertNavBar(HistoryBackString,true,"Jacob 5, Book of Mormon",ShowRelatedContentString,true);
     }
 
     @Test
     public void BookmarksCreateBookmarkFromScriptureDefault() throws Exception{
-        fail("Test Not Written");
+        OpenScripture(BookOfMormonString,JacobString,"5","");
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarksScreenAndClick(true,true,true);
+        assertNavBar(HistoryBackString,true,"Jacob 5, Book of Mormon",ShowRelatedContentString,true);
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarksScreen(false,true);
+        assertBookmarkOptionalUpdate("Jacob 5","Book of Mormon",false);
     }
 
     @Test
     public void BookmarksDefaultBookmarkTitleUpdatesItself() throws Exception{
-        fail("Test Not Written");
-
+        BookmarksCreateBookmarkFromScriptureDefault();
+        ClickUIElementByAccessibilityID(CancelString);
+        swipeNextChapter();
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarksScreen(false,true);
+        assertBookmarkOptionalUpdate("Jacob 5","Book of Mormon",true);
+        assertNavBar(HistoryBackString,true,"Jacob 6, Book of Mormon",ShowRelatedContentString,true);
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarksScreen(false,true);
+        assertBookmarkOptionalUpdate("Jacob 6","Book of Mormon",false);
     }
 
     @Test
@@ -1073,18 +1563,63 @@ public class GospelLibrary {
     }
 
     @Test
+    public void BookmarksSwipeDeleteBookmark() throws Exception{
+        BookmarksCreateBookmarkFromScriptureDefault();
+        swipeToDelete(WebElementByName("Jacob 5; Book of Mormon"),true);
+        assertBookmarksScreen(true,true);
+        assertElementNotPresentBy(WebElementsByName("Jacob 5; Book of Mormon"));
+    }
+
+    @Test
+    public void BookmarksSwipeDeletePartialSwipeBookmark() throws Exception{
+        BookmarksCreateBookmarkFromScriptureDefault();
+        swipeToDelete(WebElementByName("Jacob 5; Book of Mormon"),false);
+        TapCenterScreen();
+        assertElementNotPresentBy(WebElementsByText(DeleteString));
+        assertBookmarksScreen(false,true);
+        assertElementExistsBy(WebElementsByName("Jacob 5; Book of Mormon"));
+    }
+
+    @Test
+    public void BookmarksSwipeDeletePartialSwipeTapDeleteBookmark() throws Exception{
+        BookmarksCreateBookmarkFromScriptureDefault();
+        swipeToDelete(WebElementByName("Jacob 5; Book of Mormon"),false);
+        ClickUIElementByText(DeleteString);
+        assertElementNotPresentBy(WebElementsByText(DeleteString));
+        assertBookmarksScreen(true,true);
+        assertElementNotPresentBy(WebElementsByName("Jacob 5; Book of Mormon"));
+    }
+
+    @Test
     public void BookmarksDeleteBookmark() throws Exception{
-        fail("Test Not Written");
+        BookmarksCreateBookmarkFromScriptureDefault();
+        ClickUIElementByAccessibilityID(EditString);
+        assertBookmarksScreenEditMode(false,"Jacob 5","Book of Mormon",true);
+        assertBookmarksScreen(true,true);
+        assertElementNotPresentBy(WebElementsByName("Jacob 5; Book of Mormon"));
+        ClickUIElementByAccessibilityID(CancelString);
+
     }
 
     @Test
     public void BookmarksCancelDeleteBookmark() throws Exception{
-        fail("Test Not Written");
+        BookmarksCreateBookmarkFromScriptureDefault();
+        ClickUIElementByAccessibilityID(EditString);
+        assertBookmarksScreenEditMode(false,"Jacob 5","Book of Mormon",false);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertBookmarksScreen(true,true);
+        assertElementExistsBy(WebElementsByName("Jacob 5; Book of Mormon"));
+        ClickUIElementByAccessibilityID(CancelString);
     }
 
     @Test
     public void BookmarksHideAddAndUpdateButtonsWhenNotOnChapter() throws Exception{
-        fail("Test Not Written");
+        BookmarksCreateBookmarkFromScriptureDefault();
+        ClickUIElementByAccessibilityID(CancelString);
+        NavigateToLibrary();
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarksScreen(false,false);
+        assertElementNotPresentBy(WebElementsByName(UpdateString + " " + "Jacob 5"));
     }
 
     @Test
@@ -1096,19 +1631,28 @@ public class GospelLibrary {
 
     @Test
     public void BookmarksLandingPageFromNotes_NotSignedIn() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(NotesString);
+        assertNotebookScreen(true,"");
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarksScreen(true,false);
+        ClickUIElementByAccessibilityID(CancelString);
+        assertNotebookScreen(true,"");
 
     }
 
     @Test
-    public void ScreensScreenFromNotesScreenItemOptions() throws Exception {
-        fail("Test Not Written");
+    public void ScreensScreenFromNotesScreen() throws Exception {
+        ClickUIElementByAccessibilityID(NotesString);
+        ClickUIElementByAccessibilityID(ScreensString);
+        assertScreensScreen(false,NotesString);
 
     }
 
     @Test
     public void ScreensScreenFromLibrary() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(ScreensString);
+        assertScreensScreen(false,LibraryString);
+
 
     }
 
@@ -1649,29 +2193,33 @@ public class GospelLibrary {
 
     @Test
     public void AnnotationMenuTapMark() throws Exception{
-    OpenScripture(BookOfMormonString,JacobString,"1","1");
-    openAnnotationMenu(WebElementByAccessibilityId("1"));
-    assertAnnotationMenu(true,true);
-    ClickUIElementByAccessibilityID(MarkString);
+        OpenScripture(BookOfMormonString,JacobString,"1","1");
+        openAnnotationMenu(WebElementByAccessibilityId("1"));
+        assertAnnotationMenu(true,true);
+        ClickUIElementByAccessibilityID(MarkString);
 
-    Set handles = driver.getContextHandles();
-    List theHandles = new ArrayList(handles);
-    log(String.valueOf(theHandles));
-        for (int i = 1; i < theHandles.size(); i++) {
-            driver.context((String) theHandles.get(i));
-            log("Window handle is now: " + (String)theHandles.get(i));
-            List theWebelements = WebElementsByXpath("//*");
-            log(Joiner.on("").join(theWebelements));
-        }
+        Set handles = driver.getContextHandles();
+        List theHandles = new ArrayList(handles);
+//    log(String.valueOf(theHandles));
+//        for (int i = 1; i < theHandles.size(); i++) {
+//            driver.context((String) theHandles.get(i));
+//            log("Window handle is now: " + (String)theHandles.get(i));
+//        }
 
-    assertAnnotationMenu(false,true);
-    ClickUIElementByAccessibilityID(RemoveString);
+        assertAnnotationMenu(false,true);
+        ClickUIElementByAccessibilityID(RemoveString);
 
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyle() throws Exception{
-        fail("Test Not Written");
+        OpenScripture(BookOfMormonString,JacobString,"1","1");
+        openAnnotationMenu(WebElementByAccessibilityId("1"));
+        assertAnnotationMenu(true,true);
+        ClickUIElementByAccessibilityID(MarkString);
+
+        assertAnnotationMenu(false,true);
+        ClickUIElementByAccessibilityID(StyleString);
     }
 
     @Test
@@ -1681,102 +2229,102 @@ public class GospelLibrary {
 
     @Test
     public void AnnotationMenuTapMarkAndStyleRedUnderline() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Red","Solid","Underline");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleOrangeUnderline() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Orange","Solid","Underline");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleYellowUnderline() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Yellow","Solid","Underline");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleGreenUnderlined() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Green","Solid","Underline");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleBlueUnderline() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Blue","Solid","Underline");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleDarkBlueUnderline() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Dark Blue","Solid","Underline");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStylePurpleUnderline() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Purple","Solid","Underline");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStylePinkUnderline() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Pink","Solid","Underline");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleBrownUnderline() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Brown","Solid","Underline");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleGrayUnderline() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Gray","Solid","Underline");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleRedSolid() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Red","Solid","Solid");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleOrangeSolid() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Orange","Solid","Solid");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleYellowSolid() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Yellow","Solid","Solid");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleGreenSolid() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Green","Solid","Solid");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleBlueSolid() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Blue","Solid","Solid");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleDarkBlueSolid() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Dark Blue","Solid","Solid");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStylePurpleSolid() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Purple","Solid","Solid");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStylePinkSolid() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Pink","Solid","Solid");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleBrownSolid() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Brown","Solid","Solid");
     }
 
     @Test
     public void AnnotationMenuTapMarkAndStyleGraySolid() throws Exception{
-        fail("Test Not Written");
+        annotationStyleTest("Gray","Solid","Solid");
     }
 
     @Test

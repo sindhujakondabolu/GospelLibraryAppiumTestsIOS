@@ -96,11 +96,15 @@ SOFTWARE.
 
 ## Annotations
 
-Copyright (c) 2019 Intellectual Reserve, Inc. All rights reserved.
+Copyright © 2019 by Intellectual Reserve, Inc. All rights reserved.
 
 ## Authentication
 
 Copyright © 2019 by Intellectual Reserve, Inc. All rights reserved.
+
+## Commons
+
+Copyright (c) 2019 by Intellectual Reserve, Inc. All rights reserved.
 
 ## Content
 
@@ -647,10 +651,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-
-## LDSCommons
-
-Copyright (c) 2014 Intellectual Reserve, Inc. All rights reserved.
 
 ## Localytics
 

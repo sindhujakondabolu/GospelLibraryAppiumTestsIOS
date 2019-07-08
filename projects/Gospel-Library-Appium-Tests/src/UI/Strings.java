@@ -23,6 +23,8 @@ public abstract class Strings {
     public static String NotebookTitle1 = "Spiritual Impressions 1";
     //New Notebook 2
     public static String NotebookTitle2 = "Spiritual Impressions 2";
+    //add text to Notebook title
+    public static String NotebookTitleAddOn = " Some More Text";
 
     //email
     public static String email = "WaltDisney@TheWaltDisneyCompany.com";
@@ -139,6 +141,48 @@ public abstract class Strings {
     public static String EditString = "Edit";
     public static String LibraryString = "Library";
 
+    //Nav Bar Strings
+    public static String HistoryBackString = "History Back";
+
+
+    //Tab Bar Strings
+    public static String TagsString = "Tags";
+
+    //Notebooks Screen Strings
+    public static String NotesString = "Notes";
+    public static String NotebooksString = "Notebooks";
+    public static String NoNotebooksString = "No Notebooks";
+    public static String CreateAsManyNotebooksString = "Create as many notebooks as desired to organize all your notes.";
+    public static String CreateNotebookString = "Create Notebook";
+    public static String CancelString = "Cancel";
+    public static String SaveString = "Save";
+    public static String DoneString = "Done";
+    public static String UntitledString = "Untitled";
+    public static String FindByNameString = "Find by name";
+    public static String EditNotebookString = "Edit Notebook";
+    public static String NotebookNameString = "Notebook Name";
+    public static String ClearTextString = "Clear text";
+
+    //Bookmark Screen Strings
+    public static String BookmarksString = "Bookmarks";
+    public static String AddBookmarkString = "Add Bookmark";
+
+    //Sort By Strings
+    public static String SortMenuByMostRecentString = "Sort by Most Recent";
+    public static String SortMenuByNameString = "Sort by Name";
+    public static String SortMenuByCountString = "Sort by Count";
+
+    public static String ByMostRecentString = "Most Recent ▾";
+    public static String ByNameString = "Name ▾";
+    public static String ByCountString = "Count ▾";
+
+    //Screens Strings
+    public static String ScreensString  = "Screens";
+    public static String AddScreenString = "Add Screen";
+    public static String MoreInfoString = "More Info";
+
+
+
     //Settings Screen Strings
     public static String AccountString = "Account";
     public static String SignInString = "Sign In";
@@ -186,8 +230,13 @@ public abstract class Strings {
     public static String TermsOfUseString = "Terms of Use (Updated 2018-09-01)";
     public static String PrivacyNoticeString = "Privacy Notice (Updated 2018-09-01)";
 
+    //Back up
+    public static String BackUpString = "Back Up";
+    public static String SignInBackupString = "Signing in with a Church Account backs up all your personal data, keeping it safe and making it available on the web or any mobile device.";
+    public static String NoThanksString = "No Thanks";
+
+
     //Languages Screen Strings
-    public static String FindByNameString = "Find by name";
     public static String LanguageDutchString = "Dutch";
     public static String LanguageNederlandsString = "Nederlands";
 
@@ -251,6 +300,26 @@ public abstract class Strings {
     public static String SearchString = "Search";
     public static String DefineString = "Define";
     public static String RemoveString = "Remove";
+
+    public static String RedString = "Red";
+    public static String OrangeString = "Orange";
+    public static String YellowString = "Yellow";
+    public static String GreenString = "Green";
+    public static String BlueString = "Blue";
+    public static String DarkBlueString = "Dark Blue";
+    public static String PurpleString = "Purple";
+    public static String PinkString = "Pink";
+    public static String BrownString = "Brown";
+    public static String GrayString = "Gray";
+
+    public static String ShowRelatedContentString="Show Related Content";
+    public static String HistoryString = "History";
+    public static String UpdateString = "Update";
+    public static String HistoryIconString = "icn_history";
+    public static String ReorderString = "Reorder";
+
+
+
 
     //Dutch Strings
     public static String LibraryDutchString = "Bibliotheek";
