@@ -38,8 +38,8 @@
           <file leaf-file-name="GospelLibrary.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/GospelLibrary.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="341">
-                  <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+                <state relative-caret-position="-9123">
+                  <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -109,7 +109,7 @@
             <entry file="file://$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/GospelLibrary.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="15">
-                  <caret line="1648" column="45" selection-start-line="1648" selection-start-column="45" selection-end-line="1648" selection-end-column="45" />
+                  <caret line="1649" column="45" selection-start-line="1649" selection-start-column="45" selection-end-line="1649" selection-end-column="45" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -542,18 +542,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GospelLibrary_ScreensScreenFromLibrary - 2019.07.01 at 11h 54m 06s.xml">
-      <configuration name="GospelLibrary.ScreensScreenFromLibrary" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GospelLibrary_ScreensScreenFromLibrary - 2019.07.01 at 12h 05m 57s.xml">
-      <configuration name="GospelLibrary.ScreensScreenFromLibrary" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GospelLibrary_ScreensScreenFromNotesScreen - 2019.07.01 at 12h 07m 16s.xml">
-      <configuration name="GospelLibrary.ScreensScreenFromNotesScreen" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GospelLibrary_settingsScreenLoginCorrectUserNameAndPassword - 2019.07.11 at 10h 52m 42s.xml">
-      <configuration name="GospelLibrary.settingsScreenLoginCorrectUserNameAndPassword" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GospelLibrary_launchTest - 2019.07.11 at 11h 05m 47s.xml">
       <configuration name="GospelLibrary.launchTest" configurationId="JUnit" />
     </history-entry>
@@ -571,6 +559,18 @@
     </history-entry>
     <history-entry file="GospelLibrary_launchTest - 2019.07.11 at 11h 30m 05s.xml">
       <configuration name="GospelLibrary.launchTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GospelLibrary_launchTest - 2019.07.11 at 11h 52m 33s.xml">
+      <configuration name="GospelLibrary.launchTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GospelLibrary_NotesSectionSortNotebooksByName - 2019.07.11 at 11h 53m 01s.xml">
+      <configuration name="GospelLibrary.NotesSectionSortNotebooksByName" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GospelLibrary_NotesSectionSortNotebooksByName - 2019.07.11 at 11h 54m 12s.xml">
+      <configuration name="GospelLibrary.NotesSectionSortNotebooksByName" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GospelLibrary_NotesSectionSortNotebooksByName - 2019.07.11 at 11h 58m 21s.xml">
+      <configuration name="GospelLibrary.NotesSectionSortNotebooksByName" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -852,8 +852,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/Gospel-Library-Appium-Tests/src/GospelLibrary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+        <state relative-caret-position="-9123">
+          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -27,7 +27,7 @@ public class GospelLibrary {
     @Rule public TestName testName = new TestName();
     @Before
     public void setUp() throws Exception {
-        System.out.println(testName.getMethodName());
+        System.out.println("Class Name: " + testName.getMethodName());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName","iOS");
         capabilities.setCapability("platformVersion","12.2");
@@ -73,7 +73,7 @@ public class GospelLibrary {
     //********************************************** Functions **********************************************
     //Logs the current test's current id
     public void logTestId(String TestId) throws Exception{
-        log("TestId = "+ TestId);
+        log("Enterprise Tester ID: "+ TestId);
     }
 
 
