@@ -1,38 +1,33 @@
 package UI;
 
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.ios.IOSDriver;
 import javafx.util.Pair;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.rules.TestName;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import io.appium.java_client.ios.IOSDriver;
-import java.net.URL;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import static UI.Content.setBooks;
 import static UI.Strings.*;
-import static java.lang.Integer.parseInt;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static java.lang.Thread.sleep;
 import static org.junit.jupiter.api.Assertions.fail;
 
 
 
 public class GospelLibrary {
     IOSDriver driver;
-
-    
+    @Rule public TestName testName = new TestName();
     @Before
     public void setUp() throws Exception {
-
+        System.out.println(testName.getMethodName());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName","iOS");
         capabilities.setCapability("platformVersion","12.2");
@@ -56,6 +51,7 @@ public class GospelLibrary {
         setBooks();
         delay(5);
 
+
     }
 
     @After
@@ -75,6 +71,12 @@ public class GospelLibrary {
 
 
     //********************************************** Functions **********************************************
+    //Logs the current test's current id
+    public void logTestId(String TestId) throws Exception{
+        log("TestId = "+ TestId);
+    }
+
+
     //Replaces letters with dots
     public String hidePassword(String password) throws Exception {
         String passwordDotted = "";
@@ -87,7 +89,7 @@ public class GospelLibrary {
 
     //delay
     public void delay(int delayTime) throws Exception{
-        Thread.sleep(milliseconds_1 * delayTime);
+        sleep(milliseconds_1 * delayTime);
     }
 
     //log
@@ -265,14 +267,14 @@ public class GospelLibrary {
     public void ClickUIElementByText(String text) throws Exception {
         WebElementByText(text).click();
         System.out.println("Clicking: '" + text + "' using text by xPath with TextView");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
     }
 
     //Click Element by Text Contains
     public void ClickUIElementByTextContains(String text) throws Exception {
         WebElementByTextContains(text).click();
         System.out.println("Clicking: '" + text + "' using text by xPath with TextView");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
     }
 
     //Click Element by 2 text items
@@ -281,28 +283,28 @@ public class GospelLibrary {
         //System.out.println("Xpath of current item is: "+xPathofText+"");
         WebElementByXpath(xPathofText).click();
         System.out.println("Clicking: '" + book + " " + number + "' using 2 text contains by xPath");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
     }
 
     //Click Element by Accessibility ID
     public void ClickUIElementByAccessibilityID(String elementAccessibilityID) throws Exception {
         WebElementByAccessibilityId(elementAccessibilityID).click();
         System.out.println("Clicking: '" + elementAccessibilityID + "' by Accessibility ID");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
     }
 
     //Click Element by ID
     public void ClickUIElementByID(String elementID) throws Exception {
         WebElementById(elementID).click();
         System.out.println("Clicking: '" + elementID + "' by ID");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
     }
 
     //Click Element by Name
     public void ClickUIElementByName(String name) throws Exception {
         WebElementByName(name).click();
         System.out.println("Clicking: '" + name + "' by Name");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
     }
 
 
@@ -310,7 +312,7 @@ public class GospelLibrary {
     public void ClickUIElementByXpath(String xpath) throws Exception {
         WebElementByXpath(xpath).click();
         System.out.println("Clicking: '" + xpath + "' by xPath");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
     }
 
     //Tap in the center of the screen
@@ -356,7 +358,7 @@ public class GospelLibrary {
         textfield.clear();
         textfield.sendKeys(text);
         System.out.println("Sending Text: '" + text + "'");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
     }
 
     //click field, enter text
@@ -364,7 +366,7 @@ public class GospelLibrary {
         WebElement textfield = driver.findElementById(AccessibilityID);
         textfield.sendKeys(text);
         System.out.println("Sending Text: '" + text + "'");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
     }
 
     //Scroll down the page
@@ -400,7 +402,7 @@ public class GospelLibrary {
         int screenWidth = driver.manage().window().getSize().getWidth();
         driver.swipe(screenWidth / 20 * 18, screenHeight / 2, screenWidth / 20 * 2, screenHeight / 2, 300);
         System.out.println("Swiping right...");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
     }
 
     //Swipe previous chapter
@@ -409,7 +411,7 @@ public class GospelLibrary {
         int screenWidth = driver.manage().window().getSize().getWidth();
         driver.swipe(screenWidth / 20 * 3, screenHeight / 2, screenWidth / 20 * 19, screenHeight / 2, 300);
         System.out.println("Swiping left...");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
     }
 
     //Swipe to delete
@@ -430,7 +432,7 @@ public class GospelLibrary {
             assertElementExistsBy(WebElementsByText(DeleteString));
             log("Swiping");
         }
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
     }
 
     //Dismiss Dialog
@@ -458,7 +460,7 @@ public class GospelLibrary {
         System.out.println("X Tap Point is:  " + xTapPoint);
         TouchAction action = new TouchAction(driver);
         action.tap(xTapPoint, yTapPoint).perform();
-        Thread.sleep(1000);
+        sleep(1000);
     }
 
 
@@ -483,50 +485,50 @@ public class GospelLibrary {
         if (positionOf7 == 1) {
             //12px
             driver.tap(1, setting1, TapTarget, 1);
-            Thread.sleep(milliseconds_1);
+            sleep(milliseconds_1);
         } else if (positionOf7 == 2) {
             //18px
             driver.tap(1, setting2, TapTarget, 1);
-            Thread.sleep(milliseconds_1);
+            sleep(milliseconds_1);
         } else if (positionOf7 == 3) {
             //21px
             driver.tap(1, setting3, TapTarget, 1);
-            Thread.sleep(milliseconds_1);
+            sleep(milliseconds_1);
         } else if (positionOf7 == 4) {
             driver.tap(1, setting4, TapTarget, 1);
-            Thread.sleep(milliseconds_1);
+            sleep(milliseconds_1);
         } else if (positionOf7 == 5) {
             driver.tap(1, setting5, TapTarget, 1);
-            Thread.sleep(milliseconds_1);
+            sleep(milliseconds_1);
         } else if (positionOf7 == 6) {
             driver.tap(1, setting6, TapTarget, 1);
-            Thread.sleep(milliseconds_1);
+            sleep(milliseconds_1);
         } else if (positionOf7 == 7) {
             driver.tap(1, setting7, TapTarget, 1);
-            Thread.sleep(milliseconds_1);
+            sleep(milliseconds_1);
         } else {
             driver.tap(1, setting3, TapTarget, 1);
-            Thread.sleep(milliseconds_1);
+            sleep(milliseconds_1);
         }
     }
 
     public void OpenScripture(String work, String book, String chapter, String verse) throws Exception {
         assertElementExistsBy(WebElementsByText("Scriptures"));
         ClickUIElementByID("Scriptures");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
         ClickUIElementByID(work +", Installed");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
         if (book != "") {
             scrollToById(book);
             ClickUIElementByID(book);
-            Thread.sleep(milliseconds_2);
+            sleep(milliseconds_2);
             if (chapter != "") {
                 scrollToById(chapter);
                 ClickUIElementByID(chapter);
-                Thread.sleep(milliseconds_1);
+                sleep(milliseconds_1);
             }
             if (verse != "") {
-                Thread.sleep(milliseconds_1);
+                sleep(milliseconds_1);
                 System.out.println("Scrolling to " + verse);
                 scrollToById(verse);
             }
@@ -537,13 +539,13 @@ public class GospelLibrary {
     public void OpenConference(String month, String year, String talkTitle) throws Exception {
         assertElementExistsBy(WebElementsByText("General Conference"));
         ClickUIElementByText("General Conference");
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
 
         if (month != "") {
             scrollToById(month + " " + year);
             assertElementExistsBy(WebElementsByText(month + " " + year));
             ClickUIElementByText(month + " " + year);
-            Thread.sleep(milliseconds_1);
+            sleep(milliseconds_1);
             ClickUIElementByText(month + " " + year);
             if (talkTitle != "") {
                 scrollToById(talkTitle);
@@ -717,7 +719,7 @@ public class GospelLibrary {
 
         //Click Main Toolbar
         ClickUIElementByAccessibilityID(title1);
-        Thread.sleep(milliseconds_1);
+        sleep(milliseconds_1);
         assertElementExistsBy(WebElementsByAccessibilityId(title1));
         if (title2 != ""){
             assertElementExistsBy(WebElementsByXpath("//XCUIElementTypeButton[@name=\"" + title2 + "\"]"));
@@ -1418,6 +1420,7 @@ public class GospelLibrary {
 
     @Test
     public void NotesSectionSortNotebooksByName() throws Exception{
+        logTestId("9e01ff40-0e51-441d-b67f-aa48008cd5e3");
         CreateNewNotebook();
         ClickUIElementByAccessibilityID(CreateNotebookString);
         assertAndCreate_CreateNotebookScreen(NotebookTitle2,true);
