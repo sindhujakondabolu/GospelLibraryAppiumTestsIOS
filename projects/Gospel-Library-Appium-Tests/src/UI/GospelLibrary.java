@@ -2284,7 +2284,10 @@ public class GospelLibrary {
         ClickUIElementByAccessibilityID(SettingsString);
         scrollToById(TextSizeString);
         ClickUIElementByAccessibilityID(TextSizeString);
-        ClickSeekBarAt(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 3, 5);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 3, 5);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 5, 1);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 1, 7);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 7, 5);
         assertNavBar(BackString, true,TextSizeString, "", false);
         ClickUIElementByAccessibilityID(BackString);
         assertNavBar("",false,SettingsString, DoneString, true);
