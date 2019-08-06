@@ -1,5 +1,7 @@
 package UI;
 
+import com.thoughtworks.selenium.webdriven.commands.Click;
+import com.thoughtworks.selenium.webdriven.commands.GetElementWidth;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
 import javafx.util.Pair;
@@ -9,11 +11,16 @@ import org.junit.rules.TestName;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.JavascriptExecutor;
 
+
+import java.awt.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.Delayed;
+
 
 import static UI.Content.setBooks;
 import static UI.Strings.*;
@@ -25,12 +32,14 @@ import static org.junit.jupiter.api.Assertions.fail;
 public class GospelLibrary {
     IOSDriver driver;
     @Rule public TestName testName = new TestName();
+    private Object TestName;
+
     @Before
     public void setUp() throws Exception {
         System.out.println("Class Name: " + testName.getMethodName());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName","iOS");
-        capabilities.setCapability("platformVersion","12.2");
+        capabilities.setCapability("platformVersion","12.4");
         capabilities.setCapability("deviceName", "iPhone X");
         capabilities.setCapability("automationName","XCUITest");
         capabilities.setCapability("app", System.getProperty("user.dir") + "/../../App/GospelLibrary.app");
@@ -325,7 +334,7 @@ public class GospelLibrary {
     }
 
 
-    public void TapAndDrag(WebElement startPoint,WebElement endPoint) throws Exception{
+    public void TapAndDragWebElement(WebElement startPoint, WebElement endPoint) throws Exception{
         int tapX = startPoint.getLocation().getX();
         int tapY = startPoint.getLocation().getY();
         int tapElementWidth = startPoint.getSize().getWidth();
@@ -340,6 +349,18 @@ public class GospelLibrary {
         int endX = tapX + (tapElementWidth/2);
         int endY = tapY;
 
+        TouchAction action = new TouchAction(driver);
+
+        action
+                .longPress(startX, startY)
+                .moveTo(endX, endY)
+                .release()
+                .perform();
+
+        driver.getPageSource();
+    }
+
+    public void TapAndDrag(int startX, int startY, int endX,int endY) throws Exception{
         TouchAction action = new TouchAction(driver);
 
         action
@@ -367,6 +388,13 @@ public class GospelLibrary {
         textfield.sendKeys(text);
         System.out.println("Sending Text: '" + text + "'");
         sleep(milliseconds_1);
+    }
+
+    public void selectOptionByDisplayedText(WebElement Text)throws Exception{
+
+
+
+
     }
 
     //Scroll down the page
@@ -466,48 +494,79 @@ public class GospelLibrary {
 
     //
 
-    public void ClickSeekBarAt(WebElement webelement, int positionOf7) throws Exception {
+    public void ClickSeekBarAt(WebElement webelement, int StartPositionOf7, int positionOf7) throws Exception {
         int upperY = webelement.getLocation().getY();
         int upperX = webelement.getLocation().getX();
         int seekbarWidth = webelement.getSize().getWidth();
         int seekbarHeight = webelement.getSize().getHeight();
-        int TapTarget = (upperY + (seekbarHeight / 2));
+        int TapTargetY = (upperY + (seekbarHeight/2));
         //Seekbar positions
-        int setting1 = (upperX + (seekbarWidth / 20));
-        int setting2 = (int) (upperX + (seekbarWidth / 7) * 1.16);
-        int setting3 = (int) (upperX + (seekbarWidth / 7) * 2.33);
+        int setting1 = (upperX);
+        int setting2 = (int) (upperX + (seekbarWidth / 6) * 1);
+        int setting3 = (int) (upperX + (seekbarWidth / 6) * 2);
         int setting4 = (upperX + (seekbarWidth / 2));
-        int setting5 = (int) (upperX + ((seekbarWidth / 7) * 4.66));
-        int setting6 = (int) (upperX + ((seekbarWidth / 7) * 5.84));
-        int setting7 = (upperX + ((seekbarWidth / 20) * 19));
+        int setting5 = (int) (upperX + ((seekbarWidth / 6) * 4));
+        int setting6 = (int) (upperX + ((seekbarWidth / 6) * 5));
+        int setting7 = (upperX + (seekbarWidth));
+
+        if(StartPositionOf7 == 1){
+           verifyValue("0%",webelement);
+            StartPositionOf7 = setting1;
+        } else if (StartPositionOf7 == 2){
+            verifyValue("17%",webelement);
+            StartPositionOf7 = setting2;
+        } else if (StartPositionOf7 == 3){
+            verifyValue("33%",webelement);
+            StartPositionOf7 = setting3;
+        } else if (StartPositionOf7 == 4){
+            verifyValue("50%",webelement);
+            StartPositionOf7 = setting4;
+        } else if (StartPositionOf7 == 5){
+            verifyValue("67%",webelement);
+            StartPositionOf7 = setting5;
+        } else if (StartPositionOf7 == 6){
+            verifyValue("83%",webelement);
+            StartPositionOf7 = setting6;
+        } else if (StartPositionOf7 == 7){
+            verifyValue("100%",webelement);
+            StartPositionOf7 = setting7;
+        }
+
 
 
         if (positionOf7 == 1) {
             //12px
-            driver.tap(1, setting1, TapTarget, 1);
+            TapAndDrag(StartPositionOf7,TapTargetY,setting1,TapTargetY);
+            verifyValue("0%",webelement);
             sleep(milliseconds_1);
         } else if (positionOf7 == 2) {
             //18px
-            driver.tap(1, setting2, TapTarget, 1);
+            TapAndDrag(StartPositionOf7,TapTargetY,setting2,TapTargetY);
+            //verifyValue("17%",webelement);
             sleep(milliseconds_1);
         } else if (positionOf7 == 3) {
             //21px
-            driver.tap(1, setting3, TapTarget, 1);
+            TapAndDrag(StartPositionOf7,TapTargetY,setting3,TapTargetY);
+            //verifyValue("33%",webelement);
             sleep(milliseconds_1);
         } else if (positionOf7 == 4) {
-            driver.tap(1, setting4, TapTarget, 1);
+            TapAndDrag(StartPositionOf7,TapTargetY,setting4,TapTargetY);
+            //verifyValue("50%",webelement);
             sleep(milliseconds_1);
         } else if (positionOf7 == 5) {
-            driver.tap(1, setting5, TapTarget, 1);
+            TapAndDrag(StartPositionOf7,TapTargetY,setting5,TapTargetY);
+            //verifyValue("67%",webelement);
             sleep(milliseconds_1);
         } else if (positionOf7 == 6) {
-            driver.tap(1, setting6, TapTarget, 1);
+            TapAndDrag(StartPositionOf7,TapTargetY,setting6,TapTargetY);
+            //verifyValue("83%",webelement);
             sleep(milliseconds_1);
         } else if (positionOf7 == 7) {
-            driver.tap(1, setting7, TapTarget, 1);
+            TapAndDrag(StartPositionOf7,TapTargetY,setting7,TapTargetY);
+            //verifyValue("100%",webelement);
             sleep(milliseconds_1);
         } else {
-            driver.tap(1, setting3, TapTarget, 1);
+            TapAndDrag(StartPositionOf7,TapTargetY,setting3,TapTargetY);
             sleep(milliseconds_1);
         }
     }
@@ -536,17 +595,26 @@ public class GospelLibrary {
 
     }
 
-    public void OpenConference(String month, String year, String talkTitle) throws Exception {
-        assertElementExistsBy(WebElementsByText("General Conference"));
-        ClickUIElementByText("General Conference");
+
+    public void OpenConference(String month, String year, String talkTitle,boolean Installed) throws Exception {
+        assertElementExistsBy(WebElementsByAccessibilityId(GeneralConferenceString));
+        ClickUIElementByAccessibilityID(GeneralConferenceString);
         sleep(milliseconds_1);
+        if(! Installed){
+            String ConferenceNotInstalled = month + " " + year+", Not Installed";
+            scrollToById(ConferenceNotInstalled);
+            ClickUIElementByAccessibilityID(ConferenceNotInstalled);
+        }
+
+
+
+        String Conference = month + " " + year+", Installed";
 
         if (month != "") {
-            scrollToById(month + " " + year);
-            assertElementExistsBy(WebElementsByText(month + " " + year));
-            ClickUIElementByText(month + " " + year);
+            scrollToById(Conference);
+            assertElementExistsBy(WebElementsByText(Conference));
+            ClickUIElementByText(Conference);
             sleep(milliseconds_1);
-            ClickUIElementByText(month + " " + year);
             if (talkTitle != "") {
                 scrollToById(talkTitle);
                 ClickUIElementByText(talkTitle);
@@ -915,6 +983,41 @@ public class GospelLibrary {
         }
     }
 
+
+    public String getWebview() throws Exception {
+        Set<java.lang.String> ContextHandles = driver.getContextHandles();
+        String theWebviewToReturn = "";
+        for (String theWebview : ContextHandles) {
+            System.out.println("Context handle is now: " + theWebview);
+            if (theWebview.contains("WEBVIEW")) {
+                theWebviewToReturn = theWebview;
+                break;
+            }
+        }
+        return theWebviewToReturn;
+
+
+    }
+
+
+
+
+
+    public String getComputedCssUsingXpath(String xPath, String cssAttribute) throws Exception{
+        driver.context(getWebview());
+
+        WebElement we = WebElementByXpath(xPath);
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        String script = "var s = getComputedStyle(arguments[0],null).getPropertyValue(arguments[1]);" +
+                "return s;";
+        String scriptReturn = (executor.executeScript(script, we, cssAttribute)).toString();
+        System.out.println(scriptReturn);
+        driver.context("NATIVE_APP");
+        return scriptReturn;
+    }
+
+
+
     public void assertSettingsScreen(Boolean isFirstLaunch) throws Exception{
         assertNavBar("",false,"Settings","Done",true);
         if (isFirstLaunch) {
@@ -922,6 +1025,29 @@ public class GospelLibrary {
         } else {
             fail("No asserts for settings screen not on first launch");
         }
+    }
+
+
+    public void assertAndClickThemeScreen(String CurrentTheme, String NewTheme, Boolean Click) throws Exception{
+
+        assertItemIsNextTo(CurrentTheme, MoreInfoString, false);
+        assertNavBar(BackString, true, ThemeString, "",false);
+        assertElementExistsBy(WebElementsByName(DefaultThemeString));
+        assertElementExistsBy(WebElementsByName(NightThemeString));
+        assertElementExistsBy(WebElementsByName(SepiaThemeString));
+        assertElementExistsBy(WebElementsByName(DarkBlueString));
+        assertElementExistsBy(WebElementsByName(MagentaThemeString));
+        if(Click) {
+            ClickUIElementByName(NewTheme);
+
+        }
+            ClickUIElementByAccessibilityID(BackString);
+
+
+
+
+
+
     }
 
     public void assertChurchAccountScreen() throws Exception{
@@ -960,7 +1086,16 @@ public class GospelLibrary {
         }
         if (signIn){
             ClickUIElementByAccessibilityID("Sign In");
+
         }
+    }
+
+
+    public void assertSigninErrorScreen () throws Exception{
+
+        assertElementExistsBy(WebElementsByName(SignInErrorString));
+        assertElementExistsBy(WebElementsByAccessibilityId(WrongUserNameAndPasswordString));
+        assertElementExistsBy(WebElementsByAccessibilityId(OkString));
     }
 
     public void assertLanguageScreen(String Language, String EnglishLanguageName) throws Exception{
@@ -1160,6 +1295,20 @@ public class GospelLibrary {
 
     }
 
+    public void assertRenameBookmarkScreen(String oldName, String newName, boolean rename)throws Exception{
+        assertNavBar(BackString, true, RenameString, SaveString,true);
+        assertElementExistsBy(WebElementsByAccessibilityId(BookmarkNameString));
+        verifyValue(oldName,WebElementByAccessibilityId(BookmarkNameString));
+        assertElementExistsBy(WebElementsByAccessibilityId(ClearTextString));
+        if(rename){
+            sendText(BookmarkNameString, newName);
+            ClickUIElementByAccessibilityID(SaveString);
+        }else{
+            ClickUIElementByAccessibilityID(BackString);
+        }
+
+    }
+
     public void assertBookmarksScreenAndClick(Boolean isEmptyState, Boolean isOnContent, Boolean saveNew)throws Exception{
         assertBookmarksScreen(isEmptyState,isOnContent);
         if (saveNew){
@@ -1200,6 +1349,14 @@ public class GospelLibrary {
 
     }
 
+    public void doubleTapScreen(WebElement Element)throws Exception {
+        TouchAction action = new TouchAction(driver);
+        action.tap(Element).perform();
+        action.tap(Element).perform();
+        log("Double Tap performed");
+
+
+    }
 
 
 
@@ -1209,19 +1366,35 @@ public class GospelLibrary {
     //Scroll to by id
     public void scrollToById(String id) throws Exception {
         System.out.println("Scrolling to: " + id);
-        WebElement idIsPresent = WebElementById(id);
+        WebElement idIsPresent = WebElementByAccessibilityId(id);
         int screenHeight = driver.manage().window().getSize().getHeight();
         int upperY = idIsPresent.getLocation().getY();
         System.out.println("Screen Height is " + screenHeight + "");
         System.out.println("upper Y is " + upperY + "");
+        int currentLocationOfY;
+        while (upperY <= 88) {
+            log("Element is off the screen... scrolling to find.");
+            scrollDown();
+            delay(1);
+            idIsPresent = WebElementByAccessibilityId(id);
+            upperY = idIsPresent.getLocation().getY();
+        }
         while (upperY >= screenHeight / 2) {
             System.out.println("scrolling down y '" + upperY + "' is >= " + screenHeight / 2 + "");
+            currentLocationOfY = idIsPresent.getLocation().getY();
             scrollDown();
+            delay(1);
+            idIsPresent = WebElementByAccessibilityId(id);
             upperY = idIsPresent.getLocation().getY();
+            log("Upper Y is:" + upperY);
+            if (currentLocationOfY == upperY){
+                return;
+            }
         }
         while (upperY <= screenHeight / 10) {
             System.out.println("scrolling up y '" + upperY + "' is <= " + screenHeight / 8 + "");
             scrollUp();
+            idIsPresent = WebElementByAccessibilityId(id);
             upperY = idIsPresent.getLocation().getY();
         }
 
@@ -1272,23 +1445,55 @@ public class GospelLibrary {
 
     @Test
     public void login() throws Exception {
-        fail("Test Not Written");
+        assertNavBar(HistoryBackString,false, LibraryString,EditString,true);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByName(SignInString);
+        fillAndAssertAccountScreen(user,password,true,true);
+    assertElementExistsBy(WebElementsByAccessibilityId(AccountName+" ("+user+")"));
+
     }
 
     @Test
     public void invalidLogin() throws Exception {
-        fail("Test Not Written");
+        assertNavBar(HistoryBackString,false, LibraryString,EditString,true);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByName(SignInString);
+        fillAndAssertAccountScreen(user,wrongPassword,true,true);
+        assertSigninErrorScreen();
+
     }
 
     @Test
     public void troubleSigningIn() throws Exception {
-        fail("Test Not Written");
+        assertNavBar(HistoryBackString,false, LibraryString,EditString,true);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByName(SignInString);
+        ClickUIElementByAccessibilityID(TroubleSigningInString);
+        assertElementExistsBy(WebElementsByText("URL"));
+        verifyValue(AccountRecoveryURLString,WebElementByText("URL"));
+        ClickUIElementByAccessibilityID("Done");
+        ClickUIElementByAccessibilityID("Back");
+        ClickUIElementByAccessibilityID("Done");
+
     }
 
     @Test
     public void signInCreateAccount() throws Exception {
-        fail("Test Not Written");
+        assertNavBar(HistoryBackString,false, LibraryString,EditString,true);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByName(CreateChurchAccountString);
+        assertElementExistsBy(WebElementsByText("URL"));
+        verifyValue(CreateAccountURLString,WebElementByText("URL"));
+        ClickUIElementByAccessibilityID("Done");
+
+
     }
+
+
 
 
     //*********** Library Screen ***********
@@ -1376,7 +1581,23 @@ public class GospelLibrary {
 
     @Test
     public void CreateNewNoteInNewNotebook() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(NotesString);
+        assertNotebookScreen(true,"");
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle1,true);
+        ClickUIElementByName(NotebookTitle1);
+        ClickUIElementByName(CreateNoteString);
+        assertNavBar(CancelString,true,NoteString, SaveString,false);
+        sendText(NoteTextString,"faith");
+        assertNavBar(CancelString,true,NoteString, SaveString,true);
+        ClickUIElementByAccessibilityID(SaveString);
+
+
+
+
+
+
+
     }
 
     @Test
@@ -1541,13 +1762,39 @@ public class GospelLibrary {
 
     @Test
     public void BookmarkMoveNamedBookmarkToNewChapter() throws Exception{
-        fail("Test Not Written");
+        BookmarksCreateBookmarkFromScriptureDefault();
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarksScreen(false,true);
+        ClickUIElementByAccessibilityID(EditString);
+        assertBookmarksScreenEditMode(false,"Jacob 5","Book of Mormon", false);
+        ClickUIElementByAccessibilityID("Jacob 5");
+        assertRenameBookmarkScreen("Jacob 5",BookmarkOneTitle, true);
+        assertBookmarksScreenEditMode(false, BookmarkOneTitle, "Jacob 5",false);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertBookmarksScreen(false, true);
+        ClickUIElementByAccessibilityID(CancelString);
+        swipeNextChapter();
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarkOptionalUpdate(BookmarkOneTitle, "Jacob 6", true);
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarkOptionalUpdate(BookmarkOneTitle, "Jacob 6", false);
+
 
     }
 
     @Test
     public void BookmarksRenameABookmark() throws Exception{
-        fail("Test Not Written");
+        BookmarksCreateBookmarkFromScriptureDefault();
+        ClickUIElementByAccessibilityID(BookmarksString);
+        assertBookmarksScreen(false,true);
+        ClickUIElementByAccessibilityID(EditString);
+        assertBookmarksScreenEditMode(false,"Jacob 5","Book of Mormon", false);
+        ClickUIElementByAccessibilityID("Jacob 5");
+        assertRenameBookmarkScreen("Jacob 5",BookmarkOneTitle, true);
+        assertBookmarksScreenEditMode(false, BookmarkOneTitle, "Jacob 5",false);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertBookmarksScreen(false, true);
+        ClickUIElementByAccessibilityID(CancelString);
     }
 
     @Test
@@ -1811,6 +2058,40 @@ public class GospelLibrary {
 
     }
 
+
+    @Test
+    public void settingsScreenWhatsNewSwitch() throws Exception{
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByName(WhatsNewString);
+        assertElementExistsBy(WebElementsByXpath("//*[@name=\"TipsViewController\"]/XCUIElementTypeCell"));
+        log(WebElementByXpath("//*[@name=\"TipsViewController\"]/XCUIElementTypeCell").getAttribute("name"));
+        Assert.assertTrue(WebElementByXpath("//*[@name=\"TipsViewController\"]/XCUIElementTypeCell").getAttribute("name")!="");
+        assertNavBar(BackString,true,"What’s New", "", false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("",false,"Settings",DoneString,true);
+        ClickUIElementByAccessibilityID(SettingsString);
+
+
+    }
+
+    @Test
+    public void settingsScreenUserGuideSwitch() throws Exception{
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByName(UserGuideString);
+        verifyValue(UserGuideURLString,WebElementByName("URL"));
+        FindElementByContainsText("Done");
+        ClickUIElementByText("Done");
+        assertNavBar("",false,"Settings",DoneString,true);
+        ClickUIElementByAccessibilityID(SettingsString);
+
+    }
+
+
+
+
+
     @Test
     public void settingsScreenLanguagePage() throws Exception {
         ClickUIElementByAccessibilityID("Settings");
@@ -1890,17 +2171,48 @@ public class GospelLibrary {
 
     @Test
     public void settingsScreenDownloadedMediaLandingPage_Empty_MoreOptionsMenu() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID("Settings");
+        assertNavBar("", false, "Settings", "Done", true);
+        scrollDownTo(DownloadsString);
+        ClickUIElementByText(DownloadsString);
+        assertDownloadsScreen(true);
+
     }
 
     @Test
     public void settingsScreenDownloadedMediaGeneralConferenceDownloaded_AccessedThroughMoreOptionsMenu() throws Exception {
-        fail("Test Not Written");
+        OpenConference("October", "2017", "Turn On Your Light", false);
+        assertNavBarDropDownNav("Turn On Your Light", "October 2017","General Conference", "Library", "", "", "", true);
+        NavigateToLibrary();
+        ClickUIElementByAccessibilityID("Settings");
+        assertNavBar("", false, "Settings", "Done", true);
+        scrollDownTo(DownloadsString);
+        ClickUIElementByText(DownloadsString);
+        ClickUIElementByAccessibilityID(GeneralConferenceString);
+        assertElementExistsBy(WebElementsByName("2017"));
+        assertElementExistsBy(WebElementsByAccessibilityId(DeleteAllString));
+        assertElementExistsBy(WebElementsByAccessibilityId("October 2017"));
+        assertElementExistsBy(WebElementsByAccessibilityId("1.1 MB"));
+
+
+
     }
 
     @Test
     public void settingsScreenDownloadedMediaGeneralConferenceDownloaded_CancelAllWithOneDownload() throws Exception {
-        fail("Test Not Written");
+        OpenConference("October", "2017", "", false);
+        assertNavBarDropDownNav("Turn On Your Light", "October 2017","General Conference", "Library", "", "", "", true);
+        NavigateToLibrary();
+        ClickUIElementByAccessibilityID("Settings");
+        assertNavBar("", false, "Settings", "Done", true);
+        scrollDownTo(DownloadsString);
+        ClickUIElementByText(DownloadsString);
+        ClickUIElementByAccessibilityID(GeneralConferenceString);
+        assertElementExistsBy(WebElementsByName("2017"));
+        assertElementExistsBy(WebElementsByAccessibilityId(DeleteAllString));
+        assertElementExistsBy(WebElementsByAccessibilityId("October 2017"));
+        assertElementExistsBy(WebElementsByAccessibilityId("1.1 MB"));
+
     }
 
 //    @Test
@@ -1911,7 +2223,17 @@ public class GospelLibrary {
 
     @Test
     public void settingsScreenLimitMobileNetworkUseSwitch() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(CellularDataString);
+        ClickUIElementByAccessibilityID(CellularButtonString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+
+
+
+
+
     }
 
     //Can't turn off wifi yet
@@ -1924,19 +2246,64 @@ public class GospelLibrary {
 
     @Test
     public void settingsScreenThemeRadioButtons() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ThemeString);
+        ClickUIElementByAccessibilityID(ThemeString);
+        assertAndClickThemeScreen(DefaultThemeString, NightThemeString, true);
+        ClickUIElementByAccessibilityID(ThemeString);
+        assertAndClickThemeScreen(NightThemeString, SepiaThemeString, true);
+        ClickUIElementByAccessibilityID(ThemeString);
+        assertAndClickThemeScreen(SepiaThemeString, DarkBlueThemeString, true);
+        ClickUIElementByAccessibilityID(ThemeString);
+        assertAndClickThemeScreen(DarkBlueThemeString, MagentaThemeString, true);
+        ClickUIElementByAccessibilityID(ThemeString);
+        assertAndClickThemeScreen(MagentaThemeString, DefaultThemeString, true);
+
+
     }
 
 
     @Test
     public void settingsScreenThemeAllThemesTextColorAndFootnoteColor() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon", "Jacob", "1", "");
+        getComputedCssUsingXpath("//*[@id=\"title1\"]/span", "color");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ThemeString);
+        ClickUIElementByAccessibilityID(ThemeString);
+        assertAndClickThemeScreen(DefaultThemeString, NightThemeString, true);
+        assertNavBar("", false, "Settings", DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+        getComputedCssUsingXpath("//*[@id=\"title1\"]/span", "color");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ThemeString);
+        ClickUIElementByAccessibilityID(ThemeString);
+        assertAndClickThemeScreen(NightThemeString, DefaultThemeString, true);
+        assertNavBar("", false, "Settings", DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+
+
     }
 
 
     @Test
     public void settingsScreenTextSize() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon","Jacob","1", "1");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(TextSizeString);
+        ClickUIElementByAccessibilityID(TextSizeString);
+        ClickSeekBarAt(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 3, 5);
+        assertNavBar(BackString, true,TextSizeString, "", false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("",false,SettingsString, DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+
+
+
+
     }
 
     @Test
@@ -1991,204 +2358,733 @@ public class GospelLibrary {
 
     @Test
     public void settingsScreenListModeSwitch() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ListModeString);
+        ClickUIElementByAccessibilityID(ListModeString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
     }
 
     @Test
     public void settingsScreenListModeSwitchPersists() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(ScripturesString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ListModeString);
+        ClickUIElementByAccessibilityID(ListModeString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ListModeString);
+        ClickUIElementByAccessibilityID(ListModeString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+
     }
 
     @Test
     public void settingsScreenListModeLibraryScreenScripturesWidth() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ListModeString);
+        ClickUIElementByAccessibilityID(ListModeString);
+        assertNavBar("",false,"Settings",DoneString,true);
+        ClickUIElementByAccessibilityID(DoneString);
+        ClickUIElementByAccessibilityID(ScripturesString);
+        ClickUIElementByAccessibilityID(DoctrineAndCovenantsInstalledString);
+
+
+
     }
 
     @Test
     public void settingsScreenListModeLibraryContentScreenCategories() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ListModeString);
+        ClickUIElementByAccessibilityID(ListModeString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertNavBar(HistoryBackString,false,"Library", EditString,true);
+        assertElementExistsBy(WebElementsByName(CheckScripturesString));
+        assertElementExistsBy(WebElementsByAccessibilityId(ScripturesString));
+        assertElementExistsBy(WebElementsByAccessibilityId(ComeFollowMeString));
+        assertElementExistsBy(WebElementsByAccessibilityId(GeneralConferenceString));
+        assertElementExistsBy(WebElementsByName(MyCollectionsString));
+        assertElementExistsBy(WebElementsByAccessibilityId(NotesString));
+        assertElementExistsBy(WebElementsByAccessibilityId(StudyPlansString));
+        assertElementExistsBy(WebElementsByName(InspirationString.toUpperCase()));
+        assertElementExistsBy(WebElementsByAccessibilityId(MusicString));
+        assertElementExistsBy(WebElementsByAccessibilityId(MagazinesString));
+        assertElementExistsBy(WebElementsByAccessibilityId(SeminariesAncInstituesString));
+        assertElementExistsBy(WebElementsByAccessibilityId(TeachingsOfPresidentsString));
+        assertElementExistsBy(WebElementsByAccessibilityId(VideosString));
+        assertElementExistsBy(WebElementsByAccessibilityId(TopicsString));
+        assertElementExistsBy(WebElementsByAccessibilityId(JesusChristString));
+        assertElementExistsBy(WebElementsByAccessibilityId(MissionaryString));
+        scrollToById(IndividualsAndFamiliesString);
+        assertElementExistsBy(WebElementsByName(AudiencesString));
+        assertElementExistsBy(WebElementsByAccessibilityId(IndividualsAndFamiliesString));
+        assertElementExistsBy(WebElementsByAccessibilityId(YoungAdultsString));
+        assertElementExistsBy(WebElementsByAccessibilityId(YouthString));
+        assertElementExistsBy(WebElementsByAccessibilityId(ChildrenString));
+        assertElementExistsBy(WebElementsByAccessibilityId(LeadersString));
+        assertElementExistsBy(WebElementsByAccessibilityId(OtherString.toUpperCase()));
+        assertElementExistsBy(WebElementsByAccessibilityId(ChurchHistoryString));
+        assertElementExistsBy(WebElementsByAccessibilityId(TempleAndFamilyHistoryString));
+        assertElementExistsBy(WebElementsByAccessibilityId(LifeHelpString));
+        assertElementExistsBy(WebElementsByAccessibilityId(SelfRelianceString));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ListModeString);
+        ClickUIElementByAccessibilityID(ListModeString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+
+
+
     }
 
     @Test
     public void settingsScreenListModeScripturesContentScreenCategories() throws Exception {
         fail("Test Not Written");
+        //Need to work with Coordinates.
+
+
+
     }
 
     @Test
-    public void settingsScreenListModeScripturesScripturesScreenCategories() throws Exception {
-        fail("Test Not Written");
+    public void settingsScreenListModeScripturesScreenCategories() throws Exception {
+        ClickUIElementByAccessibilityID(ScripturesString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ListModeString);
+        ClickUIElementByAccessibilityID(ListModeString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertElementExistsBy(WebElementsByName(ScripturesString.toUpperCase()));
+        assertElementExistsBy(WebElementsByAccessibilityId(OldTestamentString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(NewTestamentString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(BookOfMormonString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(DoctrineAndCovenantsString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(PearlOfGreatPriceString+InstalledString));
+        assertElementExistsBy(WebElementsByName(StudyHelpsString.toUpperCase()));
+        assertElementExistsBy(WebElementsByAccessibilityId(GuideToTheScripturesString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(TopicalGuideString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(BibleDictionaryString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(BibleChronologyString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(HarmonyOfTheGospelsString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(JSTAppendixString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(BibleMapsString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(BiblePhotographsString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(IndexToTripleCombinationString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(ChurchHistoryMapsString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(ChurchHistoryPhotographsString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(AbbreviationsString+InstalledString));
+        assertElementExistsBy(WebElementsByAccessibilityId(AboutScripturesString+NotInstalledString));
+        assertNavBar(HistoryBackString, true,"Scriptures, Library", EditString,true);
+        ClickUIElementByAccessibilityID(HistoryBackString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ListModeString);
+        ClickUIElementByAccessibilityID(ListModeString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
     }
 
 
     @Test
     public void settingsScreenHideFootnotesSwitch() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(HideFootnotesString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
     }
 
     @Test
     public void settingsScreenHideFootnotesSwitchPersists() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(ScripturesString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(HideFootnotesString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(HideFootnotesString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
     }
 
     @Test
     public void settingsScreenHideFootnotesInContent() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon", "Jacob", "1", "");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(HideFootnotesString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        delay(1);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertNavBar(HistoryBackString, true, "Jacob 1, Book of Mormon", ShowRelatedContentString, true);
+        ClickUIElementByAccessibilityID(HistoryBackString);
+
+
+
+
     }
 
     @Test
     public void settingsScreenHideFootnotesInContentTextColor() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon", "Jacob", "1", "");
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(HideFootnotesString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        delay(1);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        assertNavBarDropDownNav("Jacob 1","Jacob","Book of Mormon","Scriptures","Library","","",false );
+        ClickUIElementByAccessibilityID(LibraryString);
+
     }
 
     @Test
     public void settingsScreenHideFootnotesInContentTextColorThenShow() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon", "Jacob", "1", "");
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(HideFootnotesString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        delay(1);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        delay(1);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        assertNavBarDropDownNav("Jacob 1","Jacob","Book of Mormon","Scriptures","Library","","",false );
+        ClickUIElementByAccessibilityID(LibraryString);
     }
 
 
     @Test
     public void settingsScreenHideFootnotesInContentThenShow() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon", "Jacob", "1", "");
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup", "display");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(HideFootnotesString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        delay(1);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup", "display");
+        delay(1);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup", "display");
+        assertNavBarDropDownNav("Jacob 1","Jacob","Book of Mormon","Scriptures","Library","","",false );
+        ClickUIElementByAccessibilityID(LibraryString);
     }
 
     @Test
     public void settingsScreenHideFootnotesInContentDCJumpLinks() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(ScripturesString);
+        ClickUIElementByAccessibilityID(DoctrineAndCovenantsInstalledString);
+        ClickUIElementByName("8");
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        ClickUIElementByName("1–5");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(HideFootnotesString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        assertNavBarDropDownNav("Doctrine and Covenants 8","Doctrine and Covenants","Scriptures","Library","","","",false );
+        ClickUIElementByAccessibilityID(LibraryString);
     }
+
+
 
     @Test
     public void settingsScreenHideFootnotesInContentTextColorDCJumpLinks() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(ScripturesString);
+        ClickUIElementByAccessibilityID(DoctrineAndCovenantsInstalledString);
+        ClickUIElementByName("8");
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        ClickUIElementByName("1–5");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(HideFootnotesString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        assertNavBarDropDownNav("Doctrine and Covenants 8","Doctrine and Covenants","Scriptures","Library","","","",false );
+        ClickUIElementByAccessibilityID(LibraryString);
     }
 
 
     @Test
-    public void settingsScreenShowScreensAsSeparateWindowsSwitch() throws Exception {
-        fail("Test Not Written");
+    public void settingsAllowFullscreenSwitch() throws Exception {
+        OpenScripture("Book of Mormon", "Jacob", "1","");
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+        delay(1);
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(AllowFullscreenString);
+        ClickUIElementByAccessibilityID(AllowFullscreenString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(AllowFullscreenString);
+        ClickUIElementByAccessibilityID(AllowFullscreenString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+        assertElementNotPresentBy(WebElementsByName("JACOB 1"));
+        assertElementNotPresentBy(WebElementsByAccessibilityId("Toolbar"));
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+        assertNavBar(HistoryBackString,true,"Jacob 1",ShowRelatedContentString,true);
+        ClickUIElementByAccessibilityID(HistoryBackString);
     }
 
     @Test
-    public void settingsScreenShowScreensAsSeparateWindowsSwitchPersists() throws Exception {
-        fail("Test Not Written");
-    }
-
-    @Test
-    public void settingsScreenShowScreensAsSeparateWindowsSwitchCheckTwoScreensOptionOnToOffFromMainScreen() throws Exception {
-        fail("Test Not Written");
-    }
-
-    @Test
-    public void settingsScreenShowScreensAsSeparateWindowsSwitchCheckTwoScreensOptionOnToOffFromSecondaryScreen() throws Exception {
-        fail("Test Not Written");
-    }
-
-    @Test
-    public void settingsScreenShowScreensAsSeparateWindowsSwitchCheckOffToOnAddScreen() throws Exception {
-        fail("Test Not Written");
+    public void settingsAllowFullscreenSwitchPersists() throws Exception {
+        OpenScripture(BookOfMormonString,JacobString,"1","");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(AllowFullscreenString);
+        ClickUIElementByAccessibilityID(AllowFullscreenString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(AllowFullscreenString);
+        ClickUIElementByAccessibilityID(AllowFullscreenString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
 
     }
 
     @Test
-    public void settingsScreenShowScreensAsSeparateWindowsSwitchCheckOffAddScreen() throws Exception {
-        fail("Test Not Written");
+    public void settingsAllowFullscreenSwitchCheckTwoScreensOptionOnToOffFromMainScreen() throws Exception {
+        OpenScripture(BookOfMormonString,JacobString,"1","");
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+        delay(1);
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(ScreensString);
+        ClickUIElementByAccessibilityID(AddScreenString);
+        OpenScripture(BookOfMormonString,JacobString,"2","");
+        doubleTapScreen(WebElementByAccessibilityId(ChapterTwoString));
+        delay(1);
+        doubleTapScreen(WebElementByAccessibilityId(ChapterTwoString));
+        ClickUIElementByAccessibilityID(ScreensString);
+        ClickUIElementByAccessibilityID(AddScreenString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(AllowFullscreenString);
+        ClickUIElementByAccessibilityID(AllowFullscreenString);
+        assertNavBar("", false,"Settings", DoneString,true);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(ScreensString);
+        ClickUIElementByName("Jacob 1");
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+        delay(1);
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+
+
+    }
+
+    @Test
+    public void settingsAllowFullscreenSwitchCheckTwoScreensOptionOnToOffFromSecondaryScreen() throws Exception {
+        OpenScripture(BookOfMormonString, JacobString, "1", "");
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+        delay(1);
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(ScreensString);
+        ClickUIElementByAccessibilityID(AddScreenString);
+        OpenScripture(BookOfMormonString, JacobString, "2", "");
+        doubleTapScreen(WebElementByAccessibilityId(ChapterTwoString));
+        delay(1);
+        doubleTapScreen(WebElementByAccessibilityId(ChapterTwoString));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(ScreensString);
+        ClickUIElementByAccessibilityID(AddScreenString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(ScreensString);
+        ClickUIElementByName("Jacob 1");
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+        delay(1);
+        doubleTapScreen(WebElementByAccessibilityId(ChapterOneString));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(AllowFullscreenString);
+        assertNavBar("", false, "Settings", DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
     }
 
     //Show Obsolete Content
     @Test
     public void settingsScreenShowObsoleteContentSwitch() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ObsoleteContentString);
+        ClickUIElementByAccessibilityID(ObsoleteContentString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
     }
 
     @Test
     public void settingsScreenShowObsoleteContentSwitchPersists() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(ComeFollowMeString);
+        ClickUIElementByAccessibilityID(OtherResourcesString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ObsoleteContentString);
+        ClickUIElementByAccessibilityID(ObsoleteContentString);
+        assertNavBar("",false,"Settings",DoneString,true );
+        ClickUIElementByAccessibilityID(DoneString);
+        assertNavBar(HistoryBackString,true,"Other Resources, Come, Follow Me","",false);
+        ClickUIElementByAccessibilityID(HistoryBackString);
+        ClickUIElementByAccessibilityID(OtherResourcesString);
+        assertElementExistsBy(WebElementsByAccessibilityId("Instructions for Curriculum 2018, Not Installed"));
+        assertElementExistsBy(WebElementsByAccessibilityId("Instructions for Curriculum 2017, Not Installed"));
+        delay(1);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ObsoleteContentString);
+        ClickUIElementByAccessibilityID(ObsoleteContentString);
+        assertNavBar("",false,"Settings",DoneString,true );
+        ClickUIElementByAccessibilityID(DoneString);
+        assertNavBar(HistoryBackString,true,"Other Resources, Come, Follow Me","",false);
+        ClickUIElementByAccessibilityID(HistoryBackString);
+        ClickUIElementByAccessibilityID(OtherResourcesString);
+        delay(1);
     }
 
-    @Test
-    public void settingsScreenShowObsoleteContent() throws Exception {
-        fail("Test Not Written");
-
-    }
 
     //No current way to guarantee an inapp notification will fire, can only test setting is on the screen, and can be switched
     @Test
     public void settingsScreenAllowInAppNotificationsSwitch() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(InAppNotificationsString);
+        ClickUIElementByAccessibilityID(InAppNotificationsString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
 
     }
 
     @Test
     public void settingsScreenAllowInAppNotificationsSwitchPersists() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(InAppNotificationsString);
+        ClickUIElementByAccessibilityID(InAppNotificationsString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(InAppNotificationsString);
+        ClickUIElementByAccessibilityID(InAppNotificationsString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+
+
+    }
+
+
+
+    @Test
+    public void FeaturedAppsScreen() throws Exception {
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(FeaturedAppsString);
+        ClickUIElementByAccessibilityID(FeaturedAppsString);
+        assertElementExistsBy(WebElementsByName("Bible Videos"));
+        assertElementExistsBy(WebElementsByName("Book of Mormon"));
+        assertElementExistsBy(WebElementsByName("Doctrinal Mastery"));
+        assertElementExistsBy(WebElementsByName("Facility Issue Reporting"));
+        assertElementExistsBy(WebElementsByName("FamilySearch Memories"));
+        assertElementExistsBy(WebElementsByName("FamilySearch Tree"));
+        assertElementExistsBy(WebElementsByName("Gospel Media"));
+        assertElementExistsBy(WebElementsByName("JustServe"));
+        assertElementExistsBy(WebElementsByName("LDS Youth"));
+        assertElementExistsBy(WebElementsByName("Member Tools"));
+        assertElementExistsBy(WebElementsByName("Mormon Channel"));
+        assertElementExistsBy(WebElementsByName("Sacred Music"));
+        assertElementExistsBy(WebElementsByName("Scripture Stories"));
+        assertElementExistsBy(WebElementsByName("Seminary and Institute"));
+        assertElementExistsBy(WebElementsByName("Sing Along Hymns"));
+        assertElementExistsBy(WebElementsByName("The Tabernacle Choir"));
+        assertNavBar(BackString, true, "Featured Apps", "", false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("", false, "Settings", DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
 
     }
 
     @Test
-    public void FeaturedAppsScreen() throws Exception {
-        fail("Test Not Written");
+    public void SettingsScreenAppDetails() throws Exception{
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(AppDetailsString);
+        ClickUIElementByAccessibilityID(AppDetailsString);
+        assertNavBar(BackString,true,"App Details","",false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("", false, "Settings", DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
 
     }
 
     @Test
     public void SendFeedbackScreenSendFeedback() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(SendFeedbackString);
+        ClickUIElementByAccessibilityID(InsertImageString);
+        ClickUIElementByTextContains("OK");
+        ClickUIElementByXpath("(//*/XCUIElementTypeImage)[1]/../*");
+        assertNavBar(IconArrowBackString, true, "Camera Roll", DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+        sendTextWithoutClearing("Name (Optional)", "John");
+        sendTextWithoutClearing("Email", "TestEmail@test.com");
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(HowDoIString);
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(ComplimentString);
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(FeatureRequestString);
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(FunctionalityIssueString);
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(ContentIssueString);
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(SignInOrSyncingIssueString);
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(OtherString);
+        sendTextWithoutClearing("Description", "This is a test Automation email, please ignore!");
+        ClickUIElementByAccessibilityID(SubmitString);
+
+
 
     }
 
     @Test
     public void SendFeedbackScreenSendFeedbackWithoutName() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(SendFeedbackString);
+        sendTextWithoutClearing("Name (Optional)", "");
+        sendTextWithoutClearing("Email", "TestEmail@test.com");
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(HowDoIString);
+        sendTextWithoutClearing("Description", "This is a test Automation email, please ignore!");
+        assertNavBar(CancelString, true, "Feedback", SubmitString, true);
+        ClickUIElementByAccessibilityID(SubmitString);
 
     }
 
     @Test
     public void SendFeedbackScreenSendFeedbackWithphoto() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(SendFeedbackString);
+        sendTextWithoutClearing("Name (Optional)", "John");
+        sendTextWithoutClearing("Email", "TestEmail@test.com");
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(HowDoIString);
+        sendTextWithoutClearing("Description", "This is a test Automation email, please ignore!");
+        assertNavBar(CancelString, true, "Feedback", SubmitString, true);
+        ClickUIElementByAccessibilityID(SubmitString);
 
     }
 
     @Test
     public void SendFeedbackScreenAddPhotoThenRemove() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(SendFeedbackString);
+        ClickUIElementByAccessibilityID(InsertImageString);
+        ClickUIElementByTextContains("OK");
+        ClickUIElementByXpath("(//*/XCUIElementTypeImage)[1]/../*");
+        assertNavBar(IconArrowBackString, true, "Camera Roll", DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+        ClickUIElementByAccessibilityID(RemoveImageString);
+        assertNavBar(CancelString, true, "Feedback", SubmitString, false);
+        ClickUIElementByAccessibilityID(CancelString);
+        assertNavBar("", false, "Settings", DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+
 
     }
 
     @Test
     public void SendFeedbackScreenInvalidEmail() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(SendFeedbackString);
+        sendTextWithoutClearing("Name (Optional)", "John");
+        sendTextWithoutClearing("Email", "Test Email");
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(HowDoIString);
+        assertNavBar(CancelString,true, "Feedback", SubmitString, false);
+        sendText("Email", "TestEmail@test.com");
+        sendTextWithoutClearing("Description", "This is a test Automation email, please ignore!");
+        assertNavBar(CancelString, true, "Feedback", SubmitString, true);
+        ClickUIElementByAccessibilityID(SubmitString);
     }
 
     @Test
     public void SendFeedbackScreenMissingRequiredFieldEmail() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(SendFeedbackString);
+        sendTextWithoutClearing("Name (Optional)", "John");
+        sendTextWithoutClearing("Email", "");
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(HowDoIString);
+        assertNavBar(CancelString,true, "Feedback", SubmitString, false);
+        sendTextWithoutClearing("Email", "TestEmail@test.com");
+        sendTextWithoutClearing("Description", "This is a test Automation email, please ignore!");
+        assertNavBar(CancelString, true, "Feedback", SubmitString, true);
+        ClickUIElementByAccessibilityID(SubmitString);
     }
 
     @Test
     public void SendFeedbackScreenMissingRequiredFieldCategory() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(SendFeedbackString);
+        sendTextWithoutClearing("Name (Optional)", "John");
+        sendTextWithoutClearing("Email", "TestEmail@test.com");
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        assertNavBar(BackString, true, "Select a Category", "", false);
+        ClickUIElementByAccessibilityID(BackString);
+        sendTextWithoutClearing("Description", "This is a test Automation email, please ignore!");
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(HowDoIString);
+        assertNavBar(CancelString, true, "Feedback", SubmitString, true);
+        ClickUIElementByAccessibilityID(SubmitString);
+
 
     }
 
     @Test
     public void SendFeedbackScreenMissingRequiredFieldDescription() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(SendFeedbackString);
+        sendTextWithoutClearing("Name (Optional)", "John");
+        sendTextWithoutClearing("Email", "TestEmail@test.com");
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(HowDoIString);
+        sendTextWithoutClearing("Description", "");
+        assertNavBar(CancelString,true, "Feedback", SubmitString, false);
+        sendTextWithoutClearing("Description", "This is a test Automation email, please ignore!");
+        assertNavBar(CancelString, true, "Feedback", SubmitString, true);
+        ClickUIElementByAccessibilityID(SubmitString);
+
+
+
     }
 
     @Test
     public void SendFeedbackScreenAutofillFields() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(SendFeedbackString);
+        sendTextWithoutClearing("Name (Optional)", "John");
+        sendTextWithoutClearing("Email", "TestEmail@test.com");
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(HowDoIString);
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(ComplimentString);
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(FeatureRequestString);
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(FunctionalityIssueString);
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(ContentIssueString);
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(SignInOrSyncingIssueString);
+        ClickUIElementByAccessibilityID(MoreInfoString);
+        ClickUIElementByName(OtherString);
+        sendTextWithoutClearing("Description", "This is a test Automation email, please ignore!");
+        ClickUIElementByAccessibilityID(SubmitString);
+
 
     }
 
     @Test
     public void AboutScreen() throws Exception {
-        fail("Test Not Written");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(AboutString);
+        ClickUIElementByAccessibilityID(AboutString);
+        assertNavBar(BackString,true,"About", "",false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+
 
     }
 
     @Test
-    public void turnOnDeveloperSettings() throws Exception{
-        fail("Test Not Written");
+    public void ViewSourceSettings() throws Exception{
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(ViewSourceString);
+        ClickUIElementByAccessibilityID(ViewSourceString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+
     }
 
 

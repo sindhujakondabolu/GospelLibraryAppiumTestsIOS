@@ -7,6 +7,7 @@ public abstract class Strings {
     public static String wrongPassword = "ldssaldssaa";
     public static String AccountName = "Johnny Test";
     public static String AccountNameAndUserName = AccountName + " (" + user +")";
+    public static String OkString = "OK";
 
     //millisecond standards
 
@@ -25,6 +26,8 @@ public abstract class Strings {
     public static String NotebookTitle2 = "Spiritual Impressions 2";
     //add text to Notebook title
     public static String NotebookTitleAddOn = " Some More Text";
+    // add text to Note in New Notebook
+    public static String NoteTitleAddon = "faith";
 
     //email
     public static String email = "WaltDisney@TheWaltDisneyCompany.com";
@@ -140,6 +143,9 @@ public abstract class Strings {
     //Library Strings
     public static String EditString = "Edit";
     public static String LibraryString = "Library";
+    public static String SettingsString = "Settings";
+    public static String GeneralConferenceString = "General Conference";
+
 
     //Nav Bar Strings
     public static String HistoryBackString = "History Back";
@@ -154,6 +160,7 @@ public abstract class Strings {
     public static String NoNotebooksString = "No Notebooks";
     public static String CreateAsManyNotebooksString = "Create as many notebooks as desired to organize all your notes.";
     public static String CreateNotebookString = "Create Notebook";
+    public static String CreateNoteString = "Create Note";
     public static String CancelString = "Cancel";
     public static String SaveString = "Save";
     public static String DoneString = "Done";
@@ -162,10 +169,14 @@ public abstract class Strings {
     public static String EditNotebookString = "Edit Notebook";
     public static String NotebookNameString = "Notebook Name";
     public static String ClearTextString = "Clear text";
+    public static String NoteTextString = "Note Text";
 
     //Bookmark Screen Strings
     public static String BookmarksString = "Bookmarks";
     public static String AddBookmarkString = "Add Bookmark";
+    public static String BackString = "Back";
+    public static String RenameString = "Rename";
+    public static String BookmarkNameString = "Bookmark Name";
 
     //Sort By Strings
     public static String SortMenuByMostRecentString = "Sort by Most Recent";
@@ -187,7 +198,11 @@ public abstract class Strings {
     public static String AccountString = "Account";
     public static String SignInString = "Sign In";
     public static String CreateChurchAccountString = "Create an Account";
+    public static String CreateAccountURLString ="\u200Eaccount.churchofjesuschrist.org, secure and validated connection";
+    public static String UserGuideURLString = "\u200Echurchofjesuschrist.org, secure and validated connection";
     public static String ChurchAccountExplainationString = "A Church Account is used to back up and synchronize your data between devices and the Church website.";
+    public static String WhatsNewString = "What’s New";
+    public static String UserGuideString = "User Guide";
     public static String FeedbackString = "Feedback";
     public static String SendFeedbackString = "Send Feedback";
     public static String ContentString = "Content";
@@ -210,19 +225,61 @@ public abstract class Strings {
     public static String AdvancedString = "Advanced";
     public static String InAppNotificationsString = "Allow In-App Notifications";
     public static String ObsoleteContentString = "Show Obsolete Content";
+    public static String OtherResourcesString = "Other Resources";
     public static String CellularDataString = "Use Cellular Data for Content Updates";
+    public static String CellularButtonString = "Should Update the Content Catalog Over Cellular";
     public static String AdditionalInfoString = "Additional Info";
     public static String FeaturedAppsString = "Featured Apps";
     public static String AppDetailsString = "App Details";
     public static String AboutString = "About";
     public static String ViewSourceString = "View Source";
     public static String AllString = "All";
+    public static String HowDoIString = "How do I…?";
+    public static String ComplimentString = "Compliment";
+    public static String FeatureRequestString = "Feature request";
+    public static String FunctionalityIssueString = "Functionality issue (Bug)";
+    public static String ContentIssueString = "Content issue";
+    public static String SignInOrSyncingIssueString = "Sign in or syncing issue";
+    public static String OtherString = "Other";
+    public static String SubmitString = "Submit";
+    public static String InsertImageString = "Chip Left Image";
+    public static String IconArrowBackString = "icn arrow back";
+    public static String RemoveImageString = "Chip Remove Button";
+    public static String CheckScripturesString = "SCRIPTURES";
+    public static String ComeFollowMeString = "Come, Follow Me";
+    public static String MyCollectionsString = "MY COLLECTIONS";
+    public static String StudyPlansString = "Study Plans";
+    public static String MusicString = "Music";
+    public static String MagazinesString = "Magazines";
+    public static String SeminariesAncInstituesString = "Seminaries and Institutes";
+    public static String TeachingsOfPresidentsString = "Teachings of Presidents";
+    public static String VideosString = "Videos";
+    public static String JesusChristString = "Jesus Christ";
+    public static String MissionaryString = "Missionary";
+    public static String AudiencesString = "AUDIENCES";
+    public static String IndividualsAndFamiliesString = "Individuals and Families";
+    public static String YoungAdultsString = "Young Adults";
+    public static String YouthString = "Youth";
+    public static String ChildrenString = "Children";
+    public static String LeadersString = "Leaders";
+    public static String ChurchHistoryString = "Church History";
+    public static String TempleAndFamilyHistoryString = "Temple and Family History";
+    public static String LifeHelpString = "Life Help";
+    public static String SelfRelianceString = "Self-Reliance";
+    public static String ChapterTwoString = "CHAPTER 2";
+
+
+
+
+
+
+
 
     //Login Screen Strings
     public static String UserNameString = "Username";
     public static String PasswordString = "Password";
-    public static String AccountURLString = "\u200Eldsaccount.lds.org, secure and validated connection";
-    public static String AccountRecoveryURLString = "\u200Eldsaccount.lds.org, secure and validated connection";
+    public static String AccountURLString = "\u200Eaccount.churchofjesuschrist.org, secure and validated connection";
+    public static String AccountRecoveryURLString = "\u200Eaccount.churchofjesuschrist.org, secure and validated connection";
     public static String TroubleSigningInString = "Having trouble signing in?";
     public static String SignInErrorString = "Sign-In Error";
     public static String WrongUserNameAndPasswordString = "Wrong username and password combination. Please check your username and password and try again.";
@@ -242,6 +299,8 @@ public abstract class Strings {
 
 
     //Download Screen Strings
+    public static String InstalledString = ", Installed";
+    public static String NotInstalledString = ", Not Installed";
     public static String ScripturesString = "Scriptures";
     public static String InspirationString = "Inspiration";
     public static String TopicsString = "Topics";
@@ -255,6 +314,7 @@ public abstract class Strings {
     public static String BookOfMormonString = "Book of Mormon";
     public static String DoctrineAndCovenantsString = "Doctrine and Covenants";
     public static String PearlOfGreatPriceString = "Pearl of Great Price";
+    public static String DoctrineAndCovenantsInstalledString = "Doctrine and Covenants, Installed";
 
     public static String GuideToTheScripturesString = "Guide to the Scriptures";
     public static String TopicalGuideString = "Topical Guide";
@@ -268,6 +328,7 @@ public abstract class Strings {
     public static String ChurchHistoryMapsString = "Church History Maps";
     public static String ChurchHistoryPhotographsString = "Church History Photographs";
     public static String AbbreviationsString = "Abbreviations";
+    public static String AboutScripturesString = "About the Scriptures";
 
     //Books in the BoM
     public static String IntroductionAndWitnessesString ="Introduction and Witnesses";
@@ -318,7 +379,7 @@ public abstract class Strings {
     public static String HistoryIconString = "icn_history";
     public static String ReorderString = "Reorder";
 
-
+    public static String ChapterOneString = "CHAPTER 1";
 
 
     //Dutch Strings
