@@ -494,79 +494,68 @@ public class GospelLibrary {
 
     //
 
-    public void ClickSeekBarAt(WebElement webelement, int StartPositionOf7, int positionOf7) throws Exception {
+    public void swipeSeekBar(WebElement webelement, int startPositionOf7 ,int endPositionOf7) throws Exception {
         int upperY = webelement.getLocation().getY();
         int upperX = webelement.getLocation().getX();
         int seekbarWidth = webelement.getSize().getWidth();
         int seekbarHeight = webelement.getSize().getHeight();
-        int TapTargetY = (upperY + (seekbarHeight/2));
+        int swipeY = (upperY + (seekbarHeight / 2));
+        log(swipeY + " swipe Y");
         //Seekbar positions
-        int setting1 = (upperX);
-        int setting2 = (int) (upperX + (seekbarWidth / 6) * 1);
-        int setting3 = (int) (upperX + (seekbarWidth / 6) * 2);
+        int setting1SwipeTo = (int) (upperX);
+        int setting1SwipeFrom = (int) (upperX + 20);
+        log(setting1SwipeTo + " swipe 2");
+        int setting2 = (int) (upperX + (seekbarWidth / 7) * 1.16);
+        int setting3 = (int) (upperX + (seekbarWidth / 7) * 2.33);
         int setting4 = (upperX + (seekbarWidth / 2));
-        int setting5 = (int) (upperX + ((seekbarWidth / 6) * 4));
-        int setting6 = (int) (upperX + ((seekbarWidth / 6) * 5));
-        int setting7 = (upperX + (seekbarWidth));
+        int setting5 = (int) (upperX + ((seekbarWidth / 7) * 4.66));
+        int setting6 = (int) (upperX + ((seekbarWidth / 7) * 5.84));
+        int setting7SwipeTo = (int) (upperX + seekbarWidth);
+        int setting7SwipeFrom = (int) (upperX + (seekbarWidth -20));
+        log (setting7SwipeTo +"");
 
-        if(StartPositionOf7 == 1){
-           verifyValue("0%",webelement);
-            StartPositionOf7 = setting1;
-        } else if (StartPositionOf7 == 2){
-            verifyValue("17%",webelement);
-            StartPositionOf7 = setting2;
-        } else if (StartPositionOf7 == 3){
-            verifyValue("33%",webelement);
-            StartPositionOf7 = setting3;
-        } else if (StartPositionOf7 == 4){
-            verifyValue("50%",webelement);
-            StartPositionOf7 = setting4;
-        } else if (StartPositionOf7 == 5){
-            verifyValue("67%",webelement);
-            StartPositionOf7 = setting5;
-        } else if (StartPositionOf7 == 6){
-            verifyValue("83%",webelement);
-            StartPositionOf7 = setting6;
-        } else if (StartPositionOf7 == 7){
-            verifyValue("100%",webelement);
-            StartPositionOf7 = setting7;
+        if (startPositionOf7 == 1){
+            startPositionOf7 = setting1SwipeFrom;
+        } else if (startPositionOf7 == 2){
+            startPositionOf7 = setting2;
+        } else if (startPositionOf7 == 3){
+            startPositionOf7 = setting3;
+        } else if (startPositionOf7 == 4){
+            startPositionOf7 = setting4;
+        } else if (startPositionOf7 == 5){
+            startPositionOf7 = setting5;
+        } else if (startPositionOf7 == 6){
+            startPositionOf7 = setting6;
+        } else if (startPositionOf7 == 7){
+            startPositionOf7 = setting7SwipeFrom;
         }
 
-
-
-        if (positionOf7 == 1) {
+        if (endPositionOf7 == 1) {
             //12px
-            TapAndDrag(StartPositionOf7,TapTargetY,setting1,TapTargetY);
-            verifyValue("0%",webelement);
+            driver.swipe(startPositionOf7, swipeY, setting1SwipeTo, swipeY, 300);
             sleep(milliseconds_1);
-        } else if (positionOf7 == 2) {
+        } else if (endPositionOf7 == 2) {
             //18px
-            TapAndDrag(StartPositionOf7,TapTargetY,setting2,TapTargetY);
-            //verifyValue("17%",webelement);
+            driver.swipe(startPositionOf7, swipeY, setting2, swipeY, 300);
             sleep(milliseconds_1);
-        } else if (positionOf7 == 3) {
+        } else if (endPositionOf7 == 3) {
             //21px
-            TapAndDrag(StartPositionOf7,TapTargetY,setting3,TapTargetY);
-            //verifyValue("33%",webelement);
+            driver.swipe(startPositionOf7, swipeY, setting3, swipeY, 300);
             sleep(milliseconds_1);
-        } else if (positionOf7 == 4) {
-            TapAndDrag(StartPositionOf7,TapTargetY,setting4,TapTargetY);
-            //verifyValue("50%",webelement);
+        } else if (endPositionOf7 == 4) {
+            driver.swipe(startPositionOf7, swipeY, setting4, swipeY, 300);
             sleep(milliseconds_1);
-        } else if (positionOf7 == 5) {
-            TapAndDrag(StartPositionOf7,TapTargetY,setting5,TapTargetY);
-            //verifyValue("67%",webelement);
+        } else if (endPositionOf7 == 5) {
+            driver.swipe(startPositionOf7, swipeY, setting5, swipeY, 300);
             sleep(milliseconds_1);
-        } else if (positionOf7 == 6) {
-            TapAndDrag(StartPositionOf7,TapTargetY,setting6,TapTargetY);
-            //verifyValue("83%",webelement);
+        } else if (endPositionOf7 == 6) {
+            driver.swipe(startPositionOf7, swipeY, setting6, swipeY, 300);
             sleep(milliseconds_1);
-        } else if (positionOf7 == 7) {
-            TapAndDrag(StartPositionOf7,TapTargetY,setting7,TapTargetY);
-            //verifyValue("100%",webelement);
+        } else if (endPositionOf7 == 7) {
+            driver.swipe(startPositionOf7, swipeY, setting7SwipeTo, swipeY, 300);
             sleep(milliseconds_1);
         } else {
-            TapAndDrag(StartPositionOf7,TapTargetY,setting3,TapTargetY);
+            driver.swipe(startPositionOf7, swipeY, setting3, swipeY, 300);
             sleep(milliseconds_1);
         }
     }
