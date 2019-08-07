@@ -16,7 +16,10 @@ import org.openqa.selenium.JavascriptExecutor;
 
 import java.awt.*;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Delayed;
@@ -24,6 +27,7 @@ import java.util.concurrent.Delayed;
 
 import static UI.Content.setBooks;
 import static UI.Strings.*;
+import static java.lang.Integer.parseInt;
 import static java.lang.Thread.sleep;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -610,6 +614,81 @@ public class GospelLibrary {
             }
         }
     }
+
+
+    public String getLatestConferenceMonth() throws Exception {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        String todaysDate = (dateFormat.format(date));
+        int year = parseInt(todaysDate.substring(0,4));
+        int month = parseInt(todaysDate.substring(5,7));
+        String conferenceMonth = "";
+        if (month <= 4){
+            conferenceMonth = "October";
+        } else if (month > 4 && month < 11){
+            conferenceMonth = "April";
+        } else if (month >= 11){
+            conferenceMonth = "October";
+        }
+        System.out.println(conferenceMonth);
+        return conferenceMonth;
+    }
+
+    public String getLatestConferenceYear() throws Exception {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        String todaysDate = (dateFormat.format(date));
+        int year = parseInt(todaysDate.substring(0,4));
+        int month = parseInt(todaysDate.substring(5,7));
+        String conferenceMonth = "";
+        if (month <= 4){
+            year = year - 1;
+        }
+        System.out.println(year);
+        return String.valueOf(year);
+    }
+
+
+    public String getLatestConference() throws Exception {
+        String latestConference = (getLatestConferenceMonth() + " " + getLatestConferenceYear());
+        System.out.println(latestConference);
+        return latestConference;
+    }
+
+    public String getConferenceName(String Month,int Year)throws Exception{
+        String ConferenceName = "";
+        if (Year>=2019){
+            ConferenceName = Month +" "+Year+" " +GeneralConferenceString;
+        } else {
+            ConferenceName = Month +" "+Year;
+        }
+
+        return ConferenceName;
+
+
+
+    }
+
+    public void IsDownloaded(String BookTitle)throws Exception{
+        Boolean isNotPresent = WebElementsByAccessibilityId(BookTitle+InstalledString).size() <= 0;
+        int i = 0;
+        while ((isNotPresent)) {
+            if (i == 15){
+                fail("The item was not Downloaded Within Set Time");
+                break;
+            }
+            delay(2);
+            log("Item not downloaded, wait "+i+" of 15");
+            isNotPresent = WebElementsByAccessibilityId(BookTitle+InstalledString).size() <= 0;
+            i = i + 1;
+        }
+
+    }
+
+
+
+
+
 
     public void NavigateToLibrary()throws Exception{
         ClickUIElementByXpath("//XCUIElementTypeNavigationBar");
@@ -2608,7 +2687,7 @@ public class GospelLibrary {
     }
 
     @Test
-    public void settingsScreenListModeSwitch() throws Exception {
+    public void settingsScreenListModeListModeSwitch() throws Exception {
         assertToolBar();
         ClickUIElementByAccessibilityID(SettingsString);
         scrollToById(ListModeString);
@@ -2699,9 +2778,27 @@ public class GospelLibrary {
 
     @Test
     public void settingsScreenListModeScripturesContentScreenCategories() throws Exception {
-        fail("Test Not Written");
-        //Need to work with Coordinates.
-
+        ClickUIElementByAccessibilityID(ScripturesString);
+        ClickUIElementByAccessibilityID(DoctrineAndCovenantsInstalledString);
+        int TitleWidth = WebElementByName("Title Page").getSize().getWidth();
+        int TitleHeight = WebElementByName("Title Page").getSize().getHeight();
+        int ChapterWidth = WebElementByName("1").getSize().getWidth();
+        int ChapterHeight = WebElementByName("1").getSize().getHeight();
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(ListModeString);
+        assertNavBar("",false,"Settings",DoneString,true);
+        ClickUIElementByAccessibilityID(DoneString);
+        log("verifying Width Expected: "+TitleWidth+" ,actual: "+WebElementByName("Title Page").getSize().getWidth());
+        Assert.assertEquals(TitleWidth,WebElementByName("Title Page").getSize().getWidth());
+        log("verifying Width Expected: "+TitleHeight+" ,actual: "+WebElementByName("Title Page").getSize().getHeight());
+        Assert.assertEquals(TitleHeight,WebElementByName("Title Page").getSize().getHeight());
+        log("verifying Width Expected: "+ChapterWidth+" ,actual: "+WebElementByName("1").getSize().getWidth());
+        Assert.assertEquals(ChapterWidth,WebElementByName("1").getSize().getWidth());
+        log("verifying Width Expected: "+ChapterHeight+" ,actual: "+WebElementByName("1").getSize().getHeight());
+        Assert.assertEquals(ChapterHeight,WebElementByName("1").getSize().getHeight());
+        assertNavBar(HistoryBackString,true,"Doctrine and Covenants, Scriptures","Download Audio",true);
+        ClickUIElementByAccessibilityID(HistoryBackString);
 
 
     }
@@ -3664,38 +3761,80 @@ public class GospelLibrary {
 
     @Test
     public void generalConferenceVerifyAll() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(GeneralConferenceString);
+        int cYear = parseInt(getLatestConferenceYear());
+        String cMonth = getLatestConferenceMonth();
+        if (cMonth == "April"){
+            scrollDownTo( getConferenceName("April",cYear) +NotInstalledString);
+            assertElementExistsBy(WebElementsByAccessibilityId(getConferenceName("April",cYear) +NotInstalledString));
+            cYear = cYear - 1;
+        }
+        while (cYear >= 1971){
+            scrollDownTo( getConferenceName("October",cYear) +NotInstalledString);
+            assertElementExistsBy(WebElementsByAccessibilityId(getConferenceName("October",cYear) +NotInstalledString));
+            scrollDownTo( getConferenceName("April",cYear) +NotInstalledString);
+            assertElementExistsBy(WebElementsByAccessibilityId(getConferenceName("April",cYear) +NotInstalledString));
+            cYear = cYear - 1;
+        }
+
+
     }
-
-    @Test
-    public void generalConferenceDownloadAllFromMoreOptionsMenu() throws Exception{
-        fail("Test Not Written");
-
-    }
-
-
-    @Test
-    public void generalConferenceRemoveAllFromMoreOptionsMenu() throws Exception{
-        fail("Test Not Written");
-    }
-
 
     @Test
     public void generalConferenceDownloadAllFromLibraryContextMenu() throws Exception{
-        fail("Test Not Written");
+        driver.tap(1,WebElementByAccessibilityId(GeneralConferenceString),1000);
+        delay(2);
+        ClickUIElementByAccessibilityID("Download All");
+        delay(15);
+        ClickUIElementByAccessibilityID(GeneralConferenceString);
+        int cYear = parseInt(getLatestConferenceYear());
+        String cMonth = getLatestConferenceMonth();
+        if (cMonth == "April"){
+            scrollDownTo( getConferenceName("April",cYear) +InstalledString);
+            IsDownloaded(getConferenceName("April",cYear));
+            cYear = cYear - 1;
+        }
+        while (cYear >= 1971){
+            scrollDownTo( getConferenceName("October",cYear) +InstalledString);
+            IsDownloaded(getConferenceName("October",cYear));
+            scrollDownTo( getConferenceName("April",cYear) +InstalledString);
+            IsDownloaded(getConferenceName("April",cYear));
+            cYear = cYear - 1;
+        }
+
 
     }
 
 
     @Test
     public void generalConferenceRemoveAllFromLibraryContextMenu() throws Exception{
-        fail("Test Not Written");
-    }
-
-    @Test
-    public void generalConferenceDownloadLatestConferenceViaContextMenu() throws Exception {
-        fail("Test Not Written");
-
+        driver.tap(1,WebElementByAccessibilityId(GeneralConferenceString),1000);
+        delay(2);
+        ClickUIElementByAccessibilityID("Download All");
+        delay(15);
+        ClickUIElementByAccessibilityID(GeneralConferenceString);
+        assertElementExistsBy(WebElementsByAccessibilityId("April 2019 General Conference, Installed"));
+        assertNavBar(HistoryBackString,true,"General Conference",EditString,true);
+        ClickUIElementByAccessibilityID(HistoryBackString);
+        driver.tap(1,WebElementByAccessibilityId(GeneralConferenceString),1000);
+        delay(2);
+        ClickUIElementByAccessibilityID("Remove All");
+        delay(15);
+        ClickUIElementByAccessibilityID(GeneralConferenceString);
+        int cYear = parseInt(getLatestConferenceYear());
+        String cMonth = getLatestConferenceMonth();
+        if (cMonth == "April"){
+            scrollDownTo( getConferenceName("April",cYear) +NotInstalledString);
+            assertElementExistsBy(WebElementsByAccessibilityId(getConferenceName("April",cYear) +NotInstalledString));
+            cYear = cYear - 1;
+        }
+        while (cYear >= 1971){
+            scrollDownTo( getConferenceName("October",cYear) +NotInstalledString);
+            assertElementExistsBy(WebElementsByAccessibilityId(getConferenceName("October",cYear) +NotInstalledString));
+            scrollDownTo( getConferenceName("April",cYear) +NotInstalledString);
+            assertElementExistsBy(WebElementsByAccessibilityId(getConferenceName("April",cYear) +NotInstalledString));
+            cYear = cYear - 1;
+        }
     }
 
     @Test
