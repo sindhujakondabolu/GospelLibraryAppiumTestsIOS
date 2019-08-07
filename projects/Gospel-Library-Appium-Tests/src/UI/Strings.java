@@ -28,6 +28,9 @@ public abstract class Strings {
     public static String NotebookTitleAddOn = " Some More Text";
     // add text to Note in New Notebook
     public static String NoteTitleAddon = "faith";
+    public static String CollapseNotesString = "Collapse notes";
+    public static String OptionsButtonString = "OptionsButton";
+
 
     //email
     public static String email = "WaltDisney@TheWaltDisneyCompany.com";
@@ -170,6 +173,7 @@ public abstract class Strings {
     public static String NotebookNameString = "Notebook Name";
     public static String ClearTextString = "Clear text";
     public static String NoteTextString = "Note Text";
+    public static String EditNoteString = "Edit Note";
 
     //Bookmark Screen Strings
     public static String BookmarksString = "Bookmarks";
@@ -374,6 +378,7 @@ public abstract class Strings {
     public static String GrayString = "Gray";
 
     public static String ShowRelatedContentString="Show Related Content";
+    public static String HideRelatedContentString = "Hide Related Content";
     public static String HistoryString = "History";
     public static String UpdateString = "Update";
     public static String HistoryIconString = "icn_history";
