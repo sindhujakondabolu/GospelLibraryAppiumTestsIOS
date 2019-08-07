@@ -1582,41 +1582,123 @@ public class GospelLibrary {
         ClickUIElementByAccessibilityID(SaveString);
 
 
-
-
-
-
-
     }
 
     @Test
     public void CreateNew20000CharacterNoteInNewNotebook() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(NotesString);
+        assertNotebookScreen(true,"");
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle1,true);
+        ClickUIElementByName(NotebookTitle1);
+        ClickUIElementByName(CreateNoteString);
+        assertNavBar(CancelString,true,NoteString, SaveString,false);
+        sendText(NoteTextString,"Revelation given to Joseph Smith the Prophet and Oliver Cowdery, at Harmony, Pennsylvania, April 1829. Oliver Cowdery began his labors as scribe in the translation of the Book of Mormon, April 7, 1829. He had already received a divine manifestation of the truth of the Prophet’s testimony respecting the plates on which was engraved the Book of Mormon record. The Prophet inquired of the Lord through the Urim and Thummim and received this response.\n" +
+                "1–6, Laborers in the Lord’s field gain salvation; 7–13, There is no gift greater than the gift of salvation; 14–27, A witness of the truth comes by the power of the Spirit; 28–37, Look unto Christ, and do good continually.\n" +
+                "1 A great and amarvelous work is about to come forth unto the children of men.\n" +
+                "2 Behold, I am God; give heed unto my aword, which is quick and powerful, bsharper than a two-edged sword, to the dividing asunder of both joints and marrow; therefore give heed unto my words.\n" +
+                "3 Behold, the afield is white already to harvest; therefore, whoso desireth to reap, let him thrust in his sickle with his might, and reap while the day blasts, that he may ctreasure up for his soul everlasting salvation in the kingdom of God.\n" +
+                "4 Yea, whosoever will thrust in his sickle and reap, the same is acalled of God.\n" +
+                "5 Therefore, if you will aask of me you shall receive; if you will knock it shall be opened unto you.\n" +
+                "6 Now, as you have asked, behold, I say unto you, keep my commandments, and aseek to bring forth and establish the cause of bZion;\n" +
+                "7 aSeek not for briches but for cwisdom, and behold, the dmysteries of God shall be unfolded unto you, and then shall you be made erich. Behold, he that hath feternal life is rich.\n" +
+                "8 Verily, verily, I say unto you, even as you adesire of me so it shall be unto you; and if you desire, you shall be the means of doing much bgood in this generation.\n" +
+                "9 Say nothing but arepentance unto this generation; keep my commandments, and assist to bring forth my work, according to my commandments, and you shall be blessed.\n" +
+                "10 Behold thou hast a gift, and blessed art thou because of thy agift. Remember it is bsacred and cometh from above—\n" +
+                "11 And if thou wilt ainquire, thou shalt know bmysteries which are great and marvelous; therefore thou shalt exercise thy cgift, that thou mayest find out mysteries, that thou mayest bring dmany to the knowledge of the truth, yea, econvince them of the error of their ways.\n" +
+                "12 Make not thy gift known unto any save it be those who are of thy faith. Trifle not with asacred things.\n" +
+                "13 If thou wilt do agood, yea, and bhold out cfaithful to the dend, thou shalt be saved in the ekingdom of God, which is the greatest of all the fgifts of God; for there is no gift greater than the gift of gsalvation.\n");
+        assertNavBar(CancelString,true,NoteString, SaveString,true);
+        ClickUIElementByAccessibilityID(SaveString);
+
+
     }
 
     @Test
     public void NotesSectionDeleteNote() throws Exception{
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(NotesString);
+        assertNotebookScreen(true,"");
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle1,true);
+        ClickUIElementByName(NotebookTitle1);
+        ClickUIElementByName(CreateNoteString);
+        assertNavBar(CancelString,true,NoteString, SaveString,false);
+        sendText(NoteTextString,"faith");
+        assertNavBar(CancelString,true,NoteString, SaveString,true);
+        ClickUIElementByAccessibilityID(SaveString);
+        ClickUIElementByAccessibilityID(OptionsButtonString);
+        ClickUIElementByText(DeleteString);
+//        *****Bug need to fix to complete this test******
+//        assertNavBar(HistoryBackString,true,"Notebooks, Notebooks",EditString,true);
+//        ClickUIElementByAccessibilityID(HistoryBackString);
+
     }
 
     @Test
     public void NotesSectionCancelDeleteNote() throws Exception{
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(NotesString);
+        assertNotebookScreen(true,"");
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle1,true);
+        ClickUIElementByName(NotebookTitle1);
+        ClickUIElementByName(CreateNoteString);
+        assertNavBar(CancelString,true,NoteString, SaveString,false);
+        sendText(NoteTextString,"faith");
+        assertNavBar(CancelString,true,NoteString, SaveString,true);
+        ClickUIElementByAccessibilityID(SaveString);
+        ClickUIElementByAccessibilityID(OptionsButtonString);
+        ClickUIElementByText("Cancel");
+        assertNavBar(HistoryBackString,true,"Notebooks, Notebooks",EditString,true);
+        ClickUIElementByAccessibilityID(HistoryBackString);
     }
 
     @Test
     public void NotesSectionEditNote() throws Exception{
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(NotesString);
+        assertNotebookScreen(true,"");
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle1,true);
+        ClickUIElementByName(NotebookTitle1);
+        ClickUIElementByName(CreateNoteString);
+        assertNavBar(CancelString,true,NoteString, SaveString,false);
+        sendText(NoteTextString,"faith");
+        assertNavBar(CancelString,true,NoteString, SaveString,true);
+        ClickUIElementByAccessibilityID(SaveString);
+        ClickUIElementByAccessibilityID(OptionsButtonString);
+        ClickUIElementByAccessibilityID(EditNoteString);
+        sendText(NoteTextString,"Jesus");
+        assertNavBar(CancelString,true,NoteString, SaveString,true);
+        ClickUIElementByAccessibilityID(SaveString);
     }
 
     @Test
     public void NotesSectionAddNoteToNotebook() throws Exception{
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(NotesString);
+        assertNotebookScreen(true,"");
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle1,true);
+        ClickUIElementByName(NotebookTitle1);
+        ClickUIElementByName(CreateNoteString);
+        assertNavBar(CancelString,true,NoteString, SaveString,false);
+        sendText(NoteTextString,"faith");
+        assertNavBar(CancelString,true,NoteString, SaveString,true);
+        ClickUIElementByAccessibilityID(SaveString);
+        ClickUIElementByAccessibilityID(CreateNoteString);
+        sendText(NoteTextString,"Testimony");
+        assertNavBar(CancelString,true,NoteString, SaveString,true);
+        ClickUIElementByAccessibilityID(SaveString);
     }
 
     @Test
     public void NotesSectionSortNotebooksByCount() throws Exception{
-        fail("Test Not Written");
+        CreateNewNotebook();
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle2,true);
+        assertElementExistsBy(WebElementsByAccessibilityId(ByMostRecentString));
+        verifyItemOrder(WebElementByName(NotebookTitle2),WebElementByName(NotebookTitle1));
+        ClickUIElementByAccessibilityID(ByMostRecentString);
+        ClickUIElementByAccessibilityID("Sort by Count");
+        verifyItemOrder(WebElementByName(NotebookTitle1),WebElementByName(NotebookTitle2));
     }
 
     @Test
@@ -1658,18 +1740,51 @@ public class GospelLibrary {
 
     @Test
     public void NotesSectionUseBoldFormatting() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(NotesString);
+        assertNotebookScreen(true,"");
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle1,true);
+        ClickUIElementByName(NotebookTitle1);
+        ClickUIElementByName(CreateNoteString);
+        assertNavBar(CancelString,true,"Note", SaveString,false);
+        ClickUIElementByAccessibilityID("Bold Formatting");
+        sendText(NoteTextString,"faith");
+        assertNavBar(CancelString,true,"Note", SaveString,true);
+        ClickUIElementByAccessibilityID(SaveString);
+
     }
 
     @Test
     public void NotesSectionUseItalicFormatting() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(NotesString);
+        assertNotebookScreen(true,"");
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle1,true);
+        ClickUIElementByName(NotebookTitle1);
+        ClickUIElementByName(CreateNoteString);
+        assertNavBar(CancelString,true,"Note", SaveString,false);
+        ClickUIElementByAccessibilityID("Italic Formatting");
+        sendText(NoteTextString,"faith");
+        assertNavBar(CancelString,true,"Note", SaveString,true);
+        ClickUIElementByAccessibilityID(SaveString);
+
     }
 
 
     @Test
     public void NotesSectionUseItalicAndBoldFormattingInSameNote() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(NotesString);
+        assertNotebookScreen(true,"");
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle1,true);
+        ClickUIElementByName(NotebookTitle1);
+        ClickUIElementByName(CreateNoteString);
+        assertNavBar(CancelString,true,"Note", SaveString,false);
+        ClickUIElementByAccessibilityID("Bold Formatting");
+        ClickUIElementByAccessibilityID("Italic Formatting");
+        sendText(NoteTextString,"faith");
+        assertNavBar(CancelString,true,"Note", SaveString,true);
+        ClickUIElementByAccessibilityID(SaveString);
     }
 
     @Test
@@ -1680,7 +1795,17 @@ public class GospelLibrary {
 
     @Test
     public void NotesSectionUseNumberedAndBulletedLists() throws Exception {
-        fail("Test Not Written");
+        ClickUIElementByAccessibilityID(NotesString);
+        assertNotebookScreen(true,"");
+        ClickUIElementByAccessibilityID(CreateNotebookString);
+        assertAndCreate_CreateNotebookScreen(NotebookTitle1,true);
+        ClickUIElementByName(NotebookTitle1);
+        ClickUIElementByName(CreateNoteString);
+        assertNavBar(CancelString,true,"Note", SaveString,false);
+        ClickUIElementByAccessibilityID("Bulleted List Formatting");
+        sendTextWithoutClearing(NoteTextString,"faith");
+        assertNavBar(CancelString,true,"Note", SaveString,true);
+        ClickUIElementByAccessibilityID(SaveString);
     }
 
     @Test
@@ -2256,7 +2381,7 @@ public class GospelLibrary {
     @Test
     public void settingsScreenThemeAllThemesTextColorAndFootnoteColor() throws Exception {
         OpenScripture("Book of Mormon", "Jacob", "1", "");
-        getComputedCssUsingXpath("//*[@id=\"title1\"]/span", "color");
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
         assertToolBar();
         ClickUIElementByAccessibilityID(SettingsString);
         scrollToById(ThemeString);
@@ -2264,7 +2389,7 @@ public class GospelLibrary {
         assertAndClickThemeScreen(DefaultThemeString, NightThemeString, true);
         assertNavBar("", false, "Settings", DoneString, true);
         ClickUIElementByAccessibilityID(DoneString);
-        getComputedCssUsingXpath("//*[@id=\"title1\"]/span", "color");
+        Assert.assertEquals("rgb(138, 225, 237)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
         assertToolBar();
         ClickUIElementByAccessibilityID(SettingsString);
         scrollToById(ThemeString);
@@ -2272,7 +2397,9 @@ public class GospelLibrary {
         assertAndClickThemeScreen(NightThemeString, DefaultThemeString, true);
         assertNavBar("", false, "Settings", DoneString, true);
         ClickUIElementByAccessibilityID(DoneString);
-
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
+        assertNavBarDropDownNav("Jacob 1","Jacob","Book of Mormon","Scriptures","Library","","",false );
+        ClickUIElementByAccessibilityID(LibraryString);
 
     }
 
@@ -2285,67 +2412,199 @@ public class GospelLibrary {
         scrollToById(TextSizeString);
         ClickUIElementByAccessibilityID(TextSizeString);
         swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 3, 5);
-        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 5, 1);
-        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 1, 7);
-        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 7, 5);
-        assertNavBar(BackString, true,TextSizeString, "", false);
+        assertNavBar(BackString,true,"Text Size","",false);
         ClickUIElementByAccessibilityID(BackString);
         assertNavBar("",false,SettingsString, DoneString, true);
         ClickUIElementByAccessibilityID(DoneString);
-
-
-
-
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(TextSizeString);
+        ClickUIElementByAccessibilityID(TextSizeString);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 5, 1);
+        assertNavBar(BackString,true,"Text Size","",false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("",false,SettingsString, DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
     }
 
     @Test
     public void settingsScreenTextSizeCancelSameContent() throws Exception {
-        fail("Test Not Written");
-    }
-
-    @Test
-    public void settingsScreenTextSizeChangeSliderThenCancelSameContent() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon","Jacob","1", "1");
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(TextSizeString);
+        ClickUIElementByAccessibilityID(TextSizeString);
+        assertNavBar(BackString,true,"Text Size","",false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("",false,SettingsString, DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
     }
 
     @Test
     public void settingsScreenTextSizeAllSizesSameRelatedContentScripture() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon","Jacob","1", "1");
+        assertNavBar(HistoryBackString,true,"Jacob 1, Book of Mormon",ShowRelatedContentString,true);
+        ClickUIElementByAccessibilityID(ShowRelatedContentString);
+        assertNavBar(HideRelatedContentString,true,"Related Content","",false);
+        ClickUIElementByAccessibilityID(HideRelatedContentString);
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(TextSizeString);
+        ClickUIElementByAccessibilityID(TextSizeString);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 3, 4);
+        assertNavBar(BackString,true,"Text Size","",false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("",false,SettingsString, DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+        assertNavBar(HistoryBackString,true,"Jacob 1, Book of Mormon",ShowRelatedContentString,true);
+        ClickUIElementByAccessibilityID(ShowRelatedContentString);
+        assertNavBar(HideRelatedContentString,true,"Related Content","",false);
+        ClickUIElementByAccessibilityID(HideRelatedContentString);
+
+
+
     }
 
     @Test
     public void settingsScreenTextSizeOneTitle_Subtitle_Body() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon","Jacob","1", "1");
+        Assert.assertEquals("31.5px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("19.799999237060547px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("16.200000762939453px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(TextSizeString);
+        ClickUIElementByAccessibilityID(TextSizeString);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 3, 1);
+        assertNavBar(BackString,true,"Text Size","",false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("",false,SettingsString, DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+        Assert.assertEquals("21px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("13.199999809265137px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("10.800000190734863px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
+
+
     }
 
     @Test
     public void settingsScreenTextSizeTwoTitle_Subtitle_Body() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon","Jacob","1", "1");
+        Assert.assertEquals("31.5px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("19.799999237060547px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("16.200000762939453px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(TextSizeString);
+        ClickUIElementByAccessibilityID(TextSizeString);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 3, 2);
+        assertNavBar(BackString,true,"Text Size","",false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("",false,SettingsString, DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+        Assert.assertEquals("26.25px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("16.5px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("13.5px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
     }
 
     @Test
     public void settingsScreenTextSizeThreeTitle_Subtitle_Body() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon","Jacob","1", "1");
+        Assert.assertEquals("31.5px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("19.799999237060547px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("16.200000762939453px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(TextSizeString);
+        ClickUIElementByAccessibilityID(TextSizeString);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 3, 3);
+        assertNavBar(BackString,true,"Text Size","",false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("",false,SettingsString, DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+        Assert.assertEquals("31.5px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("19.799999237060547px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("16.200000762939453px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
     }
 
     @Test
     public void settingsScreenTextSizeFourTitle_Subtitle_Body() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon","Jacob","1", "1");
+        Assert.assertEquals("31.5px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("19.799999237060547px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("16.200000762939453px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(TextSizeString);
+        ClickUIElementByAccessibilityID(TextSizeString);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 3, 4);
+        assertNavBar(BackString,true,"Text Size","",false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("",false,SettingsString, DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+        Assert.assertEquals("36.75px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("23.100000381469727px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("18.899999618530273px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
     }
 
     @Test
     public void settingsScreenTextSizeFiveTitle_Subtitle_Body() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon","Jacob","1", "1");
+        Assert.assertEquals("31.5px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("19.799999237060547px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("16.200000762939453px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(TextSizeString);
+        ClickUIElementByAccessibilityID(TextSizeString);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 3, 5);
+        assertNavBar(BackString,true,"Text Size","",false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("",false,SettingsString, DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+        Assert.assertEquals("45.5px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("28.600000381469727px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("23.399999618530273px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
     }
 
     @Test
     public void settingsScreenTextSizeSixTitle_Subtitle_Body() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon","Jacob","1", "1");
+        Assert.assertEquals("31.5px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("19.799999237060547px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("16.200000762939453px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(TextSizeString);
+        ClickUIElementByAccessibilityID(TextSizeString);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 3, 6);
+        assertNavBar(BackString,true,"Text Size","",false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("",false,SettingsString, DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+        Assert.assertEquals("70px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("44px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("36px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
     }
 
     @Test
     public void settingsScreenTextSizeSevenTitle_Subtitle_Body() throws Exception {
-        fail("Test Not Written");
+        OpenScripture("Book of Mormon","Jacob","1", "1");
+        Assert.assertEquals("31.5px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("19.799999237060547px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("16.200000762939453px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        scrollToById(TextSizeString);
+        ClickUIElementByAccessibilityID(TextSizeString);
+        swipeSeekBar(WebElementByXpath("//XCUIElementTypeOther[@name=\"Text Size\"]"), 3, 7);
+        assertNavBar(BackString,true,"Text Size","",false);
+        ClickUIElementByAccessibilityID(BackString);
+        assertNavBar("",false,SettingsString, DoneString, true);
+        ClickUIElementByAccessibilityID(DoneString);
+        Assert.assertEquals("105px", getComputedCssUsingXpath("//*[@id=\"title1\"]/span","font-size"));
+        Assert.assertEquals("66px", getComputedCssUsingXpath("//*[@id=\"title_number1\"]","font-size"));
+        Assert.assertEquals("54px", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[1]","font-size"));
     }
 
     @Test
@@ -2540,20 +2799,20 @@ public class GospelLibrary {
     @Test
     public void settingsScreenHideFootnotesInContentTextColor() throws Exception {
         OpenScripture("Book of Mormon", "Jacob", "1", "");
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
         assertToolBar();
         ClickUIElementByAccessibilityID(SettingsString);
         scrollToById(HideFootnotesString);
         ClickUIElementByAccessibilityID(HideFootnotesString);
         assertNavBar("", false, "Settings", "Done", true);
         ClickUIElementByAccessibilityID(DoneString);
-        delay(1);
+        Assert.assertEquals("rgb(33, 34, 37)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
         assertToolBar();
         ClickUIElementByAccessibilityID(SettingsString);
         ClickUIElementByAccessibilityID(HideFootnotesString);
         assertNavBar("", false, "Settings", "Done", true);
         ClickUIElementByAccessibilityID(DoneString);
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
         assertNavBarDropDownNav("Jacob 1","Jacob","Book of Mormon","Scriptures","Library","","",false );
         ClickUIElementByAccessibilityID(LibraryString);
 
@@ -2562,27 +2821,27 @@ public class GospelLibrary {
     @Test
     public void settingsScreenHideFootnotesInContentTextColorThenShow() throws Exception {
         OpenScripture("Book of Mormon", "Jacob", "1", "");
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
         assertToolBar();
         ClickUIElementByAccessibilityID(SettingsString);
         scrollToById(HideFootnotesString);
         ClickUIElementByAccessibilityID(HideFootnotesString);
         assertNavBar("", false, "Settings", "Done", true);
         ClickUIElementByAccessibilityID(DoneString);
+        Assert.assertEquals("rgb(33, 34, 37)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
         delay(1);
         assertToolBar();
         ClickUIElementByAccessibilityID(SettingsString);
         ClickUIElementByAccessibilityID(HideFootnotesString);
         assertNavBar("", false, "Settings", "Done", true);
         ClickUIElementByAccessibilityID(DoneString);
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
-        delay(1);
-        assertToolBar();
-        ClickUIElementByAccessibilityID(SettingsString);
-        ClickUIElementByAccessibilityID(HideFootnotesString);
-        assertNavBar("", false, "Settings", "Done", true);
-        ClickUIElementByAccessibilityID(DoneString);
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        Assert.assertEquals("rgb(33, 34, 37)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
         assertNavBarDropDownNav("Jacob 1","Jacob","Book of Mormon","Scriptures","Library","","",false );
         ClickUIElementByAccessibilityID(LibraryString);
     }
@@ -2591,27 +2850,27 @@ public class GospelLibrary {
     @Test
     public void settingsScreenHideFootnotesInContentThenShow() throws Exception {
         OpenScripture("Book of Mormon", "Jacob", "1", "");
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup", "display");
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
         assertToolBar();
         ClickUIElementByAccessibilityID(SettingsString);
         scrollToById(HideFootnotesString);
         ClickUIElementByAccessibilityID(HideFootnotesString);
         assertNavBar("", false, "Settings", "Done", true);
         ClickUIElementByAccessibilityID(DoneString);
+        Assert.assertEquals("rgb(33, 34, 37)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
+        assertToolBar();
+        ClickUIElementByAccessibilityID(SettingsString);
+        ClickUIElementByAccessibilityID(HideFootnotesString);
+        assertNavBar("", false, "Settings", "Done", true);
+        ClickUIElementByAccessibilityID(DoneString);
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
         delay(1);
         assertToolBar();
         ClickUIElementByAccessibilityID(SettingsString);
         ClickUIElementByAccessibilityID(HideFootnotesString);
         assertNavBar("", false, "Settings", "Done", true);
         ClickUIElementByAccessibilityID(DoneString);
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup", "display");
-        delay(1);
-        assertToolBar();
-        ClickUIElementByAccessibilityID(SettingsString);
-        ClickUIElementByAccessibilityID(HideFootnotesString);
-        assertNavBar("", false, "Settings", "Done", true);
-        ClickUIElementByAccessibilityID(DoneString);
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup", "display");
+        Assert.assertEquals("rgb(33, 34, 37)", getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]/sup","color"));
         assertNavBarDropDownNav("Jacob 1","Jacob","Book of Mormon","Scriptures","Library","","",false );
         ClickUIElementByAccessibilityID(LibraryString);
     }
@@ -2621,15 +2880,14 @@ public class GospelLibrary {
         ClickUIElementByAccessibilityID(ScripturesString);
         ClickUIElementByAccessibilityID(DoctrineAndCovenantsInstalledString);
         ClickUIElementByName("8");
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
-        ClickUIElementByName("1–5");
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"study_summary1\"]/a[1]","color"));
         assertToolBar();
         ClickUIElementByAccessibilityID(SettingsString);
         scrollToById(HideFootnotesString);
         ClickUIElementByAccessibilityID(HideFootnotesString);
         assertNavBar("", false, "Settings", "Done", true);
         ClickUIElementByAccessibilityID(DoneString);
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"study_summary1\"]/a[1]","color"));
         assertNavBarDropDownNav("Doctrine and Covenants 8","Doctrine and Covenants","Scriptures","Library","","","",false );
         ClickUIElementByAccessibilityID(LibraryString);
     }
@@ -2641,23 +2899,22 @@ public class GospelLibrary {
         ClickUIElementByAccessibilityID(ScripturesString);
         ClickUIElementByAccessibilityID(DoctrineAndCovenantsInstalledString);
         ClickUIElementByName("8");
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
-        ClickUIElementByName("1–5");
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"study_summary1\"]/a[1]","color"));
         assertToolBar();
         ClickUIElementByAccessibilityID(SettingsString);
         scrollToById(HideFootnotesString);
         ClickUIElementByAccessibilityID(HideFootnotesString);
         assertNavBar("", false, "Settings", "Done", true);
         ClickUIElementByAccessibilityID(DoneString);
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"study_summary1\"]/a[1]","color"));
         assertToolBar();
         ClickUIElementByAccessibilityID(SettingsString);
         ClickUIElementByAccessibilityID(HideFootnotesString);
         assertNavBar("", false, "Settings", "Done", true);
         ClickUIElementByAccessibilityID(DoneString);
-        getComputedCssUsingXpath("//*[@id=\"p1\"]/span[2]", "color");
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"study_summary1\"]/a[1]","color"));
         assertNavBarDropDownNav("Doctrine and Covenants 8","Doctrine and Covenants","Scriptures","Library","","","",false );
-        ClickUIElementByAccessibilityID(LibraryString);
+        Assert.assertEquals("rgb(23, 124, 156)", getComputedCssUsingXpath("//*[@id=\"study_summary1\"]/a[1]","color"));
     }
 
 
