@@ -316,6 +316,7 @@ public abstract class Strings {
     public static String OldTestamentString = "Old Testament";
     public static String NewTestamentString = "New Testament";
     public static String BookOfMormonString = "Book of Mormon";
+    public static String BookOfMormonInstalledString = "Book of Mormon, Installed";
     public static String DoctrineAndCovenantsString = "Doctrine and Covenants";
     public static String PearlOfGreatPriceString = "Pearl of Great Price";
     public static String DoctrineAndCovenantsInstalledString = "Doctrine and Covenants, Installed";
@@ -391,5 +392,11 @@ public abstract class Strings {
     public static String LibraryDutchString = "Bibliotheek";
     public static String ScripturesDutchString = "Schriften";
     public static String GeneralConferenceDutchString = "Algemene conferentie";
+
+
+    //StudyPlan Strings
+    public static String CreateAPlanString = "Create a Plan";
+
+
 
 }
